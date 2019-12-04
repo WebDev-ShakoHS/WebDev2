@@ -3,23 +3,37 @@
     <title>Marcus intro to Jquery</title>
     <h1>NFC North Standings</h1>
     <script src="JS/jquery-3.4.1.js"></script>
-    <style>
-    ul li{
-        color: red;
-        }
-        .packers{color: green;}
-    </style>
-     
-    </head>
    
-    <body> 
-        <ul><li>Packers</li><li>Vikings</li>
-        <li>bears</li><li>lions</li>
+    <style>
+        .emphasis { font-weight: bold}
+    ul li{
+        color: green;
+        }
         
-            <script> var lis =$('ul li');
-                 console.log(lis);
-            </script>
-           $('ol li').addClass('packers');
-            $('h1').addClass('bears');
+    </style>
+   
+<script>
+$(function() {
+$('li:first-child').addClass('emphasis');
+   });
+</script>
+     
+</head>
+   
+ <body> 
+       
+ <ul><li>Packers</li><li>Vikings</li>
+<li>bears</li><li>lions</li>
+        
+  <script> 
+  var lis =$('ul li');
+  console.log(lis);
+  </script>
+         
+ <script>
+$('ol li').addClass('packers');
+$('h1').addClass('bears');
+ </script>
+            
             </body>
 </html>
