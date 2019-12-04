@@ -3,7 +3,9 @@
     <title>Marcus intro to Jquery</title>
     <h1>NFC North Standings</h1>
     <script src="JS/jquery-3.4.1.js"></script>
-   
+  <link rel='stylesheet'
+        href="CSS/Day.css">
+    
     <style>
         .emphasis { font-weight: bold}
     ul li{
@@ -11,8 +13,20 @@
         }
         
     </style>
-   
-<script>
+   <script>
+    (function(){
+        $('button').click(function(){
+        $('link').attr('href', 'night.css')
+            
+        
+        
+        });
+    })();
+    
+    </script>
+
+    
+    <script>
 $(function() {
 $('li:first-child').addClass('emphasis');
    });
@@ -21,9 +35,11 @@ $('li:first-child').addClass('emphasis');
 </head>
    
  <body> 
-       
+ 
  <ul><li>Packers</li><li>Vikings</li>
 <li>bears</li><li>lions</li>
+      <button data-file="day">Day</button>
+     <button data-file="night">Night</button>
         
   <script> 
   var lis =$('ul li');
