@@ -40,8 +40,27 @@ $('li:first-child').addClass('emphasis');
 <li>bears</li><li>lions</li>
       <button data-file="day">Day</button>
      <button data-file="night">Night</button>
-        
-  <script> 
+    
+<script>
+    (function() {
+        var link = $('link');
+        $('button').on('click',function() {
+            var $this = $(this),
+             stylesheet = $(this).data('file');
+           
+    link.attr('href', stylesheet + '.css');
+$this
+    .siblings('button')
+    .removeAttr('disable');
+    .end()
+    .attr('disabled', 'disable');
+    
+     
+     </script>       
+        });
+    })();
+  
+    <script> 
   var lis =$('ul li');
   console.log(lis);
   </script>
