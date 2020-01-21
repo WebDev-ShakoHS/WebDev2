@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+
+<body>
+     <body>
+
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+
+      <div class="container">
+
+        <div class="navbar-header">
+
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+
+            <span class="sr-only"></span>
+
+            <span class="icon-bar"></span>
+
+            <span class="icon-bar"></span>
+
+            <span class="icon-bar"></span>
+
+          </button>
+
+            <li><a href="user17/Index.html">Home</a></li>
+            
+
+        </div>
+
+        <div class="collapse navbar-collapse">
+
+           <ul class="nav navbar-nav">
+
+            <li class="active"><a href="webDevUser17Acc.html">Gotta question for me?</a></li>
+
+            <li><a href="https://www.youtube.com/">Watch some tube!</a></li>
+
+            <li><a href="">stories and ideas (in the works)</a></li>
+               
+               <li><a href="mailto:301034@shakopeeschools.org/">Contact</a></li>
+
+          </ul>
+
+        </div><!--/.nav-collapse -->
+
+      </div>
+
+    </div>
+    <div id="gradient"></div>
+    <div id="page">
+
+        <div id="Message-Container">
+            <div id="message">
+                <h1>Congratulations!</h1>
+                <p>You are done.</p>
+                <p id="moves"></p>
+                <input id="okBtn" type="button" onclick="toggleVisablity('Message-Container')" value="Cool!" />
+            </div>
+        </div>
+
+        <div id="menu">
+            <div class="custom-select">
+                <select id="diffSelect">
+                    <option value="10">Easy</option>
+                    <option value="15">Medium</option>
+                    <option value="25">Hard</option>
+                    <option value="38">Extreme</option>
+                </select>
+            </div>
+            <input id="startMazeBtn" type="button" onclick="makeMaze()" value="Start" />
+        </div>
+        <div id="view">
+            <div id="mazeContainer">
+                <canvas id="mazeCanvas" class="border" height="1100" width="1100"></canvas>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/vendor/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/vendor/jquery.touchSwipe.min.js"></script>
+    <script type="text/javascript" src="js/globalFuncs.js"></script>
+    <script type="text/javascript" src="js/mazeFactory.js"></script>
+    <script type="text/javascript" src="js/drawMaze.js"></script>
+    <script type="text/javascript" src="js/player.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+</body>
+
+</html>
