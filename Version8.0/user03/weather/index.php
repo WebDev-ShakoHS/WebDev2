@@ -10,6 +10,15 @@ else {
 }
 $googleApiUrl = "http://api.openweathermap.org/data/2.5/weather?id=" . $cityId . "&lang=en&units=" . $units . "&APPID=" . $apiKey;
 
+
+if ($data->main->temp_max > 32){
+    $color='aqua';
+}
+else {
+    $color='black';
+}
+
+
 $ch = curl_init();
 
 curl_setopt($ch, CURLOPT_HEADER, 0);
@@ -27,55 +36,58 @@ $currentTime = time();
 
 <!doctype html>
 <html>
+
 <head>
-<title>Forecast Weather using OpenWeatherMap with PHP</title>
-<link rel="shortcut icon" href="file:///Users/223131/Applications/mampstack/apache2/htdocs/WebDev2/Version8.0/user03/images/favicon.ico">
-<style>
-body {
-    font-family: Arial;
-    font-size: 0.95em;
-    color: #000000;
-}
+    <title>Forecast Weather using OpenWeatherMap with PHP</title>
+    <link rel="shortcut icon" href="file:///Users/223131/Applications/mampstack/apache2/htdocs/WebDev2/Version8.0/user03/images/favicon.ico">
+    <style>
+        body {
+            font-family: Arial;
+            font-size: 0.95em;
+            color: #000000;
+        }
 
-.report-container {
-    border: #E0E0E0 1px solid;
-    padding: 20px 40px 40px 40px;
-    border-radius: 2px;
-    width: 550px;
-    margin: 0 auto;
-}
+        .report-container {
+            border: #E0E0E0 1px solid;
+            padding: 20px 40px 40px 40px;
+            border-radius: 2px;
+            width: 550px;
+            margin: 0 auto;
+        }
 
-.weather-icon {
-    vertical-align: middle;
-    margin-right: 20px;
-}
+        .weather-icon {
+            vertical-align: middle;
+            margin-right: 20px;
+        }
 
-.weather-forecast {
-    color: #212121;
-    font-size: 1.2em;
-    font-weight: bold;
-    margin: 20px 0px;
-}
+        .weather-forecast {
+            color: #212121;
+            font-size: 1.2em;
+            font-weight: bold;
+            margin: 20px 0px;
+        }
 
-span.min-temperature {
-    margin-left: 15px;
-    color: #929292;
-}
+        span.min-temperature {
+            margin-left: 15px;
+            color: #929292;
+        }
 
-.time {
-    line-height: 25px;
-}
-    
-    .background {
-        background-color:red;
-    }
-    
-    .weatherbackground {
-        background-color: lightgrey;
-    }
-</style>
+        .time {
+            line-height: 25px;
+        }
+
+        .background {
+            background-color: red;
+        }
+
+        .weatherbackground {
+            background-color: lightgrey;
+        }
+
+    </style>
 
 </head>
+
 <body class="background">
 
     <div class="report-container weatherbackground">
@@ -86,10 +98,8 @@ span.min-temperature {
             <div><?php echo ucwords($data->weather[0]->description); ?></div>
         </div>
         <div class="weather-forecast">
-            <img
-                src="http://openweathermap.org/img/w/<?php echo $data->weather[0]->icon; ?>.png"
-                class="weather-icon" /> <?php echo $data->main->temp_max; ?>&deg;<?php echo $temp; ?><span
-                class="min-temperature"><?php echo $data->main->temp_min; ?>&deg;<?php echo $temp; ?></span>
+            <img src="http://openweathermap.org/img/w/<?php echo $data->weather[0]->icon; ?>.png" class="weather-icon" />
+            <div style="color:<?php echo $color?>;"><?php echo $data->main->temp_max; ?>&deg;<?php echo $temp; ?></div><span class="min-temperature"><?php echo $data->main->temp_min; ?>&deg;<?php echo $temp; ?></span>
         </div>
         <div class="time">
             <div>Humidity: <?php echo $data->main->humidity; ?> %</div>
@@ -99,4 +109,5 @@ span.min-temperature {
 
 
 </body>
+
 </html>
