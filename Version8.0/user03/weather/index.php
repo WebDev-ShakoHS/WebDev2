@@ -1,7 +1,7 @@
 <?php
-$apiKey = "API KEY"; //You will need to add in the 
+$apiKey = "c412172094a97f38ced93e0328a7a830"; //You will need to add in the 
 $cityId = "5046997"; //5046997 Shakopee City Id
-$units = "metric";//metric-Celcius  imperial-Farhenheit
+$units = "imperial";//metric-Celcius  imperial-Farhenheit
 if ($units == 'metric'){//Changes the $temp varaible to match 
     $temp = "C";
 }
@@ -29,12 +29,12 @@ $currentTime = time();
 <html>
 <head>
 <title>Forecast Weather using OpenWeatherMap with PHP</title>
-
+<link rel="shortcut icon" href="file:///Users/223131/Applications/mampstack/apache2/htdocs/WebDev2/Version8.0/user03/images/favicon.ico">
 <style>
 body {
     font-family: Arial;
     font-size: 0.95em;
-    color: #929292;
+    color: #000000;
 }
 
 .report-container {
@@ -65,12 +65,20 @@ span.min-temperature {
 .time {
     line-height: 25px;
 }
+    
+    .background {
+        background-color:red;
+    }
+    
+    .weatherbackground {
+        background-color: lightgrey;
+    }
 </style>
 
 </head>
-<body>
+<body class="background">
 
-    <div class="report-container">
+    <div class="report-container weatherbackground">
         <h2><?php echo $data->name; ?> Weather Status</h2>
         <div class="time">
             <div><?php echo date("l g:i a", $currentTime); ?></div>
