@@ -11,11 +11,11 @@ else {
 $googleApiUrl = "http://api.openweathermap.org/data/2.5/weather?id=" . $cityId . "&lang=en&units=" . $units . "&APPID=" . $apiKey;
 
 
-if ($data->main->temp_max > 32){
+if ($data->main->temp_max < 32){
     $color='aqua';
 }
-else {
-    $color='black';
+else{
+    $color:'red';
 }
 
 
