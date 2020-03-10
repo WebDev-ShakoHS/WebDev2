@@ -123,6 +123,9 @@ else {
             height: auto;
         }
 
+        #footer {
+            
+        }
     </style>
 
 </head>
