@@ -1,13 +1,16 @@
 <?php
-$apiKey = "API KEY"; //You will need to add in the 
+$apiKey = "20c7bb1a6d6d63476f41cb33eb3d9b41"; //You will need to add in the 
 $cityId = "5046997"; //5046997 Shakopee City Id
-$units = "metric";//metric-Celcius  imperial-Farhenheit
+$units = "imperial";//metric-Celcius  imperial-Farhenheit
 if ($units == 'metric'){//Changes the $temp varaible to match 
     $temp = "C";
 }
 else {
     $temp = "F";
 }
+
+
+    
 $googleApiUrl = "http://api.openweathermap.org/data/2.5/weather?id=" . $cityId . "&lang=en&units=" . $units . "&APPID=" . $apiKey;
 
 $ch = curl_init();
@@ -23,7 +26,36 @@ $response = curl_exec($ch);
 curl_close($ch);
 $data = json_decode($response);
 $currentTime = time();
+
+if ($data->main->temp_max < 20){
+$color='red';
+}
+else {
+$color='blue';
+}
+    
+var_dump($color);
+
+if ($data->main->temp_max < 20){
+$hide1='hidden';
+}
+else {
+$hide1='showing';
+}
+    
+var_dump($hide1);
+
+
+if ($data->main->temp_max > 20){
+$hide2='hidden';
+}
+else {
+$hide2='showing';
+}
+    
+var_dump($hide2);
 ?>
+
 
 <!doctype html>
 <html>
@@ -35,6 +67,7 @@ body {
     font-family: Arial;
     font-size: 0.95em;
     color: #929292;
+    background-image: "http://openweathermap.org/img/w/<?php echo $data->weather[0]->icon; ?>.png";
 }
 
 .report-container {
@@ -65,11 +98,19 @@ span.min-temperature {
 .time {
     line-height: 25px;
 }
+    .hidden {
+        visibility: hidden;
+    }
+    .showing {
+        visibility: visible;
+    }
 </style>
 
 </head>
 <body>
-
+<h1 style="color:<?php echo $color ?>" >IF BLUE ITS WINTER BUT SPRING IF RED</h1>
+    <h1 style="color: red" class="<?php echo $hide1 ?>">ITS HOT TODAY</h1>
+    <h1 style="color: blue" class="<?php echo $hide2 ?>">ITS COLD TODAY</h1>
     <div class="report-container">
         <h2><?php echo $data->name; ?> Weather Status</h2>
         <div class="time">
@@ -86,6 +127,7 @@ span.min-temperature {
         <div class="time">
             <div>Humidity: <?php echo $data->main->humidity; ?> %</div>
             <div>Wind: <?php echo $data->wind->speed; ?> km/h</div>
+            
         </div>
     </div>
 

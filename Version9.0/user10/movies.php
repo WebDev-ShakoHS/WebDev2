@@ -76,6 +76,7 @@
         }
 
     </style>
+    <script type="text/javascript" src="scripts.js"></script>
 </head>
 
 <body>
@@ -89,10 +90,10 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav">
                     <!---------------------------------- Edit These Items in your Menu ------------->
-                    <a href="index.html" class="nav-item nav-link" tabindex="1">Who</a>
-                    <a href="what.html" class="nav-item nav-link">What</a>
-                    <a href="movies.html" class="nav-item nav-link active" tabindex="-1">Movies</a>
-                    <a href="index_list.html" class="nav-item nav-link" tabindex="-2">Favorites</a>
+                    <a href="index.php" class="nav-item nav-link" tabindex="1">Who</a>
+                    <a href="what.html" class="nav-item nav-link active">What</a>
+                    <a href="movies.php" class="nav-item nav-link" tabindex="-1">Movies</a>
+                    <a href="index_list.php" class="nav-item nav-link" tabindex="-2">Favorites</a>
                     <a href="talents.html" class="nav-item nav-link " tabindex="-2">Talents</a>
                     <a href="javagames.html" class="nav-item nav-link " tabindex="-2">TicTacToe</a>
                     <button data-file="day" onClick="lightmode()" class="col-lg-5">Light Mode</button>
@@ -150,6 +151,26 @@
             <td style="color:#000f00; background-color:royalblue;">Classic movie and very cool story.</td>
         </tr>
     </table>
+    <div>
+    <div class="container">
+
+      <div class="example-div report-container">
+        
+        <h1 style="text-align: left;">Search</h1>
+        
+        <section id="fetch">
+          <form name="fetch">
+            <input type="text" placeholder="Enter a movie title" id="term" style="padding: 100px; background-color: purple; border-color: black;"/>
+            <input type="submit" id="search" value="Find me a poster" style="border-color: black; border: 50px dashed red"/>
+          </form> 
+        </section>
+        
+        <section id="poster">
+          
+        </section>
+          
+    </div>
+
     <p id="hahalol">
         Watch them illegally online here <a href="https://www.yahoo.com" target="_blank"> Bad Site</a>
     </p>
@@ -175,6 +196,7 @@
         }
 
     </script>
+    </html>
 </body>
 
 </html>

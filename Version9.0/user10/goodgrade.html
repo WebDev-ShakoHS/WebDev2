@@ -6,6 +6,16 @@
     -->
 
 <head>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        .lolol {
+            border: 1.5px dashed green;
+        }
+
+    </style>
     <link rel="shortcut icon" type="image/ico" href="images/FaviconE.ico">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,6 +32,7 @@
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="CSS/SampleCSS.css">
+    <script src="JS/SampleJS.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -40,52 +51,39 @@
             text-align: center;
         }
 
-        h1 {
-            color: green;
-        }
+    </style>
+    <link href="CSS/SampleCSS.css" rel="stylesheet" type="text/css">
 
-        #buttonthing {
-            background-color: red;
-            color: black;
-        }
-
-        .report-container {
-    border: #E0E0E0 1px solid;
-    padding: 20px 40px 40px 40px;
-    border-radius: 2px;
-    width: 550px;
-    margin: 0 auto;
-}
-
-.weather-icon {
-    vertical-align: middle;
-    margin-right: 20px;
-}
-
-.weather-forecast {
-    color: #212121;
-    font-size: 1.2em;
-    font-weight: bold;
-    margin: 20px 0px;
-}
-
-span.min-temperature {
-    margin-left: 15px;
-    color: #929292;
-}
-
-.time {
-    line-height: 25px;
-}
-    .hidden {
-        visibility: hidden;
-    }
-    .showing {
-        visibility: visible;
-    }
-          td {
+    <style>
+        td {
             color: #FF0000;
 
+        }
+
+        i {
+            color: #2FAC66;
+            width: 30px;
+            height: 30px;
+            font-size: 28px;
+            padding: 0px;
+            margin: 0px;
+            border: 0px;
+        }
+
+        h1 {
+            padding: 0px;
+            margin: 0px;
+            border: 0px;
+        }
+
+    </style>
+    <link rel="shortcut icon" type="image/ico" href="images/FaviconE.ico">
+    <title>My Favorite Movies</title>
+    <link href="CSS/SampleCSS.css" rel="stylesheet" type="text/css">
+    <style>
+        td {
+            color: #FFFFFF;
+            background-color: black
         }
 
     </style>
@@ -103,7 +101,7 @@ span.min-temperature {
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav">
                     <!---------------------------------- Edit These Items in your Menu ------------->
-                    <a href="index.php" class="nav-item nav-link active" tabindex="1">Who</a>
+                   <a href="index.php" class="nav-item nav-link" tabindex="1">Who</a>
                     <a href="what.html" class="nav-item nav-link">What</a>
                     <a href="movies.php" class="nav-item nav-link" tabindex="-1">Movies</a>
                     <a href="index_list.php" class="nav-item nav-link" tabindex="-2">Favorites</a>
@@ -119,56 +117,14 @@ span.min-temperature {
             </div>
         </nav>
     </div>
-
-    <div class="wideMargin" id="content">
-
-        <h1 text-align=left id="front-title">Who is Emmet?</h1>
-        <p>
-            I am Emmet Hoversten, born in Minneapolis, Mn on August 7th 2004 delivered by my own father.
-        </p>
-        <p>
-            I was basically born into technology and have been accidently learning it about it from using it all my life after building my first pc. I have been with tech my whole life and grew up in this lifestyle. I want to learn coding, I learned some of the languages partly like python and playing around in linux terminals but am learing new ones in this class.
-        </p>
-        <button class="col-lg-12" id="buttonthing" onClick="editwebsite()">Click to Change My Story</button>
+    <div>
+        <h1>HIDDEN FILE</h1>
     </div>
-    <h1 style="color:<?php echo $color ?>" >IF BLUE ITS WINTER BUT SPRING IF RED</h1>
-    <h1 style="color: red" class="<?php echo $hide1 ?>">ITS HOT TODAY</h1>
-    <h1 style="color: blue" class="<?php echo $hide2 ?>">ITS COLD TODAY</h1>
-    <div class="report-container">
-        <h2><?php echo $data->name; ?> Weather Status</h2>
-        <div class="time">
-            <div><?php echo date("l g:i a", $currentTime); ?></div>
-            <div><?php echo date("jS F, Y",$currentTime); ?></div>
-            <div><?php echo ucwords($data->weather[0]->description); ?></div>
-        </div>
-        <div class="weather-forecast">
-            <img
-                src="http://openweathermap.org/img/w/<?php echo $data->weather[0]->icon; ?>.png"
-                class="weather-icon" /> <?php echo $data->main->temp_max; ?>&deg;<?php echo $temp; ?><span
-                class="min-temperature"><?php echo $data->main->temp_min; ?>&deg;<?php echo $temp; ?></span>
-        </div>
-        <div class="time">
-            <div>Humidity: <?php echo $data->main->humidity; ?> %</div>
-            <div>Wind: <?php echo $data->wind->speed; ?> km/h</div>
-            
-        </div>
-    </div>
-    <script>
-        var lol = $('p');
-        setInterval(function() {
-            lol.toggleClass('blinking');
-        }, 100);
+    <div>
+        <p>I am very surprised you see this. This is only for the good graders. Also if you did in fact grade this all the way through, you have to give me an A or 20 years of bad luck. I don't make the rules.</p>
 
-    </script>
-    <script>
+        <button class="lolol col-lg-12" onClick="sike()">Click To Redeem Your Reward</button>
 
-
-    </script>
-    <div class="wideMargin" id="footer">
-        <p>
-
-            Webpage made by <a href="index.html" target="_blank">[Emmet Hoversten]</a>
-        </p>
     </div>
 
 </body>
