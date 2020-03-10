@@ -15,9 +15,22 @@ if ($data->main->temp_max < 32){
     $color='aqua';
 }
 else{
-    $color:'red';
+    $color='red';
 }
 
+if ($data->main->temp_max < 32){
+    $backgroundcolor='aqua';
+}
+else{
+    $backgroundcolor='red';
+}
+
+if ($data->main->temp_min < 32){
+    $color='aqua';
+}
+else{
+    $color='red';
+}
 
 $ch = curl_init();
 
@@ -38,7 +51,7 @@ $currentTime = time();
 <html>
 
 <head>
-    <title>Forecast Weather using OpenWeatherMap with PHP</title>
+    <title>Current Weather</title>
     <link rel="shortcut icon" href="file:///Users/223131/Applications/mampstack/apache2/htdocs/WebDev2/Version8.0/user03/images/favicon.ico">
     <style>
         body {
@@ -88,7 +101,7 @@ $currentTime = time();
 
 </head>
 
-<body class="background">
+<body style="background-color:<?php echo $backgroundcolor?>;">
 
     <div class="report-container weatherbackground">
         <h2><?php echo $data->name; ?> Weather Status</h2>
