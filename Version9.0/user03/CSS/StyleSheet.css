@@ -1,0 +1,75 @@
+
+h1 {
+	font-size: 2em;
+	text-align: center;
+}
+
+h2{
+        font-size: 1.5em;
+}
+
+table {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: left;
+	border-collapse: collapse;
+	cellspacing: 0px;
+}
+
+tr {
+	border: 1px solid #ffffff;
+	text-align: center;
+	background-color:#9FB6CD; 
+}
+
+th {
+	text-align: center;
+	color: #ffffff;
+	background-color: #003366;
+}
+
+.paragraph1Margin {
+    margin-right: 600px;
+}
+
+.paragraphMargin {
+    margin: 50px;
+}
+
+.menu {
+    margin: 0px;
+    font-size: 1em;
+}
+
+.wideMargin {
+    margin: 15px;
+}
+
+#footer {
+    font-size: 12px;
+    text-align: center;
+}
+
+.bg-dark {
+    background-color: #222222 !important;
+}
+
+.headertoppadding {
+    padding-top: 30px;
+}
+
+.center {
+    text-align: center;
+}
+
+.textalignright {
+    text-align: right;
+}
+
+.textalignright2 {
+    text-align: right;
+}
+
+span {
+    color: red;
+}
