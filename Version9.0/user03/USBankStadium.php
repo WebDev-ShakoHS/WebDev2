@@ -69,7 +69,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     </div>
 
     <div class="wideMargin">
-        <div>
+        <div class='headertoppadding headerbottompadding'>
             <h1>US Bank Stadium</h1>
         </div>
         <div class="row">
@@ -105,7 +105,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                 <center><img src="images/USBankInside.jpeg" width=400px></center>
             </div>
         </div>
-
+    </div>
+    <div id="footer">
+    Webpage made by <span>Mitchell Berg</span>.
     </div>
 </body>
 
