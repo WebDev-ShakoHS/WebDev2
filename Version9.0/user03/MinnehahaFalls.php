@@ -26,10 +26,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="CSS/StyleSheet.css">
     <script src="JS/FinalJS.js"></script>
-    <script>
-
-
-    </script>
 </head>
 
 <body class="backgroundMinnehahaFalls">
@@ -65,9 +61,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         </nav>
     </div>
     <div class="wideMargin">
-        <center>
-            <h1 align="right"><span>Minnehaha Falls</span></h1>
-        </center>
+        <div class='headertoppadding headerbottompadding'>
+            <center><h1>Minnehaha Falls</h1></center>
+        </div>
         <div class="row">
             <div class="col-sm-6">
                 <h2>What is Minnehaha Falls?</h2>
@@ -82,5 +78,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                 <center><img src="images/MinnehahaFalls.jpeg" width=675px></center>
             </div>
         </div>
+    </div>
+    <div id="footer">
+    Webpage made by <span>Mitchell Berg</span>.
     </div>
 </body>
