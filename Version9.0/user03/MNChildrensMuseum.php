@@ -70,7 +70,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     </div>
 
     <div class="wideMargin">
-        <center><h1>Minnesota Childrens Museum</h1></center>
+        <div class='headertoppadding headerbottompadding'>
+            <center><h1>Minnesota Childrens Museum</h1></center>
+        </div>
 
         <div class="row">
             <div class="col-sm-6">
@@ -87,9 +89,11 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                 <p>Minnesota Children’s Museum is a leading producer of hands-on rental exhibits for children’s museums and discovery centers. <a href="https://mcm.org/about/" link="red">Learn More.</a></p></div>
                 <div class='textalignright2'>
                 <h2>Prices</h2>
-                <p><strong>Ages 1-101:</strong> $12.95</p>
-                <p><strong>Museum Members:</strong> Free</p>
-                <p><strong>Children Under Age 1:</strong> Free</p>
+                    <ul>
+                        <li><strong>Ages 1-101:</strong> $12.95</li>
+                        <li><strong>Museum Members:</strong> Free</li>
+                        <li><strong>Children Under Age 1:</strong> Free</li>
+                    </ul>
                 </div>
 
             </div>
