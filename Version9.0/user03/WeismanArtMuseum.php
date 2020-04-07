@@ -62,7 +62,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     </div>
 
     <div class="wideMargin">
-        <center><h1>Weisman Art Museum</h1></center>
+        <div class='headertoppadding headerbottompadding'>
+            <center><h1>Weisman Art Museum</h1></center>
+        </div>
         <div class="row">
             <div class="col-sm-6">
                 <h2>What is the Weisman Art Museum?</h2>
@@ -76,19 +78,53 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                         <p>The construction of an 8,100 square-foot expansion, designed by internationally renowned architect Frank Gehry, was completed in 2011. Gehry is also responsible for the original design of this landmark facility. The museum reopened to the public on October 2, 2011, and nearly doubled the size of the galleries for collections and enhanced its role as a cultural resource for the University, students, Minnesota, and the state’s many visitors. The museum engaged Minneapolis-based HGA Architects and Engineers as the local architects for the project and JE Dunn Construction as contractors.</p>
                 
                 
-                        <p><strong>Hours</strong></p>
-                        <p>Mon-Closed</p>
-                        <p>Tue, Thu, Fri10 am – 5 pm</p>
-                        <p>Wed10 am – 8 pm</p>
-                        <p>Sat, Sun11 am – 5 pm</p>
-                        <p>Closed on the following holidays: New Year’s Day, Independence Day, Thanksgiving, Christmas Eve Day, and Christmas Day.</p>
                 
             </div>
 
             <div class="col-sm-4">
                 <img src="images/WeismanNight.jpeg" width=445px>
             </div>
+            
+            <table>
+                    <tbody>
+                        <tr>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td><strong>Hours</strong></td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                            <td>Sunday</td>
+                            <td>Monday</td>
+                            <td>Tuesday</td>
+                            <td>Wednesday</td>
+                            <td>Thursday</td>
+                            <td>Friday</td>
+                            <td>Saturday</td>
+                        </tr>
+                        <tr>
+                            <td>11a-5p</td>
+                            <td><span>Closed</span></td>
+                            <td>10a-5p</td>
+                            <td>10a-8p</td>
+                            <td>10a-5p</td>
+                            <td>10a-5p</td>
+                            <td>11a-5p</td>
+                        </tr>
+                    </tbody>
+                </table>
+                        
+            <div class='headertoppadding'>
+                <p><strong>Closed on the following holidays:</strong> New Year’s Day, Independence Day, Thanksgiving, Christmas Eve Day, and Christmas Day.</p>
+            </div>
+            
         </div>
+    </div>
+    <div id="footer">
+    Webpage made by <span>Mitchell Berg</span>.
     </div>
 </body>
 
