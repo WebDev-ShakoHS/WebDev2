@@ -17,15 +17,23 @@ table {
 }
 
 tr {
-	border: 1px solid #ffffff;
+	border: 1px solid #000000;
 	text-align: center;
-	background-color:#9FB6CD; 
+	background-color:#eeeeee; 
 }
 
 th {
 	text-align: center;
-	color: #ffffff;
-	background-color: #003366;
+	color: #000000;
+	background-color: #ffffff;
+}
+
+td {
+    background-color: #eeeeee;
+    color: #000000;
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .paragraph1Margin {
@@ -72,4 +80,8 @@ th {
 
 span {
     color: red;
+}
+
+.headerbottompadding {
+    padding-bottom: 20px;
 }
