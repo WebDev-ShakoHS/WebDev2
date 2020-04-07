@@ -69,9 +69,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     </div>
 
     <div class="wideMargin">
-        <center>
-            <h1>Minneapolis Sculpture Garden</h1>
-        </center>
+        <div class='headertoppadding headerbottompadding'>
+            <center><h1>Minneapolis Sculpture Garden</h1></center>
+        </div>
         <div class="row">
             <div class="col-sm-4">
                 <img src="images/MinneapolisSculptureGarden.jpeg" width=445px>
@@ -100,8 +100,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
             </div>
         </div>
     </div>
-
-
-
-
+<div id="footer">
+    Webpage made by <span>Mitchell Berg</span>.
+    </div>
 </body>
