@@ -101,11 +101,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         }
 
     </style>
+    <link rel="stylesheet" type="text/css" href="CSS/StyleSheet.css">
+    <script src='JS/FinalJS.js'></script>
 </head>
 
 <body>
     <div class="menu">
         <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+            <a class="navbar-brand"><img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0" src='https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSMgZJOU6m518_A443vctOUHCbiSFtcAJMJ8i4sVyZ8dW4-IvR6' height=50px width=50px></a>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
             </button>
