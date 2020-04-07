@@ -1,5 +1,5 @@
 function ChildrensMuseum() {
-  alert("Silly human being, this page is for kids!");
+  alert("Silly homo sapien, this page is for kids!");
 }
 
 function bigImg(x) {
