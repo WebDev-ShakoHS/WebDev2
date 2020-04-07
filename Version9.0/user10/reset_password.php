@@ -74,12 +74,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <html lang="en">
 
 <head>
+    <link rel="shortcut icon" type="image/ico" href="images/FaviconE.ico">
+    <title>Emmet's Autobiography</title>
+
+    <!-- Bootstrap meta data -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="SHS WebDev Login">
-
-    <title>Reset Password</title>
+    <meta name="description" content="SHS WebDev Bootstrap sample">
 
     <!-- Bootstrap core JS -->
     <!-- These are needed to get the responsive menu to work -->
@@ -88,8 +90,22 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
     <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="CSS/SampleCSS.css">
+    <script src="JS/SampleJS.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="CSS/SampleCSS.css">
+
+    <style>
+        .bs-example {
+            margin: 20px;
+        }
+
+        label {
+            color: green;
+        }
+
+    </style>
     <style type="text/css">
         body {
             font: 14px sans-serif;
@@ -104,9 +120,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 </head>
 
 <body>
-    <div class="menu">
+    <div style="margin: 0px; border:0px; padding:0px;" class="menu">
         <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-            <a href="http://shakonet.isd720.com/WebDev" class="navbar-brand">WebDev</a>
+            <a href="reset_password.php" class="navbar-brand">Emmet H</a>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -114,11 +130,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav">
                     <!---------------------------------- Edit These Items in your Menu ------------->
-                    <a href="#" class="nav-item nav-link">Home</a>
-                    <a href="#" class="nav-item nav-link">About Me</a>
-                    <a href="#" class="nav-item nav-link disabled" tabindex="-1">Music</a>
-                    <a href="#" class="nav-item nav-link disabled" tabindex="-1">Lists</a>
-                    <a href="mailto:sample@gmail.com?Subject=Hello" class="nav-item nav-link disabled" tabindex="-1">Contact</a>
+                    <a href="index.php" class="nav-item nav-link " tabindex="1">Who</a>
+                    <a href="what.php" class="nav-item nav-link">What</a>
+                    <a href="movies.php" class="nav-item nav-link" tabindex="-1">Movies</a>
+                    <a href="index_list.php" class="nav-item nav-link" tabindex="-2">Favorites</a>
+                    <a href="talents.php" class="nav-item nav-link " tabindex="-2">Talents</a>
+                    <a href="javagames.php" class="nav-item nav-link " tabindex="-2">TicTacToe</a>
+                    <button data-file="day" onClick="lightmode()" class="col-lg-5">Light Mode</button>
+
                     <!----------------------------------^ Edit These Items in your Menu ^ ------------->
                 </div>
                 <div class="navbar-nav ml-auto">
@@ -132,7 +151,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         </nav>
     </div>
     <div class="wrapper">
-        <h2>Reset Password</h2>
         <p>Please fill out this form to reset your password.</p>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group <?php echo (!empty($new_password_err)) ? 'has-error' : ''; ?>">
@@ -151,6 +169,36 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             </div>
         </form>
     </div>
+    <div class="footer-dark">
+            <footer>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6 col-md-3 item">
+                            <h3>Services</h3>
+                            <ul>
+                                <li><a href="index.php">Main Page</a></li>
+                                <li><a href="javagames.php">Games</a></li>
+                                <li><a href="talents.php">Cool Things</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6 col-md-3 item">
+                            <h3>About</h3>
+                            <ul>
+                                <li><a href="#">Company</a></li>
+                                <li><a href="what.php">Team</a></li>
+                                <li><a href="index_list.php">Careers</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6 item text">
+                            <h3>Emmet Hoverten</h3>
+                            <p>Just a young lad doing coding for school.</p>
+                        </div>
+                        <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
+                    </div>
+                    <p class="copyright">Emmet Hoversten © 2020</p>
+                </div>
+            </footer>
+        </div>
 </body>
 
 </html>

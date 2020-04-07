@@ -1,3 +1,13 @@
+<?php
+// Initialize the session
+session_start();
+ 
+// Check if the user is logged in, if not then redirect him to login page
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+    header("location: login.php");
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <!--Version 3.0
@@ -25,6 +35,16 @@
     <link rel="stylesheet" href="CSS/SampleCSS.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
     <!-- Custom styles for this template -->
     <style type="text/css">
@@ -103,7 +123,7 @@
 <body>
     <div style="margin: 0px; border:0px; padding:0px;" class="menu">
         <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-            <a href="http://shakonet.isd720.com" class="navbar-brand">Emmet H</a>
+            <a href="reset_password.php" class="navbar-brand">Emmet H</a>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -112,17 +132,21 @@
                 <div class="navbar-nav">
                     <!---------------------------------- Edit These Items in your Menu ------------->
                     <a href="index.php" class="nav-item nav-link active" tabindex="1">Who</a>
-                    <a href="what.html" class="nav-item nav-link">What</a>
+                    <a href="what.php" class="nav-item nav-link">What</a>
                     <a href="movies.php" class="nav-item nav-link" tabindex="-1">Movies</a>
                     <a href="index_list.php" class="nav-item nav-link" tabindex="-2">Favorites</a>
-                    <a href="talents.html" class="nav-item nav-link " tabindex="-2">Talents</a>
-                    <a href="javagames.html" class="nav-item nav-link " tabindex="-2">TicTacToe</a>
+                    <a href="talents.php" class="nav-item nav-link " tabindex="-2">Talents</a>
+                    <a href="javagames.php" class="nav-item nav-link " tabindex="-2">TicTacToe</a>
                     <button data-file="day" onClick="lightmode()" class="col-lg-5">Light Mode</button>
 
                     <!----------------------------------^ Edit These Items in your Menu ^ ------------->
                 </div>
                 <div class="navbar-nav ml-auto">
-                    <a href="form.html" class="nav-item nav-link">Login</a>
+                    <a href="reset_password.php" class="nav-item nav-link active"><i class="fa fa-cog fa-lg" aria-hidden="true"></i><?php echo htmlspecialchars($_SESSION["username"]); ?></a>
+
+                    <?php if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+                    echo "<a href='logout.php' class='nav-item nav-link btn-danger' onclick='return confirm(\"Are you sure?\");'> Logout </a>";
+                    } else { echo "<a href='login.php' class='nav-item nav-link'> Login </a>";} ?>
                 </div>
             </div>
         </nav>
@@ -200,7 +224,7 @@ var_dump($hide2);
         <h1 style="color: red" class="<?php echo $hide1 ?>">ITS HOT TODAY</h1>
         <h1 style="color: blue" class="<?php echo $hide2 ?>">ITS COLD TODAY</h1>
         <div id="weatherbox">
-            <div class="report-container">
+            <div class="report-container" style="color: green;">
                 <h2><?php echo $data->name; ?> Weather Status</h2>
                 <div class="time">
                     <div><?php echo date("l g:i a", $currentTime); ?></div>
@@ -208,7 +232,7 @@ var_dump($hide2);
                     <div><?php echo ucwords($data->weather[0]->description); ?></div>
                 </div>
                 <div class="weather-forecast">
-                    <img src="http://openweathermap.org/img/w/<?php echo $data->weather[0]->icon; ?>.png" width="100px" height="100px" class="weather-icon" /> <span class="min-temperature" style="color: white;"><?php echo $data->main->temp_max; ?>&deg;<?php echo $temp; ?></span><span class="min-temperature" style="color: white;"><?php echo $data->main->temp_min; ?>&deg;<?php echo $temp; ?></span>
+                    <img src="http://openweathermap.org/img/w/<?php echo $data->weather[0]->icon; ?>.png" width="100px" height="100px" class="weather-icon" /> <span class="min-temperature" style="color: green;"><?php echo $data->main->temp_max; ?>&deg;<?php echo $temp; ?></span><span class="min-temperature" style="color: darkgreen;"><?php echo $data->main->temp_min; ?>&deg;<?php echo $temp; ?></span>
                 </div>
                 <div class="time">
                     <div>Humidity: <?php echo $data->main->humidity; ?> %</div>
@@ -235,6 +259,36 @@ var_dump($hide2);
             Webpage made by <a href="index.html" target="_blank">[Emmet Hoversten]</a>
         </p>
     </div>
+    <div class="footer-dark">
+            <footer>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6 col-md-3 item">
+                            <h3>Services</h3>
+                            <ul>
+                                <li><a href="index.php">Main Page</a></li>
+                                <li><a href="javagames.php">Games</a></li>
+                                <li><a href="talents.php">Cool Things</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6 col-md-3 item">
+                            <h3>About</h3>
+                            <ul>
+                                <li><a href="#">Company</a></li>
+                                <li><a href="what.php">Team</a></li>
+                                <li><a href="index_list.php">Careers</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6 item text">
+                            <h3>Emmet Hoverten</h3>
+                            <p>Just a young lad doing coding for school.</p>
+                        </div>
+                        <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
+                    </div>
+                    <p class="copyright">Emmet Hoversten © 2020</p>
+                </div>
+            </footer>
+        </div>
 
 </body>
 

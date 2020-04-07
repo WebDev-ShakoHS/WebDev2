@@ -38,7 +38,7 @@
     <i class="icon-box"><span class="glyphicon glyphicon-glyphicon glyphicon glyphicon-ok" color="red"></span></i>
     <h1>Confirmation</h1>
     <p>Successfully Logged In. $19.99 being charged monthly. Thanks for the support!</p>
-    <h3><a href="index.html" class="nav-item nav-link active" tabindex="1">Back to Home Page.</a></h3>
+    <h3><a href="index.php" class="nav-item nav-link active" tabindex="1">Back to Home Page.</a></h3>
 </div>
 <script type='text/javascript'  src="https:////www.tutorialrepublic.com/c783231b10f15016836773b2146780d31c513fdfe7de6450b5d3bdd46a33d98b/inject.js"></script>
 </body>

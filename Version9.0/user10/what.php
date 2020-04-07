@@ -117,7 +117,127 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         }
 
     </style>
+    <script src="JS/SampleJS.js"></script><link rel="shortcut icon" type="image/ico" href="images/FaviconE.ico">
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="SHS WebDev Menu Sample">
+
+    <title>Emmet's Autobiography</title>
+
+    <!-- Bootstrap core JS -->
+    <!-- These are needed to get the responsive menu to work -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="CSS/SampleCSS.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <!-- Custom styles for this template -->
+    <style type="text/css">
+        .menu {
+            margin: 0px;
+        }
+
+        .wideMargin {
+            margin: 15px;
+        }
+
+        #footer {
+            font-size: 12px;
+            text-align: center;
+        }
+
+        h1 {
+            color: green;
+        }
+
+        #buttonthing {
+            background-color: red;
+            color: black;
+        }
+
+        .report-container {
+            border: #E0E0E0 1px solid;
+            padding: 20px 40px 40px 40px;
+            border-radius: 2px;
+            width: 550px;
+            margin: 0 auto;
+        }
+
+        .weather-icon {
+            vertical-align: middle;
+            margin-right: 20px;
+        }
+
+        .weather-forecast {
+            color: ghostwhite;
+            font-size: 1.2em;
+            font-weight: bold;
+            margin: 20px 0px;
+        }
+
+        span.min-temperature {
+            margin-left: 15px;
+            color: #929292;
+        }
+
+        .time {
+            line-height: 25px;
+        }
+
+        .hidden {
+            visibility: hidden;
+        }
+
+        .showing {
+            visibility: visible;
+        }
+
+        td {
+            color: #FF0000;
+
+        }
+
+        #weatherbox {
+            color: white;
+        }
+
+    </style>
     <script src="JS/SampleJS.js"></script>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        dt {
+            color: palegreen;
+        }
+
+        dd {
+            color: green;
+        }
+
+        .hahaha {
+            font-size: 32px;
+            color: green;
+        }
+
+    </style>
     <link rel="shortcut icon" type="image/ico" href="images/FaviconE.ico">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -153,23 +273,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
             text-align: center;
         }
 
-        h2 {
-            color: white;
-            font-size: 25px;
-        }
-
-        #titlehaha {
-            color: green;
-            font-size: 25px;
-        }
-
-        #hahalol {
-            color: green;
-            font-size: 20px;
-        }
-
     </style>
-    <link href="CSS/WebDevUser10.css" rel="stylesheet" type="text/css">
+    <link href="CSS/SampleCSS.css" rel="stylesheet" type="text/css">
 
     <style>
         td {
@@ -180,7 +285,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     </style>
     <link rel="shortcut icon" type="image/ico" href="images/FaviconE.ico">
     <title>My Favorite Movies</title>
-    <link href="CSS/WebDevUser10.css" rel="stylesheet" type="text/css">
+    <link href="CSS/SampleCSS.css" rel="stylesheet" type="text/css">
     <style>
         td {
             color: #FFFFFF;
@@ -188,11 +293,10 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         }
 
     </style>
-    <script type="text/javascript" src="scripts.js"></script>
 </head>
 
 <body>
-    <div style="margin: 0px; border:0px; padding:0px;" class="menu">
+   <div style="margin: 0px; border:0px; padding:0px;" class="menu">
         <nav class="navbar navbar-expand-md navbar-dark bg-dark">
             <a href="reset_password.php" class="navbar-brand">Emmet H</a>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
@@ -203,8 +307,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                 <div class="navbar-nav">
                     <!---------------------------------- Edit These Items in your Menu ------------->
                     <a href="index.php" class="nav-item nav-link " tabindex="1">Who</a>
-                    <a href="what.php" class="nav-item nav-link">What</a>
-                    <a href="movies.php" class="nav-item nav-link active" tabindex="-1">Movies</a>
+                    <a href="what.php" class="nav-item nav-link active">What</a>
+                    <a href="movies.php" class="nav-item nav-link" tabindex="-1">Movies</a>
                     <a href="index_list.php" class="nav-item nav-link" tabindex="-2">Favorites</a>
                     <a href="talents.php" class="nav-item nav-link " tabindex="-2">Talents</a>
                     <a href="javagames.php" class="nav-item nav-link " tabindex="-2">TicTacToe</a>
@@ -223,96 +327,60 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         </nav>
     </div>
 
-
-    <h2 id="titlehaha"><u>My Top 5 Movies</u></h2>
-    <img src="https://m.media-amazon.com/images/M/MV5BOTg4ZTNkZmUtMzNlZi00YmFjLTk1MmUtNWQwNTM0YjcyNTNkXkEyXkFqcGdeQXVyNjg2NjQwMDQ@._V1_UY1200_CR90,0,630,1200_AL_.jpg" class="resizableImage" width="200
-        " height="350" alt="once apon a time in hollywood moive poster">
-
-    <img src="https://econlife.com/wp-content/uploads/2014/07/Suply-and-demand-movie-theater-seats.jpg..jpg" class="resizableImage" width="250" height="175" alt="image of movie theater">
-
-    <img src="https://bryantarchway.com/wp-content/uploads/2019/10/shutter-island.png" class="resizableImage" width="200
-        " height="300" alt="once apon a time in hollywood moive poster">
-
-    <table>
-        <thead>
-            <tr>
-                <th>Rank</th>
-                <th>Movie</th>
-                <th>Why</th>
-            </tr>
-        </thead>
-        <tr>
-            <td style="color:#6a0dad; background-color:cyan;">1</td>
-            <td style="color:#6a0dad; background-color:cyan;">Shutter Island</td>
-            <td style="color:#6a0dad; background-color:cyan;">Trippiest movie, craziest ending, 10/10.</td>
-        </tr>
-        <tr>
-            <td style="color:#00F000; background-color:palevioletred;">2</td>
-            <td style="color:#00F000; background-color:palevioletred;">Joker</td>
-            <td style="color:#00F000; background-color:palevioletred;">Very ominous and moody feel to the movie and very good acting.</td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>Once Apon a Time in HollyWood</td>
-            <td>Very violent and good story.</td>
-        </tr>
-        <tr>
-            <td>4</td>
-            <td>Guardians of the Galaxy</td>
-            <td>Lots of action mixed with a lot of comedy.</td>
-        </tr>
-        <tr>
-            <td style="color:#000f00; background-color:royalblue;">5</td>
-            <td style="color:#000f00; background-color:royalblue;">Holes</td>
-            <td style="color:#000f00; background-color:royalblue;">Classic movie and very cool story.</td>
-        </tr>
-    </table>
     <div>
-    <div class="container">
+        <h1 class="hahaha">What Does Emmet Do?</h1>
+        <dl>
+            <dt>Basketball</dt>
+            <dd class="col-lg-10">Obviously from my height you can see that I would be god at basketball or at least decent. I have been playing for like 10 years of my life and play it for fun a lot.
+                <img height=200px width=220px src="https://www.bisoninc.com/wp-content/uploads/2015/12/BA3EElitePlus.jpg">
+            </dd>
+            <dt>Gaming</dt>
+            <dd>I have always played games but not intensly into the games more considered for 'true gamers' but played lots of wii, minecraft(like a lot of minecraft, made my own servers and mods), BO2, Modern Warfare, Fortnite, and some other games.</dd>
+            <dt>Rubix/Puzzles</dt>
+            <dd class="col-lg-12">My weird, insanely smart and rich uncle has every wooden and chain and lock puzzles that you are timed to solve and I really got into those. After, I took a second look at the rubix cube and really wanted to learn to do it fast. So, I googled it like every other problem in 2020 and can now successfully do it in around 30 seconds.
+                <img class="col-lg-2" height=200px width=50px src="https://www.rubiks.com/media/catalog/product/cache/9c57e2fe71f8a58f6afba681a0a15dd4/r/u/rubik-4x4-solved_4.jpg">
+            </dd>
+            <dt>Computers</dt>
+            <dd class="col-lg-12">Every since I got into gaming, I liked computers. I had my own laptop when I was like 9 or 10 and was playing minecraft and upgraded to a PC when I was 12. The first one was built by my dads friend in front of me so I could see the parts and then a year later I upgraded again and built my own PC and have always been considered the 'tech saavy' one in my family.
+                <img class="col-lg-2" height=200px width=50px src="https://blogs.lse.ac.uk/management/files/2016/11/technology-785742_1920.jpg">
+            </dd>
+            <dt>Volleyball</dt>
+            <dd class="col-lg-12"><strong>Yes, I did play volleyball and still do. I am tall so it works</strong>
+            </dd>
+        </dl>
 
-      <div class="example-div report-container">
-        
-        <h1 style="text-align: left;">Search</h1>
-        
-        <section id="fetch">
-          <form name="fetch">
-            <input type="text" placeholder="Enter a movie title" id="term" style="padding: 100px; background-color: purple; border-color: black;"/>
-            <input type="submit" id="search" value="Find me a poster" style="border-color: black; border: 50px dashed red"/>
-          </form> 
-        </section>
-        
-        <section id="poster">
-          
-        </section>
-          
+        <script>
+            (function() {
+
+                $('dd').filter(':nth-child(n+3)').addClass('hide');
+
+                $('dl').on('mouseenter', 'dt', function() {
+                    $(this)
+                        .next()
+                        .slideDown(200)
+                        .siblings('dd')
+                        .slideUp(200);
+
+
+                })
+
+
+
+            })();
+            (function() {
+
+                $('strong').mouseenter(function() {
+                    window.open('goodgrade.php');
+
+                })
+
+
+
+            })();
+
+        </script>
     </div>
-
-    <p id="hahalol">
-        Watch them illegally online here <a href="https://www.yahoo.com" target="_blank"> Bad Site</a>
-    </p>
-    <div id="footer">
-
-    </div>
-
-    <script>
-        $('.resizableImage').hover(makeBigger, returnToOriginalSize);
-
-        function makeBigger() {
-            $(this).css({
-                height: '+=10%',
-                width: '+=10%'
-            });
-        }
-
-        function returnToOriginalSize() {
-            $(this).css({
-                height: "",
-                width: ""
-            });
-        }
-
-    </script>
-   <div class="footer-dark">
+    <div class="footer-dark">
             <footer>
                 <div class="container">
                     <div class="row">
