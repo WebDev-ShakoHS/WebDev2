@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--Version 7.0
+        Name:Radwan Abdalla
+        Date Completed:
+    -->
+
+<head>
+    <link rel="shortcut icon" type="image/png" href="images/p5%20logo.png" />
+    <link href="CSS/SampleCSS.css">
+    <link href="JS/SampleJS.js">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="SHS WebDev Menu Sample">
+
+    <title>Tesla</title>
+
+    <!-- Bootstrap core JS -->
+    <!-- These are needed to get the responsive menu to work -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- Custom styles for this template -->
+    <style type="text/css">
+        .menu {
+            margin: 0px;
+        }
+
+        .wideMargin {
+            margin: 15px;
+        }
+
+        #footer {
+            font-size: 30px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="menu">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+            <a href="index.html" class="navbar-brand">Home</a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav">
+                    <!---------------------------------- Edit These Items in your Menu ------------->
+                    <a href="Elon.html" class="nav-item nav-link active">About Elon</a>
+                    <a href="Tesla.html" class="nav-item nav-link active" tabindex="-1">Tesla</a>
+                    <a href="SpaceX.html" class="nav-item nav-link active" tabindex="-2">Space X</a>
+                    <a href="PayPal.html" class="nav-item nav-link active" tabindex="-3">PayPal</a>
+                    <a href="TheBoring.html" class="nav-item nav-link active" tabindex="-3">The Boring Company</a>
+                    <a href="movies.php" class="nav-item nav-link active" tabindex="-2"> Movie Posters</a>
+                    <!----------------------------------^ Edit These Items in your Menu ^ ------------->
+                </div>
+                <div class="navbar-nav ml-auto">
+                    <a href="login.php" class="nav-item nav-link active">Login</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div class="wideMargin" id="content">
+
+        <!----------------------------------------- All content here---------------------------------------------->
+
+        <center>
+            <p> <img src="images/Tesla%20Logo%202.png" style="height: 150px"></p>
+        </center>
+
+        <h3>
+            <p>
+                Tesla, Inc., is an American electric vehicle and clean energy company based in Palo Alto, California. The company specializes in electric vehicle manufacturing, battery energy storage from home to grid scale and, through its acquisition of SolarCity, solar panel and solar roof tile manufacturing.
+
+            </p>
+
+
+
+            <p>
+                Tesla is best known for its electric cars. The company first gained attention following the 2008 release of the Tesla Roadster, the very first electric sports car. Following the Roadster was the Model S, Model X, Model 3 and development is currently underway for the Model Y, 2020 Roadster, Tesla Semi, and the Cybertruck.
+
+            </p>
+
+            <p>
+                <a href="https://www.tesla.com">Link To the Tesla Website</a>
+
+            </p>
+
+            <div class="jumbotron text-center">
+                <h1>Cars (Currently) Produced by Tesla</h1>
+            </div>
+
+        </h3>
+        <style>
+            img {
+                height: 550px;
+            }
+
+        </style>
+
+        <center>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <h3>Model S</h3>
+                        <h5>
+                            <p>Sedan</p>
+                        </h5>
+                        <img src="images/Model%20S.png" style="height: 292px;">
+                    </div>
+                    <div class="col-sm-4">
+                        <h3>Model 3</h3>
+                        <h5>
+                            <p>Affordable Sedan</p>
+                            <img src="images/Model%203.png" style="height:270px;">
+                        </h5>
+                    </div>
+                    <div class="col-sm-4">
+                        <h3>Model X</h3>
+                        <h5>
+                            <p>SUV</p>
+                            <img src="images/Model%20X.png" style="height:230px;">
+                        </h5>
+                    </div>
+                </div>
+            </div>
+        </center>
+
+        <p>
+            <center>
+                <form>
+                    <h2>Choose which car is your favorite:</h2>
+                    <select id="browsers" onchange="preferedBrowser()">
+                        <option value="Model S">Model S</option>
+                        <option value="Model 3">Model 3</option>
+                        <option value="Model X">Model X</option>
+                    </select>
+                </form>
+            </center>
+        </p>
+    </div>
+
+
+    <footer>
+            <div class="wrapper">
+                <nav>
+                    <ul>
+                        <li><a href="mailto:306933@shakopeeschools.org?Subject=Hello" class="nav-item nav-link active" tabindex="-2">Contact</a></li>
+                    </ul>
+
+                </nav>
+
+            </div>
+
+        </footer>
+</body>
+
+</html>

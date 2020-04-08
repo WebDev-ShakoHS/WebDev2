@@ -1,0 +1,32 @@
+img {
+    
+    border: 5px solid #000000;
+    box-shadow: 0 5 15px (0,0,0,1);
+}
+
+footer {
+    background-color: #222;
+    width: 100%;
+    padding: 60px 60px; 
+    
+}
+
+footer nav {   
+    float: center;
+}
+
+footer nav ul {
+}
+
+footer nav ul li {
+
+    margin-right: 20px;
+    list-style: none;
+    
+}
+
+footer nav ul li a {
+    font-weight: 400;
+    font-size: 50px;
+    color: #fff;
+}

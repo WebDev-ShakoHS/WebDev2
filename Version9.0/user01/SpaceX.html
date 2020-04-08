@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--Version 7.0
+        Name:Radwan Abdalla
+        Date Completed:
+    -->
+
+<head>
+    <link rel="shortcut icon" type="image/png" href="images/p5%20logo.png" />
+    <link href="CSS/SampleCSS.css" />
+    <link href="JS/SampleJS.js" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="SHS WebDev Menu Sample">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>SpaceX</title>
+
+    <!-- Bootstrap core JS -->
+    <!-- These are needed to get the responsive menu to work -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <!-- Custom styles for this template -->
+    <style type="text/css">
+        .accordion {
+            background-color: #ddd;
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+        }
+
+        .active,
+        
+        .accordion:hover {
+            background-color: #ccc;
+        }
+
+        .panel {
+            padding: 0 18px;
+            display: none;
+            background-color: white;
+            overflow: hidden;
+        }
+
+        .center {
+            align-content: center;
+        }
+
+        .menu {
+            margin: 0px;
+        }
+
+        .wideMargin {
+            margin: 15px;
+        }
+
+        #footer {
+            font-size: 30px;
+            text-align: center;
+        }
+        
+        button {
+            background-color: #fff;
+            
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="menu">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+            <a href="index.html" class="navbar-brand">Home</a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav">
+                    <!---------------------------------- Edit These Items in your Menu ------------->
+                    <a href="Elon.html" class="nav-item nav-link active">About Elon</a>
+                    <a href="Tesla.html" class="nav-item nav-link active" tabindex="-1">Tesla</a>
+                    <a href="SpaceX.html" class="nav-item nav-link active" tabindex="-2">Space X</a>
+                    <a href="PayPal.html" class="nav-item nav-link active" tabindex="-3">PayPal</a>
+                    <a href="TheBoring.html" class="nav-item nav-link active" tabindex="-3">The Boring Company</a>
+                    <a href="movies.php" class="nav-item nav-link active" tabindex="-2"> Movie Posters</a>
+                    <!----------------------------------^ Edit These Items in your Menu ^ ------------->
+                </div>
+                <div class="navbar-nav ml-auto">
+                    <a href="login.php" class="nav-item nav-link active">Login</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div class="wideMargin" id="content">
+
+
+
+        <center>
+            <h1>SpaceX</h1>
+
+        </center>
+
+
+        <p>
+            <h1>What is SpaceX?
+        </p>
+
+        <img src="images/SpaceX%20Rocket.jpg" style="width: 1400px;">
+
+
+
+        <p>
+            <h3>SpaceX is a private spaceflight company that puts satellites into orbit and delivers cargo to the International Space Station (ISS). It was the first private company to send a cargo ship to the ISS, doing so in 2012. The company is working on developing powerful rockets and spacecraft capable of carrying people into space. Founder and CEO Elon Musk said in 2019 that he wanted people to start flying aboard the company's newest and enormous rocket ship in the next year or so. </h3>
+        </p>
+        <center>
+            <h3>
+                <button class="accordion">Falcon 9 Full Thrust</button>
+                <div class="panel">
+                    <p><img src="images/Falcon%209%20Full%20Thrust.jpg" style="height: 700px"></p>
+                </div>
+
+                <button class="accordion">Falcon Heavy</button>
+                <div class="panel">
+                    <p><img src="images/Falcon%20Heavy.jpg" style="height: 700px;"></p>
+                </div>
+                <button class="accordion">Starship</button>
+                <div class="panel">
+                    <p><img src="images/Starship.jpg" style="height: 700px;"></p>
+                </div>
+            </h3>
+        </center>
+
+        <script>
+            var acc = document.getElementsByClassName("accordion");
+            var i;
+
+            for (i = 0; i < acc.length; i++) {
+                acc[i].addEventListener("click", function() {
+                    this.classList.toggle("active");
+                    var panel = this.nextElementSibling;
+                    if (panel.style.display === "block") {
+                        panel.style.display = "none";
+                    } else {
+                        panel.style.display = "block";
+                    }
+                });
+            }
+
+        </script>
+
+        <p>
+            <a href="https://www.spacex.com">Link To the SpaceX Website</a>
+
+        </p>
+
+
+        <footer>
+            <div class="wrapper">
+                <nav>
+                    <ul>
+                        <li><a href="mailto:306933@shakopeeschools.org?Subject=Hello" class="nav-item nav-link active" tabindex="-2">Contact</a></li>
+                    </ul>
+
+                </nav>
+
+            </div>
+
+        </footer>
+
+</body>
+
+
+</html>
