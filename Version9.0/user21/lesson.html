@@ -22,14 +22,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="SHS WebDev Login">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+     <link href="CSS/SampleCSS.css" rel="stylesheet" type="text/css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
 
-     <link href="CSS/SampleCSS.css" rel="stylesheet" type="text/css">
       <script src="JS/SampleJS.js"></script>
      <link rel="shortcut icon" type="image/png"href="images/jungkook favicon.jpg">
 
-    <title>Golden Closet</title>
+
+    <title>Lesson</title>
 
     <!-- Bootstrap core JS -->
     <!-- These are needed to get the responsive menu to work -->
@@ -51,15 +52,76 @@
         }
 
     </style>
+
     <style>
-body {
-background-image: url(https://pbs.twimg.com/media/DTBr9kZXcAER-Ue.jpg);
-    background-repeat: repeat;
-  background-size: 1340px 900px;
-}
-    
-}
+        .emphasis {
+            color: red
+        }
+
     </style>
+
+
+    <script>
+        $(document).ready(function() {
+
+            $('li:first-child').addClass('emphasis');
+        })
+
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.toggle').click(function() {
+                $('.toggle').toggleClass('active')
+                $('body').toggleClass('night')
+            })
+        })
+
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("body").on({
+                mouseenter: function() {
+                    $(this).css("background-color", "gray");
+                },
+
+                mouseleave: function() {
+                    $(this).css("background-color", "blue");
+                },
+
+                dblclick: function() {
+                    $(this).css("background-color", "green");
+                }
+            });
+        });
+
+    </script>
+
+
+    <script>
+        $(document).ready(function() {
+            $("button").click(function() {
+                var number_of_rows = $('#rows').val();
+                var number_of_cols = $('#cols').val();
+                var table_body = '<table border="1">';
+                for (var i = 0; i < number_of_rows; i++) {
+                    table_body += '<tr>';
+                    for (var j = 0; j < number_of_cols; j++) {
+                        table_body += '<td>';
+                        table_body += 'Jungkook';
+                        table_body += '</td>';
+                    }
+                    table_body += '</tr>';
+                }
+                table_body += '</table>';
+                $('#tableDiv').html(table_body);
+            });
+        });
+
+    </script>
+
+
+
 </head>
 
 <body>
@@ -84,6 +146,56 @@ background-image: url(https://pbs.twimg.com/media/DTBr9kZXcAER-Ue.jpg);
             </div>
         </nav>
     </div>
+   
+ <ul>
+        
+    </ul>
+    <p style="font-family:courier new; font-size: 30px">Double click and move the mouse pointer to change the background color.</p>
+
+    <div style="margin-top: 50px; margin-left: 250px">
+        Number of Rows:<input type="text" id="rows">
+        Number of Coloumn: <input type="text" id="cols">
+        <button>Create Table</button>
+        <div id="tableDiv" style="margin-top: 40px">
+            Table will gentare here.
+        </div>
+    </div>
+
+    <div class="toggle"></div>
+   
+
+ <dl style="color:white";>
+        <dt>What thing Jungkook loves to do?</dt>
+        <dd>G.C.F</dd>
+        <dt>What thing Jungkook loves to do?</dt>
+        <dd>G.C.F</dd>
+        <dt>What thing Jungkook loves to do?</dt>
+        <dd>G.C.F</dd>
+        <dt>What thing Jungkook loves to do?</dt>
+        <dd>G.C.F</dd>
+        <dt>What thing Jungkook loves to do?</dt>
+        <dd>G.C.F</dd>
+    </dl>
+ <script>
+        (function() {
+
+            $('dd').filter(':nth-child(n+4)').addClass('hide');
+
+            $('dl').on('mouseenter', 'dt', function() {
+                $(this)
+                    .next()
+                    .slideDown(200)
+                    .siblings('dd')
+                    .slideUp(200);
+            });
+        })();
+
+    </script>
+
+    
+
+ 
+    </body>
      <div class="footer-dark">
             <footer>
                 <div class="container">
@@ -114,6 +226,6 @@ background-image: url(https://pbs.twimg.com/media/DTBr9kZXcAER-Ue.jpg);
                 </div>
             </footer>
         </div>
-    
-    </body>
+  
+
 </html>

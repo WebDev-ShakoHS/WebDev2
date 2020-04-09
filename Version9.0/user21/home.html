@@ -22,14 +22,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="SHS WebDev Login">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+     <link href="CSS/SampleCSS.css" rel="stylesheet" type="text/css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
 
-     <link href="CSS/SampleCSS.css" rel="stylesheet" type="text/css">
       <script src="JS/SampleJS.js"></script>
      <link rel="shortcut icon" type="image/png"href="images/jungkook favicon.jpg">
 
-    <title>Golden Closet</title>
+    <title>Home</title>
 
     <!-- Bootstrap core JS -->
     <!-- These are needed to get the responsive menu to work -->
@@ -49,17 +49,30 @@
             width: 350px;
             padding: 20px;
         }
+        .content {
+            border: 2px solid black;
+  padding: 25px
+        }
 
     </style>
-    <style>
-body {
-background-image: url(https://pbs.twimg.com/media/DTBr9kZXcAER-Ue.jpg);
-    background-repeat: repeat;
-  background-size: 1340px 900px;
-}
-    
-}
-    </style>
+     <script>
+        $(document).ready(function() {
+            $("body").on({
+                mouseenter: function() {
+                    $(this).css("background-color", "gray");
+                },
+
+                mouseleave: function() {
+                    $(this).css("background-color", "blue");
+                },
+
+                dblclick: function() {
+                    $(this).css("background-color", "green");
+                }
+            });
+        });
+
+    </script>
 </head>
 
 <body>
@@ -83,6 +96,17 @@ background-image: url(https://pbs.twimg.com/media/DTBr9kZXcAER-Ue.jpg);
                 </div>
             </div>
         </nav>
+    </div>
+    </body>
+     <div class="content">
+        <center><h1>JUNGKOOK</h1>
+        <p style="font-family:courier new; font-size: 30px">Jeon Jung-kook, better known mononymously as Jungkook, is a South Korean singer, songwriter and record producer. He is a member and vocalist of the South Korean boy band BTS.<br><br>
+        </p><br><br>
+        <h1>What is JUNGKOOK'S G.C.F?</h1>
+        <p style="font-family:courier new; font-size: 30px">G.C.F stands for Golden Closet Film, and Jungkook shoots, edits and directs every video.<br><br>
+        </p>
+         </center>
+         
     </div>
      <div class="footer-dark">
             <footer>
@@ -113,7 +137,6 @@ background-image: url(https://pbs.twimg.com/media/DTBr9kZXcAER-Ue.jpg);
                     <p class="copyright">Company Name © 2018</p>
                 </div>
             </footer>
-        </div>
-    
-    </body>
+    </div>
+
 </html>
