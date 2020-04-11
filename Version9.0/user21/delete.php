@@ -1,82 +1,63 @@
+<?php
+// Process delete operation after confirmation
+if(isset($_POST["id"]) && !empty($_POST["id"])){
+    // Include config file
+    require_once "config.php";
+    
+    // Prepare a delete statement
+    $sql = "DELETE FROM employees WHERE id = ?";
+    
+    if($stmt = mysqli_prepare($link, $sql)){
+        // Bind variables to the prepared statement as parameters
+        mysqli_stmt_bind_param($stmt, "i", $param_id);
+        
+        // Set parameters
+        $param_id = trim($_POST["id"]);
+        
+        // Attempt to execute the prepared statement
+        if(mysqli_stmt_execute($stmt)){
+            // Records deleted successfully. Redirect to landing page
+            header("location: index.php");
+            exit();
+        } else{
+            echo "Oops! Something went wrong. Please try again later.";
+        }
+    }
+     
+    // Close statement
+    mysqli_stmt_close($stmt);
+    
+    // Close connection
+    mysqli_close($link);
+} else{
+    // Check existence of id parameter
+    if(empty(trim($_GET["id"]))){
+        // URL doesn't contain id parameter. Redirect to error page
+        header("location: error.php");
+        exit();
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-     <!-- Bootstrap meta data -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="SHS WebDev Bootstrap sample">
-
-    <!-- Bootstrap core JS -->
-    <!-- These are needed to get the responsive menu to work -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="SHS WebDev Login">
+    <meta charset="UTF-8">
+    <title>View Record</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
      <link href="CSS/SampleCSS.css" rel="stylesheet" type="text/css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="shortcut icon" type="image/png"href="images/jungkook favicon.jpg">
 
-      <script src="JS/SampleJS.js"></script>
-     <link rel="shortcut icon" type="image/png"href="images/jungkook favicon.jpg">
-
-    <title>Home</title>
-
-    <!-- Bootstrap core JS -->
-    <!-- These are needed to get the responsive menu to work -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <style type="text/css">
-        body {
-            font: 14px sans-serif;
+        .wrapper{
+            width: 500px;
+            margin: 0 auto;
         }
-
-        .wrapper {
-            width: 350px;
-            padding: 20px;
-        }
-        .content {
-            border: 2px solid black;
-  padding: 25px
-        }
-
     </style>
-     <script>
-        $(document).ready(function() {
-            $("body").on({
-                mouseenter: function() {
-                    $(this).css("background-color", "gray");
-                },
-
-                mouseleave: function() {
-                    $(this).css("background-color", "blue");
-                },
-
-                dblclick: function() {
-                    $(this).css("background-color", "green");
-                }
-            });
-        });
-
-    </script>
 </head>
-
 <body>
-    <div class="menu">
+        <div class="menu">
         <nav class="navbar navbar-expand-md navbar-dark bg-dark">
             <a href="http://shakonet.isd720.com/WebDev" class="navbar-brand">WebDev</a>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
@@ -98,16 +79,26 @@
             </div>
         </nav>
     </div>
-    </body>
-     <div class="content">
-        <center><h1>JUNGKOOK</h1>
-        <p style="font-family:courier new; font-size: 30px">Jeon Jung-kook, better known mononymously as Jungkook, is a South Korean singer, songwriter and record producer. He is a member and vocalist of the South Korean boy band BTS.<br><br>
-        </p><br><br>
-        <h1>What is JUNGKOOK'S G.C.F?</h1>
-        <p style="font-family:courier new; font-size: 30px">G.C.F stands for Golden Closet Film, and Jungkook shoots, edits and directs every video.<br><br>
-        </p>
-         </center>
-         
+    <div class="wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="page-header">
+                        <h1>Delete Membership</h1>
+                    </div>
+                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+                        <div class="alert alert-danger fade in">
+                            <input type="hidden" name="id" value="<?php echo trim($_GET["id"]); ?>"/>
+                            <p>Are you sure you want to delete this membership?</p><br>
+                            <p>
+                                <input type="submit" value="Yes" class="btn btn-danger">
+                                <a href="index.php" class="btn btn-default">No</a>
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </div>        
+        </div>
     </div>
      <div class="footer-dark">
             <footer>
@@ -138,6 +129,7 @@
                     <p class="copyright">Company Name © 2018</p>
                 </div>
             </footer>
-    </div>
-
+        
+    </div> 
+</body>
 </html>

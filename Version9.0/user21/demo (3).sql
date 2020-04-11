@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Apr 09, 2020 at 06:06 AM
+-- Generation Time: Apr 10, 2020 at 06:32 PM
 -- Server version: 8.0.17
 -- PHP Version: 7.3.8
 
@@ -32,15 +32,17 @@ CREATE TABLE `employees` (
   `id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
   `address` varchar(255) NOT NULL,
-  `salary` int(10) NOT NULL
+  `dollar` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `employees`
 --
 
-INSERT INTO `employees` (`id`, `name`, `address`, `salary`) VALUES
-(3, 'An', 'Nguyen', 34);
+INSERT INTO `employees` (`id`, `name`, `address`, `dollar`) VALUES
+(20, 'Jimin', 'Busan, Korea', 34),
+(21, 'Kristie', '1153 Polk Street South', 34),
+(22, 'An', 'Vietnam', 34);
 
 -- --------------------------------------------------------
 
@@ -89,7 +91,7 @@ ALTER TABLE `station`
 -- AUTO_INCREMENT for table `employees`
 --
 ALTER TABLE `employees`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

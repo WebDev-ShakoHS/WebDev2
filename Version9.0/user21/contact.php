@@ -55,9 +55,9 @@ $currentTime = time();
 
      <link href="CSS/SampleCSS.css" rel="stylesheet" type="text/css">
       <script src="JS/SampleJS.js"></script>
-     <link rel="shortcut icon" type="image/png"href="images/banana milk.jpg">
+ <link rel="shortcut icon" type="image/png"href="images/jungkook favicon.jpg">
 
-    <title>Golden Closet</title>
+    <title>Contact</title>
 
     <!-- Bootstrap core JS -->
     <!-- These are needed to get the responsive menu to work -->
@@ -131,6 +131,9 @@ $currentTime = time();
                     <a href="music.html" class="nav-item nav-link " tabindex="-1">Music</a>
                     <a href="list.html" class="nav-item nav-link " tabindex="-1">Lists</a>
                     <a href="contact.php" class="nav-item nav-link " tabindex="-1">Contact</a>
+                     <a href="create.php" class="nav-item nav-link " tabindex="-1">Membership</a>
+                    
+    
                 </div>
             </div>
         </nav>

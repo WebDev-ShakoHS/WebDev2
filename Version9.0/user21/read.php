@@ -1,80 +1,72 @@
+<?php
+// Check existence of id parameter before processing further
+if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
+    // Include config file
+    require_once "config.php";
+    
+    // Prepare a select statement
+    $sql = "SELECT * FROM employees WHERE id = ?";
+    
+    if($stmt = mysqli_prepare($link, $sql)){
+        // Bind variables to the prepared statement as parameters
+        mysqli_stmt_bind_param($stmt, "i", $param_id);
+        
+        // Set parameters
+        $param_id = trim($_GET["id"]);
+        
+        // Attempt to execute the prepared statement
+        if(mysqli_stmt_execute($stmt)){
+            $result = mysqli_stmt_get_result($stmt);
+    
+            if(mysqli_num_rows($result) == 1){
+                /* Fetch result row as an associative array. Since the result set
+                contains only one row, we don't need to use while loop */
+                $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+                
+                // Retrieve individual field value
+                $name = $row["name"];
+                $address = $row["address"];
+                $dollar = $row["dollar"];
+            } else{
+                // URL doesn't contain valid id parameter. Redirect to error page
+                header("location: error.php");
+                exit();
+            }
+            
+        } else{
+            echo "Oops! Something went wrong. Please try again later.";
+        }
+    }
+     
+    // Close statement
+    mysqli_stmt_close($stmt);
+    
+    // Close connection
+    mysqli_close($link);
+} else{
+    // URL doesn't contain id parameter. Redirect to error page
+    header("location: error.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-     <!-- Bootstrap meta data -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="SHS WebDev Bootstrap sample">
-
-    <!-- Bootstrap core JS -->
-    <!-- These are needed to get the responsive menu to work -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="SHS WebDev Login">
+    <meta charset="UTF-8">
+    <title>View Record</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
      <link href="CSS/SampleCSS.css" rel="stylesheet" type="text/css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="shortcut icon" type="image/png"href="images/jungkook favicon.jpg">
 
-      <script src="JS/SampleJS.js"></script>
-     <link rel="shortcut icon" type="image/png"href="images/jungkook favicon.jpg">
-
-    <title>Home</title>
-
-    <!-- Bootstrap core JS -->
-    <!-- These are needed to get the responsive menu to work -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <style type="text/css">
-        body {
-            font: 14px sans-serif;
+        .wrapper{
+            width: 500px;
+            margin: 0 auto;
         }
-
-        .wrapper {
-            width: 350px;
-            padding: 20px;
-        }
-        .content {
-            border: 2px solid black;
-  padding: 25px
-        }
-
     </style>
-     <script>
-        $(document).ready(function() {
-            $("body").on({
-                mouseenter: function() {
-                    $(this).css("background-color", "gray");
-                },
-
-                mouseleave: function() {
-                    $(this).css("background-color", "blue");
-                },
-
-                dblclick: function() {
-                    $(this).css("background-color", "green");
-                }
-            });
-        });
-
-    </script>
 </head>
-
 <body>
     <div class="menu">
         <nav class="navbar navbar-expand-md navbar-dark bg-dark">
@@ -98,18 +90,31 @@
             </div>
         </nav>
     </div>
-    </body>
-     <div class="content">
-        <center><h1>JUNGKOOK</h1>
-        <p style="font-family:courier new; font-size: 30px">Jeon Jung-kook, better known mononymously as Jungkook, is a South Korean singer, songwriter and record producer. He is a member and vocalist of the South Korean boy band BTS.<br><br>
-        </p><br><br>
-        <h1>What is JUNGKOOK'S G.C.F?</h1>
-        <p style="font-family:courier new; font-size: 30px">G.C.F stands for Golden Closet Film, and Jungkook shoots, edits and directs every video.<br><br>
-        </p>
-         </center>
-         
+    <div class="wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="page-header">
+                        <h1>View Record</h1>
+                    </div>
+                    <div class="form-group">
+                        <label>Name</label>
+                        <p class="form-control-static"><?php echo $row["name"]; ?></p>
+                    </div>
+                    <div class="form-group">
+                        <label>Address</label>
+                        <p class="form-control-static"><?php echo $row["address"]; ?></p>
+                    </div>
+                    <div class="form-group">
+                        <label>Dollar</label>
+                        <p class="form-control-static"><?php echo $row["dollar"]; ?></p>
+                    </div>
+                    <p><a href="index.php" class="btn btn-primary">Back</a></p>
+                </div>
+            </div>        
+        </div>
     </div>
-     <div class="footer-dark">
+            <div class="footer-dark">
             <footer>
                 <div class="container">
                     <div class="row">
@@ -138,6 +143,7 @@
                     <p class="copyright">Company Name © 2018</p>
                 </div>
             </footer>
-    </div>
-
+        </div>
+   
+</body>
 </html>
