@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Bootstrap</title>
     <meta charset="utf-8">
@@ -9,7 +10,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    
+
 </head>
 
 <body>
@@ -27,13 +28,42 @@
             </ul>
         </div>
     </nav>
-    
+
     <style>
+        .card {
+            box-shadow: 0 4px 8px 0 rgb(255, 0, 0);
+            transition: 0.3s;
+            width: 40%;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 16px 0 rgb(255, 0, 0);
+        }
+
+        .container {
+            padding: 2px 16px;
+        }
+
+        h1 {
+            color: azure;
+        }
+
+        h2 {
+            color: azure;
+        }
+
         body {
             background-image: url("rb26.jpeg"), url("images/rb26.jpeg");
             background-color: #cccccc;
         }
-        </style>
+    </style>
+    <div class="card">
+        <img src="images/350z.jpeg" alt="Car" style="width:100%">
+        <div class="container">
+            <h1>Nissan 350z</h1>
+            <h2>$15,000</h2>
+        </div>
+    </div>
 </body>
 
- </html>
+</html>
