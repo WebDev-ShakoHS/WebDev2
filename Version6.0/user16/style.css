@@ -1,0 +1,641 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 50px;
+    font-size: 100%;
+    line-height: 1.5;
+    font-family: Roboto;
+}
+
+button {
+    padding: 5px;
+}
+
+ol {
+    list-style-type: decimal-leading-zero;
+}
+
+ol ol {
+    margin-left: 0.9em;
+}
+
+ol li {
+    line-height: 1.5;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+h1 {
+    font-family: "Fjalla One", sans-serif;
+    font-size: 2em;
+    text-transform: uppercase;
+    font-weight: 400;
+    border-bottom: 1px solid black;
+    margin-bottom: 1em;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0 none;
+    position: relative;
+}
+
+html {
+    background: #000;
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+article {
+    display: flex;
+    justify-content: space-around;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    animation: blur 11s infinite;
+}
+
+@keyframes blur {
+    23% {
+        filter: url(#none);
+    }
+    24% {
+        filter: url(#svg-blur-h);
+    }
+    25% {
+        filter: url(#none);
+    }
+    26% {
+        filter: url(#svg-blur-h);
+    }
+    27% {
+        filter: url(#none);
+    }
+    28% {
+        filter: url(#svg-blur-h);
+    }
+    35% {
+        filter: url(#none);
+    }
+    80% {
+        filter: url(#none);
+    }
+    81% {
+        filter: url(#svg-blur-v);
+    }
+    87% {
+        filter: url(#none);
+    }
+    88% {
+        filter: url(#svg-blur-v);
+    }
+    89% {
+        filter: url(#none);
+    }
+}
+
+pre {
+    color: #80FF00;
+    text-shadow: 0 0 2px #60F000, 1px -1px 2px #60F000;
+    font-weight: 400;
+    font-size: 1.5rem;
+    text-decoration: none;
+    letter-spacing: .3rem;
+    word-spacing: 1rem;
+    padding: 1rem 0;
+    writing-mode: vertical-rl;
+    -webkit-text-orientation: upright;
+    -moz-text-orientation: upright;
+    text-orientation: upright;
+    transform: translatey(-100%);
+    animation: matrix linear 30s infinite;
+}
+
+@keyframes matrix {
+    100% {
+        transform: translatey(100%);
+    }
+}
+
+pre:nth-child(5n+1) {
+    animation-delay: 1s;
+    animation-duration: 13s;
+}
+
+pre:nth-child(5n+2) {
+    animation-delay: 1.33s;
+    animation-duration: 53s;
+}
+
+pre:nth-child(5n+3) {
+    animation-delay: -1s;
+    animation-duration: 29s;
+}
+
+pre:nth-child(4n) {
+    animation-delay: -2s;
+    animation-duration: 43s;
+}
+
+.hide {
+    position: absolute;
+    height: 0;
+    width: 0;
+    overflow: 0;
+    left: -100%;
+}
+
+.aviso {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: #80FF00;
+    color: #009000;
+    font-weight: 400;
+    padding: .5rem;
+    border-radius: 0 5px 0 0;
+    box-shadow: 0 0 4px rgba(0, 0, 0, .4);
+    z-index: 1;
+}
+
+.aviso a {
+    text-decoration: none;
+    color: #000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins', sans-serif;
+}
+
+Html, body {
+    display: grid;
+    height: 100%;
+    place-items: center;
+}
+
+.wrapper {
+    height: 350px;
+    width: 413px;
+    background: linear-gradient(135deg, #14ffe9, #ffeb3b, #ff00e0);
+    border-radius: 10px;
+    animation: animate 1.5s linear infinite;
+}
+
+.wrapper .display, .wrapper span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.wrapper .display {
+    z-index: 999;
+    background: #1b1b1b;
+    height: 85px;
+    width: 345px;
+    border-radius: 2px;
+    text-align: center;
+}
+
+.wrapper .display #time {
+    line-height: 85px;
+    font-size: 50px;
+    font-weight: 600px;
+    letter-spacing: 5px;
+    background: linear-gradient(135deg, #14ffe9, #ffeb3b, #ff00e0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animate 1.5s linear infinite;
+}
+
+@keyframes animate {
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+#outerCircleText {
+    color: #000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3000;
+    cursor: default;
+}
+
+#outerCircleText div {
+    position: relative;
+}
+
+#outerCircleText div div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+}
+
+.wrapper span {
+    height: 100%;
+    width: 100%;
+    background: inherit;
+    border-radius: 10px;
+}
+
+.wrapper span:last-child {
+    filter: blur(20px);
+}
+
+.rainbow {
+    /* Font options */
+    font-family: 'Comic Sans MS', fantasy;
+    text-shadow: 2px 2px 4px #000000;
+    font-size: 20px;
+    /* Chrome, Safari, Opera */
+    -webkit-animation: rainbow 5s infinite;
+    /* Internet Explorer */
+    -ms-animation: rainbow 5s infinite;
+    /* Standar Syntax */
+    animation: rainbow 5s infinite;
+}
+
+/* Chrome, Safari, Opera */
+
+@-webkit-keyframes rainbow {
+    0% {
+        color: orange;
+    }
+    10% {
+        color: purple;
+    }
+    20% {
+        color: red;
+    }
+    30% {
+        color: CadetBlue;
+    }
+    40% {
+        color: yellow;
+    }
+    50% {
+        color: coral;
+    }
+    60% {
+        color: green;
+    }
+    70% {
+        color: cyan;
+    }
+    80% {
+        color: DeepPink;
+    }
+    90% {
+        color: DodgerBlue;
+    }
+    100% {
+        color: orange;
+    }
+}
+
+/* Internet Explorer */
+
+@-ms-keyframes rainbow {
+    0% {
+        color: orange;
+    }
+    10% {
+        color: purple;
+    }
+    20% {
+        color: red;
+    }
+    30% {
+        color: CadetBlue;
+    }
+    40% {
+        color: yellow;
+    }
+    50% {
+        color: coral;
+    }
+    60% {
+        color: green;
+    }
+    70% {
+        color: cyan;
+    }
+    80% {
+        color: DeepPink;
+    }
+    90% {
+        color: DodgerBlue;
+    }
+    100% {
+        color: orange;
+    }
+}
+
+/* Standar Syntax */
+
+@keyframes rainbow {
+    0% {
+        color: orange;
+    }
+    10% {
+        color: purple;
+    }
+    20% {
+        color: red;
+    }
+    30% {
+        color: CadetBlue;
+    }
+    40% {
+        color: yellow;
+    }
+    50% {
+        color: coral;
+    }
+    60% {
+        color: green;
+    }
+    70% {
+        color: cyan;
+    }
+    80% {
+        color: DeepPink;
+    }
+    90% {
+        color: DodgerBlue;
+    }
+    100% {
+        color: orange;
+    }
+}
+
+.actuallyBurnToDeath {
+    /* Font options */
+    font-family: 'Comic Sans MS', fantasy;
+    text-shadow: 2px 2px 4px #000000;
+    font-size: 20px;
+    /* Chrome, Safari, Opera */
+    -webkit-animation: actuallyBurnToDeath 1s infinite;
+    /* Internet Explorer */
+    -ms-animation: actuallyBurnToDeath 1s infinite;
+    /* Standar Syntax */
+    animation: actuallyBurnToDeath 1s infinite;
+}
+
+/* Chrome, Safari, Opera */
+
+@-webkit-keyframes actuallyBurnToDeath {
+    0% {
+        color: black;
+    }
+    10% {
+        color: red;
+    }
+    20% {
+        color: black;
+    }
+    30% {
+        color: red;
+    }
+    40% {
+        color: black;
+    }
+    50% {
+        color: red;
+    }
+    60% {
+        color: black;
+    }
+    70% {
+        color: red;
+    }
+    80% {
+        color: black;
+    }
+    90% {
+        color: red;
+    }
+    100% {
+        color: black;
+    }
+}
+
+/* Internet Explorer */
+
+@-ms-keyframes actuallyBurnToDeath {
+    0% {
+        color: black;
+    }
+    10% {
+        color: red;
+    }
+    20% {
+        color: black;
+    }
+    30% {
+        color: red;
+    }
+    40% {
+        color: black;
+    }
+    50% {
+        color: red;
+    }
+    60% {
+        color: black;
+    }
+    70% {
+        color: red;
+    }
+    80% {
+        color: black;
+    }
+    90% {
+        color: red;
+    }
+    100% {
+        color: black;
+    }
+}
+
+/* Standard Syntax */
+
+@keyframes actuallyBurnToDeath {
+    0% {
+        color: black;
+    }
+    10% {
+        color: red;
+    }
+    20% {
+        color: black;
+    }
+    30% {
+        color: red;
+    }
+    40% {
+        color: black;
+    }
+    50% {
+        color: red;
+    }
+    60% {
+        color: black;
+    }
+    70% {
+        color: red;
+    }
+    80% {
+        color: black;
+    }
+    90% {
+        color: red;
+    }
+    100% {
+        color: black;
+    }
+}
+
+.seizure {
+    /* Font options */
+    font-family: 'Comic Sans MS', fantasy;
+    text-shadow: 2px 2px 4px #000000;
+    font-size: 20px;
+    /* Chrome, Safari, Opera */
+    -webkit-animation: seizure 1s infinite;
+    /* Internet Explorer */
+    -ms-animation: seizure 1s infinite;
+    /* Standar Syntax */
+    animation: seizure 1s infinite;
+}
+
+/* Chrome, Safari, Opera */
+
+@-webkit-keyframes seizure {
+    0% {
+        color: black;
+    }
+    10% {
+        color: white;
+    }
+    20% {
+        color: black;
+    }
+    30% {
+        color: white;
+    }
+    40% {
+        color: black;
+    }
+    50% {
+        color: white;
+    }
+    60% {
+        color: black;
+    }
+    70% {
+        color: white;
+    }
+    80% {
+        color: black;
+    }
+    90% {
+        color: white;
+    }
+    100% {
+        color: black;
+    }
+}
+
+/* Internet Explorer */
+
+@-ms-keyframes seizure {
+    0% {
+        color: black;
+    }
+    10% {
+        color: white;
+    }
+    20% {
+        color: black;
+    }
+    30% {
+        color: white;
+    }
+    40% {
+        color: black;
+    }
+    50% {
+        color: white;
+    }
+    60% {
+        color: black;
+    }
+    70% {
+        color: white;
+    }
+    80% {
+        color: black;
+    }
+    90% {
+        color: white;
+    }
+    100% {
+        color: black;
+    }
+}
+
+/* Standard Syntax */
+
+@keyframes seizure {
+    0% {
+        color: black;
+    }
+    10% {
+        color: white;
+    }
+    20% {
+        color: black;
+    }
+    30% {
+        color: white;
+    }
+    40% {
+        color: black;
+    }
+    50% {
+        color: white;
+    }
+    60% {
+        color: black;
+    }
+    70% {
+        color: white;
+    }
+    80% {
+        color: black;
+    }
+    90% {
+        color: white;
+    }
+    100% {
+        color: black;
+    }
+}
