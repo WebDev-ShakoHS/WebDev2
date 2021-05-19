@@ -18,27 +18,26 @@
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="index.html">Name of the website</a>
+                <a class="navbar-brand" href="boostrap.html">New</a>
             </div>
             <ul class="nav navbar-nav">
-                <li><a href="boostrap.html">Buy</a></li>
-                <li class="active"><a href="home.html">Home</a></li>
+                <li class="active"><a href="index.html">Home</a></li>
                 <li><a href="aboutUs.html">Informarion</a></li>
                 <li><a href="carsandtrucks.html">Buy Car/Truck</a></li>
-                <li><a href="bikes.html">Buy Bike</a></li>
+                <li><a href="motorcycles.html">Buy Motorcycle</a></li>
             </ul>
         </div>
     </nav>
 
     <style>
         .card {
-            box-shadow: 0 4px 8px 0 rgb(255, 0, 0);
+            box-shadow: 0 4px 8px 0 rgba(255, 7, 7, 0);
             transition: 0.3s;
             width: 40%;
         }
 
         .card:hover {
-            box-shadow: 0 8px 16px 0 rgb(255, 0, 0);
+            box-shadow: 0 8px 16px 0 rgb(255, 255, 255);
         }
 
         .container {
@@ -53,18 +52,45 @@
             color: azure;
         }
 
+        h3 {
+            color: white;
+        }
+
         body {
-            background-image: url("rb26.jpeg"), url("images/rb26.jpeg");
+            background-image: url("rb26.jpeg"), url("images/2jz.jpeg");
             background-color: #cccccc;
         }
     </style>
+
+    <p>
+    <h1>Today</h1>
+    </p>
     <div class="card">
-        <img src="images/350z.jpeg" alt="Car" style="width:100%">
+        <img src="images/350z.jpeg" alt="Car" style="width:50%">
         <div class="container">
-            <h1>Nissan 350z</h1>
-            <h2>$15,000</h2>
+            <h2>Nissan 350z</h2>
+            <h3>$15,000</h3>
         </div>
     </div>
+
+    <div class="card">
+        <img src="images/mx5.png" alt="Car" style="width: 50%">
+        <div class="container">
+            <h2>Mazda Mx5 Miata NA</h2>
+            <h3>$5,700</h3>
+        </div>
+    </div>
+
+
+    <div class="card">
+        <img src="images/rx7.png" alt="Car" style="width:50%">
+        <div class="container">
+            <h2>Mazda Rx7</h2>
+            <h3>&26,800</h3>
+        </div>
+    </div>
+
 </body>
+
 
 </html>
