@@ -4,7 +4,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Bootstrap</title>
+    <title>Cars</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -14,30 +14,63 @@
 </head>
 
 <body>
-
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="boostrap.html">New</a>
             </div>
             <ul class="nav navbar-nav">
                 <li class="active"><a href="index.html">Home</a></li>
-                <li><a href="aboutUs.html">Informarion</a></li>
-                <li><a href="carsandtrucks.html">Buy Car/Truck</a></li>
+                <li><a href="bestcars.html">Best Cars</a></li>
+                <li><a href="trucks.html">Buy Truck</a></li>
+                <li><a href="boostrap.html">Buy Cars</a></li>
                 <li><a href="motorcycles.html">Buy Motorcycle</a></li>
             </ul>
         </div>
     </nav>
 
+    <!-- Footer -->
+    <footer class="page-footer font-small special-color-dark pt-4">
+
+        <!-- Footer Elements -->
+        <div class="container">
+
+            <!--Grid row-->
+            <div class="row">
+
+                <!--Grid column-->
+                <div class="col-md-6 mb-4">
+
+                    <!-- Form -->
+                    <form class="form-inline">
+                        <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Car/Brand Name"
+                            aria-label="Search">
+                        <i class="fas fa-search" aria-hidden="true"></i>
+
+                    </form>
+                </div>
+
+                <!--Grid column-->
+
+            </div>
+            <!--Grid column-->
+
+        </div>
+        <!--Grid row-->
+
+        </div>
+        <!-- Footer Elements -->
+
+    </footer>
+    <!-- Footer -->
     <style>
         .card {
-            box-shadow: 0 4px 8px 0 rgba(255, 7, 7, 0);
+            box-shadow: 0 4px 8px 0 rgba(255, 0, 0, 0);
             transition: 0.3s;
             width: 40%;
         }
 
         .card:hover {
-            box-shadow: 0 8px 16px 0 rgb(255, 255, 255);
+            box-shadow: 0 8px 16px 0 rgb(255, 0, 0);
         }
 
         .container {
@@ -45,31 +78,30 @@
         }
 
         h1 {
-            color: azure;
+            color: rgb(0, 0, 0);
         }
 
         h2 {
-            color: azure;
+            color: rgb(0, 0, 0);
         }
 
         h3 {
-            color: white;
-        }
-
-        body {
-            background-image: url("rb26.jpeg"), url("images/2jz.jpeg");
-            background-color: #cccccc;
+            color: rgb(0, 0, 0);
         }
     </style>
-
-    <p>
-    <h1>Last 24h</h1>
-    </p>
     <div class="card">
         <img src="images/350z.jpeg" alt="Car" style="width:50%">
         <div class="container">
             <h2>Nissan 350z</h2>
             <h3>$15,000</h3>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="images/r33.jpeg" alt="Car" style="width:50%">
+        <div class="container">
+            <h2>Nissan R33</h2>
+            <h3>$25,000</h3>
         </div>
     </div>
 
