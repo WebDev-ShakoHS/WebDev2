@@ -1,29 +1,140 @@
 body {
     margin: 0;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-style: oblique;
+    font-family: Roboto;
+    font-style: roboto;
+    background: rgb(63, 199, 245);
+    background: linear-gradient(45deg, rgba(63, 199, 245, 1) 5%, rgba(69, 253, 29, 1) 82%);
+    font-size: medium;
 }
 
-.topnav {
-    overflow: hidden;
-    background-color: slategrey;
+.Color {
+    color: white;
+    text-shadow: 4px 3px 4px #000000;
+    font-family: roboto;
+    font-size: medium;
 }
 
-.topnav a {
-    float: center;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 20px 20px;
-    text-decoration: solid;
-    font-size: 20px;
-}
-
-.topnav a:hover {
-    background-color: #ddd;
+.TEXTCARD {
     color: black;
+    font-family: Roboto;
+    font-size: small;
 }
 
-.topnav a.active {
-    background-color: lightseagreen;
-    color: whitesmoke;
+#NEXT {
+    font-style: italic;
+}
+
+#TOP {
+    font-style: italic;
+}
+
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #111;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+}
+
+.openbtn:hover {
+    background-color: #444;
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidebar {
+        padding-top: 15px;
+    }
+    .sidebar a {
+        font-size: 10px;
+    }
+}
+
+.CARDHOVER {
+    transition: box-shadow .3s;
+    width: 500px;
+    height: 500px;
+    margin: 33.5px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    background: #fff;
+    float: left;
+}
+
+.CARDHOVER:hover {
+    box-shadow: 10px 10px 20px rgba(25, 50, 50);
+}
+
+/* NEW CODE STARTS HERE_TYLERB */
+
+table {
+    width: 100%;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+}
+
+#t01 tr:nth-child(even) {
+    background-color: #eee;
+}
+
+#t01 tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+#t01 th {
+    background-color: black;
+    color: white;
+}
+
+.TABLE {
+    color: black;
+    font-size: medium;
+
 }
