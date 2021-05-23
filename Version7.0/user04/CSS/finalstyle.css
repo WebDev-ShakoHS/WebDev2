@@ -23,7 +23,7 @@ body {
   }
   
   .topnav a.active {
-    background-color: #06d610;
+    background-color: #04c40d;
     color: white;
   }
 
@@ -35,7 +35,55 @@ body {
 }
 
 .space {
-  margin-top: 20px;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-top: 30px;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-bottom: 30px;
+}
+
+.size {
+  font-size: 18.5px;
+}
+
+.box {
+  margin-top: 45px;
+  margin-left: 60px;
+  margin-right: 40px;
+  margin-bottom: 30px;
+}
+
+ul.a {
+  list-style-type: circle;
+}
+
+.space2 {
+  margin-top: 30px;
+  margin-left: 150px;
+  margin-right: 40px;
+  margin-bottom: 30px;
+}
+
+.listspace {
+  margin-bottom: 20px;
+}
+
+.margin{
+  margin-top: 40px;
+}
+
+.card-image {
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  width: 300px;
+  height: 300px;
+}
+
+.space3 {
+  margin-top: 30px;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-bottom: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
