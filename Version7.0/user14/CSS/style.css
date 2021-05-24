@@ -172,4 +172,7 @@ h2 {
   padding: 10px 20px;
 }
 
-
+.form-message {
+  padding-bottom: 5rem;
+  padding-top: 1.25rem;
+}

@@ -12,9 +12,10 @@ function photoClick(imgs) {
 }
 
 function messageSent() {
-    alert("Your message has been sent!")
+    alert("Your message has been sent!");
 }
 
 function changeText() {
     document.getElementById("headerText").innerHTML = "Great!";
 }
+
