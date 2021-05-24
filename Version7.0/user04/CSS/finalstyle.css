@@ -127,3 +127,23 @@ ul.a {
 .size3 {
   font-size: 20px;
 }
+
+.header img {
+  float: left;
+  width: 150px;
+  height: 150px;
+  background: #555;
+}
+
+.header h1 {
+  position: relative;
+  top: 18px;
+  left: 10px;
+}
+
+
+.pad {
+padding-top: 30px;
+margin: 50px;
+margin-left: 30px;
+}
