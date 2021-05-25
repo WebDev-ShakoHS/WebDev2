@@ -1,7 +1,7 @@
 <?php
-$apiKey = "API KEY"; //You will need to add in the 
+$apiKey = "1f96559e21409364ad30f0e971ba00eb"; //You will need to add in the 
 $cityId = "5046997"; //5046997 Shakopee City Id
-$units = "metric";//metric-Celcius  imperial-Farhenheit
+$units = "imperial";//metric-Celcius  imperial-Farhenheit
 if ($units == 'metric'){//Changes the $temp varaible to match 
     $temp = "C";
 }
@@ -29,6 +29,14 @@ $currentTime = time();
 <html>
 <head>
 <title>Forecast Weather using OpenWeatherMap with PHP</title>
+<?php
+if($data->main->temp_max >= "90"){
+    echo "<style> body{background-color:yellow; </style>";
+}
+else{
+    echo "<style> body{background-color:blue; </style>";
+}
+?>
 
 <style>
 body {
@@ -69,7 +77,6 @@ span.min-temperature {
 
 </head>
 <body>
-
     <div class="report-container">
         <h2><?php echo $data->name; ?> Weather Status</h2>
         <div class="time">
