@@ -5,8 +5,6 @@
 
   <title> Welcome To Gaming </title>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <title> Home </title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -17,12 +15,13 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <script src="JS/SampleJS.js"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </head>
 
 <style>
-
   .carousel-inner>.item>img,
   .carousel-inner>.item>a>img {
     height: 30%;
@@ -35,18 +34,17 @@
     padding: 3px;
     color: white;
   }
-
 </style>
 
 <body>
 
-  <div id="mySidebar" class="sidebar">
+  <nav id="mySidebar" class="sidebar">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
     <a href="Home.html">Home Page</a>
     <a href="Evolution.html">Evolution</a>
-    <a href="Uno.html">1960's-1990's</a>
-    <a href="Dos.html">1990's'-2020's</a>
-  </div>
+    <a href="Uno.html">1960s-1990s</a>
+    <a href="Dos.html">1990s-2020s</a>
+  </nav>
 
   <div id="main">
     <button class="openbtn" onclick="openNav()">☰ Pages</button>
@@ -115,7 +113,7 @@
       </center>
 
       <center>
-        <p>
+        <p class="tab">
           For generations gaming has brought communities together into a shared space with common interests.
           Every-single-day most people interact with games in forms like Smartphones, PC, or when you don’t have WIFI
           (Dinosaur game). To continue, the influence gaming has had on American society is exponential, with the very
@@ -128,19 +126,25 @@
 </body>
 
 <footer class="Color">
-
   <p>
     <---- Author: Tyler Braun / Email to ----> <br>
-      <a href="226716@shakopeeschools.org">226716@shakopeeschools.org</a>
+      <a href="mailto:226716@shakopeeschools.org">226716@shakopeeschools.org</a>
   </p>
 
   <div class="container">
-    <h2>Quick Access</h2>
+    <h2>Quick Access Tool Tips</h2>
 
     <button id="TOP" onclick="button1()" type="button" class="btn btn-primary">Return To Top</button>
-
-    <button id="NEXT" onclick="button2()" type="button" class="btn btn-primary">Next Page Here</button>
   </div>
+
+  <ul class="pagination justify-content-center">
+    <li class="page-item disabled"><a class="previous" href="javascript:void(0);">Previous Page</a></li>
+    <li class="page-item disabled"><a class="page-link" href="Home.html">1</a></li>
+    <li class="page-item"><a class="page-link" href="Evolution.html">2</a></li>
+    <li class="page-item"><a class="page-link" href="Uno.html">3</a></li>
+    <li class="page-item"><a class="page-link" href="Dos.html">4</a></li>
+    <li class="page-item"><a class="page-link" href="Evolution.html">Next Page</a></li>
+  </ul>
 
 </footer>
 

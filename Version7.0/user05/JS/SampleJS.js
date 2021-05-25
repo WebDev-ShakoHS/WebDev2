@@ -31,15 +31,3 @@ function closeNav() {
     document.getElementById("main").style.marginLeft = "0";
 }
 
-window.onscroll = function () { MOVE() };
-
-var navbar = document.getElementById("sidebar");
-var sticky = navbar.offsetTop;
-
-function MOVE() {
-    if (window.pageYOffset >= sticky) {
-        navbar.classList.add("sticky")
-    } else {
-        navbar.classList.remove("sticky");
-    }
-}
