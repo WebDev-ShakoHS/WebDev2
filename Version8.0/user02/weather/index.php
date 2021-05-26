@@ -1,7 +1,7 @@
 <?php
-$apiKey = "API KEY"; //You will need to add in the 
+$apiKey = "e64ac9a3d5793257e294ae295f677d2a"; //You will need to add in the 
 $cityId = "5046997"; //5046997 Shakopee City Id
-$units = "metric";//metric-Celcius  imperial-Farhenheit
+$units = "imperial";//metric-Celcius  imperial-Farhenheit
 if ($units == 'metric'){//Changes the $temp varaible to match 
     $temp = "C";
 }
@@ -64,6 +64,10 @@ span.min-temperature {
 
 .time {
     line-height: 25px;
+}
+
+if ($data->main->temp_max > "80") {
+    echo ("<style>body(background-color:"blue";)</style>")
 }
 </style>
 
