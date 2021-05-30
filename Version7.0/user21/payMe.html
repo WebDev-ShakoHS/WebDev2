@@ -22,6 +22,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="JS/script.js"></script>
+    <script src="SampleJS.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
 
     <!--↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ Put your .js files here ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑-->
 
@@ -39,8 +43,11 @@
             font-size: 12px;
             text-align: center;
         }
+
     </style>
+
     <!-- Nav-bar styling-->
+
     <style type="text/css" class="nav-bar">
         .intro-2 {
             background: url("../user21/images/pour gravy.jpg")no-repeat center center;
@@ -158,15 +165,16 @@
     <!-- Nav-bar styling-->
 
 
+
 </head>
 
 
 
 <!--Main Navigation-->
-<header>
+<header onload="fade()">
 
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark indigo" style="background-color: #B6DC76;">
-        <a class="navbar-brand" href="#"><strong>Navbar</strong></a>
+        <a class="navbar-brand" href="#"><strong>GravyDrain™©®</strong></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -180,7 +188,7 @@
                     <a class="nav-link" href="aboutUs.html">About Us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="payMe.html">Become A Member</a>
+                    <a class="nav-link" href="payMe.html">Give Money</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Contact us</a>
@@ -189,12 +197,24 @@
         </div>
     </nav>
 
-    <div class="view intro-2">
-        <div class="full-bg-img">
+    <div class="view intro-2" onmousemove="fade" >
+<script> 
+
+function fade(){
+
+$(document).ready(function fade() {
+   
+        $("#div2").fadeToggle("slow");
+    });
+}
+
+
+</script>
+        <div class="money">
             <div class="mask rgba-black-light flex-center">
                 <div class="container text-center white-text">
                     <div class="white-text text-center wow fadeInUp" id="title">
-
+                        <div id="div1" style="width:80px;height:80px;display:none;background-color:red;"></div><br>
 
                         <h5>
                             <div class="row">
@@ -291,7 +311,7 @@
                             </div>
                         </h5>
                         <br>
-                       
+
                     </div>
                 </div>
             </div>
@@ -306,7 +326,7 @@
 
 
 
-    
+
 
 </main>
 <!--Main Layout-->

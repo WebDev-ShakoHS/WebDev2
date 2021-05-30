@@ -1,7 +1,7 @@
 <?php
-$apiKey = "API KEY"; //You will need to add in the 
+$apiKey = "41cc0521cdd3ad25fb2d581d4d702449"; //You will need to add in the 
 $cityId = "5046997"; //5046997 Shakopee City Id
-$units = "metric";//metric-Celcius  imperial-Farhenheit
+$units = "imperial";//metric-Celcius  imperial-Farhenheit
 if ($units == 'metric'){//Changes the $temp varaible to match 
     $temp = "C";
 }
@@ -69,6 +69,7 @@ span.min-temperature {
 
 </head>
 <body>
+
 
     <div class="report-container">
         <h2><?php echo $data->name; ?> Weather Status</h2>
