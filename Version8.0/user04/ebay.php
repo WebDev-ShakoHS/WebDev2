@@ -83,7 +83,7 @@ if ($resp->ack == "Success") {
     
 /////////////////////////EDIT THIS LINE/////////////////////////////////////////////////////
     // For each SearchResultItem node, build a link and append it to $results
-    if($i % 3 === 1){
+  ($i % 3 === 1){
         $results .= "<div class='row'><div class='col-sm-4'><img src=\"$pic\"><a href=\"$link\">$title</a>"
     }
     if($i % 3 === 2){

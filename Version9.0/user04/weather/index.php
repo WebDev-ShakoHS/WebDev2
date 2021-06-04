@@ -19,7 +19,7 @@ curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
 curl_setopt($ch, CURLOPT_VERBOSE, 0);
 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 $response = curl_exec($ch);
-
+$response = curl_exec($curl);
 curl_close($ch);
 $data = json_decode($response);
 $currentTime = time();
