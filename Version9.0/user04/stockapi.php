@@ -43,7 +43,7 @@ echo $response;
 <!doctype html>
 <html>
 <head>
-<title>Apple and Microsoft quotes</title>
+<title>Quotes</title>
 
 <style>
 
@@ -59,7 +59,7 @@ echo $response;
 <body>
 
     <div class="report-container">
-        <h2><?php echo $data->name; ?>Quotes</h2>
+        <h1><?php echo $data->name; ?>Stock Prices</h1>
         <div class="price">
             <div><Span>Apple: </span><?php echo $data[0]['ask'] ; ?></div>
             <div><Span>Microsoft: </span> <?php echo $data[1]['ask'] ; ?></div>

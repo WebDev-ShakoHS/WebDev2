@@ -5,7 +5,7 @@ if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
     require_once "config.php";
     
     // Prepare a select statement
-    $sql = "SELECT * FROM employees WHERE id = ?";
+    $sql = "SELECT * FROM trades WHERE id = ?";
     
     if($stmt = mysqli_prepare($link, $sql)){
         // Bind variables to the prepared statement as parameters
@@ -24,9 +24,10 @@ if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
                 $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
                 
                 // Retrieve individual field value
-                $name = $row["name"];
-                $address = $row["address"];
-                $salary = $row["salary"];
+                $ticker = $row["Ticker"];
+                $buyprice = $row["Buy Price"];
+                $sellprice = $row["Sell Price"];
+                $profitloss = $row["Profit/Loss"];
             } else{
                 // URL doesn't contain valid id parameter. Redirect to error page
                 header("location: error.php");
@@ -71,16 +72,20 @@ if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
                         <h1>View Record</h1>
                     </div>
                     <div class="form-group">
-                        <label>Name</label>
-                        <p class="form-control-static"><?php echo $row["name"]; ?></p>
+                        <label>Ticker</label>
+                        <p class="form-control-static"><?php echo $row["Ticker"]; ?></p>
                     </div>
                     <div class="form-group">
-                        <label>Address</label>
-                        <p class="form-control-static"><?php echo $row["address"]; ?></p>
+                        <label>Buy Price</label>
+                        <p class="form-control-static"><?php echo $row["Buy Price"]; ?></p>
                     </div>
                     <div class="form-group">
-                        <label>Salary</label>
-                        <p class="form-control-static"><?php echo $row["salary"]; ?></p>
+                        <label>Sell Price</label>
+                        <p class="form-control-static"><?php echo $row["Sellprice"]; ?></p>
+                    </div>
+                    <div class="form-group">
+                        <label>Profit/Loss Amount</label>
+                        <p class="form-control-static"><?php echo $row["Profit/loss"]; ?></p>
                     </div>
                     <p><a href="index.php" class="btn btn-primary">Back</a></p>
                 </div>

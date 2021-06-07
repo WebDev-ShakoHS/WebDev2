@@ -3,43 +3,46 @@
 require_once "config.php";
  
 // Define variables and initialize with empty values
-$name = $address = $salary = "";
-$name_err = $address_err = $salary_err = "";
+$ticker = $buyprice = $sellprice = $profitloss = "";
+$ticker_err = $buyprice_err = $sellprice_err = $profitloss_err = "";
  
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Validate name
-    $input_name = trim($_POST["name"]);
-    if(empty($input_name)){
-        $name_err = "Please enter a name.";
-    } elseif(!filter_var($input_name, FILTER_VALIDATE_REGEXP, array("options"=>array("regexp"=>"/^[a-zA-Z\s]+$/")))){
-        $name_err = "Please enter a valid name.";
+    $input_ticker = trim($_POST["Ticker"]);
+    if(empty($input_ticker)){
+        $ticker_err = "Please enter a Ticker.";
     } else{
-        $name = $input_name;
+        $ticker = $input_ticker;
     }
     
     // Validate address
-    $input_address = trim($_POST["address"]);
-    if(empty($input_address)){
-        $address_err = "Please enter an address.";     
+    $input_buyprice = trim($_POST["Buy Price"]);
+    if(empty($input_buyprice)){
+        $buyprice_err = "Please enter the Buying Price.";     
     } else{
-        $address = $input_address;
+        $buyprice = $input_buyprice;
+    }
+
+    $input_sellprice = trim($_POST["Sell Price"]);
+    if(empty($input_sellprice)){
+        $sellprice_err = "Please enter the Sell Price.";     
+    } else{
+        $sellprice = $input_sellprice;
     }
     
     // Validate salary
-    $input_salary = trim($_POST["salary"]);
-    if(empty($input_salary)){
-        $salary_err = "Please enter the salary amount.";     
-    } elseif(!ctype_digit($input_salary)){
-        $salary_err = "Please enter a positive integer value.";
+    $input_profitloss = trim($_POST["Profit/Loss Amount"]);
+    if(empty($input_profitloss)){
+        $profitloss_err = "Please enter the profit/loss amount.";     
     } else{
-        $salary = $input_salary;
+        $profitloss = $input_profitloss;
     }
     
     // Check input errors before inserting in database
-    if(empty($name_err) && empty($address_err) && empty($salary_err)){
+    if(empty($ticker_err) && empty($buyprice_err) && empty($sellprice_err) && empty($profitloss_err)){
         // Prepare an insert statement
-        $sql = "INSERT INTO employees (name, address, salary) VALUES (?, ?, ?)";
+        $sql = "INSERT INTO trades (Ticker, Buy Price, Sell Price, Profit/Loss) VALUES (?, ?, ?)";
          
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
@@ -90,20 +93,26 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     <div class="page-header">
                         <h2>Create Record</h2>
                     </div>
-                    <p>Please fill this form and submit to add employee record to the database.</p>
+                    <p>Please fill this form and submit to add additional trades to The Option Guys.</p>
                     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                         <div class="form-group <?php echo (!empty($name_err)) ? 'has-error' : ''; ?>">
-                            <label>Name</label>
+                            <label>Stock Ticker</label>
                             <input type="text" name="name" class="form-control" value="<?php echo $name; ?>">
                             <span class="help-block"><?php echo $name_err;?></span>
                         </div>
                         <div class="form-group <?php echo (!empty($address_err)) ? 'has-error' : ''; ?>">
-                            <label>Address</label>
+                            <label>Buy Price</label>
                             <textarea name="address" class="form-control"><?php echo $address; ?></textarea>
                             <span class="help-block"><?php echo $address_err;?></span>
                         </div>
                         <div class="form-group <?php echo (!empty($salary_err)) ? 'has-error' : ''; ?>">
-                            <label>Salary</label>
+                            <label>Sell Price</label>
+                            <input type="text" name="salary" class="form-control" value="<?php echo $salary; ?>">
+                            <span class="help-block"><?php echo $salary_err;?></span>
+                        </div>
+                        
+                        <div class="form-group <?php echo (!empty($salary_err)) ? 'has-error' : ''; ?>">
+                            <label>Profit/Loss Amount</label>
                             <input type="text" name="salary" class="form-control" value="<?php echo $salary; ?>">
                             <span class="help-block"><?php echo $salary_err;?></span>
                         </div>
