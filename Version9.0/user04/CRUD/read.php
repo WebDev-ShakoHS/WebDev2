@@ -25,9 +25,9 @@ if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
                 
                 // Retrieve individual field value
                 $ticker = $row["Ticker"];
-                $buyprice = $row["Buy Price"];
-                $sellprice = $row["Sell Price"];
-                $profitloss = $row["Profit/Loss"];
+                $buyprice = $row["Buyprice"];
+                $sellprice = $row["sellprice"];
+                $profitloss = $row["Profitloss"];
             } else{
                 // URL doesn't contain valid id parameter. Redirect to error page
                 header("location: error.php");
@@ -77,15 +77,15 @@ if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
                     </div>
                     <div class="form-group">
                         <label>Buy Price</label>
-                        <p class="form-control-static"><?php echo $row["Buy Price"]; ?></p>
+                        <p class="form-control-static"><?php echo $row["Buyprice"]; ?></p>
                     </div>
                     <div class="form-group">
                         <label>Sell Price</label>
-                        <p class="form-control-static"><?php echo $row["Sellprice"]; ?></p>
+                        <p class="form-control-static"><?php echo $row["sellprice"]; ?></p>
                     </div>
                     <div class="form-group">
                         <label>Profit/Loss Amount</label>
-                        <p class="form-control-static"><?php echo $row["Profit/loss"]; ?></p>
+                        <p class="form-control-static"><?php echo $row["Profitloss"]; ?></p>
                     </div>
                     <p><a href="index.php" class="btn btn-primary">Back</a></p>
                 </div>
