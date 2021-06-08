@@ -19,11 +19,11 @@
             <div class="navbar-header">
             </div>
             <ul class="nav navbar-nav">
-                <li class="active"><a href="index.html">Home</a></li>
-                <li><a href="bestcars.html">Best Cars</a></li>
-                <li><a href="trucks.html">Buy Truck</a></li>
-                <li><a href="boostrap.html">Buy Cars</a></li>
-                <li><a href="motorcycles.html">Buy Motorcycle</a></li>
+            <li class="active"><a href="index.php">Home</a></li>
+                <li><a href="bestcars.php">Best Cars</a></li>
+                <li><a href="trucks.php">Buy Truck</a></li>
+                <li><a href="boostrap.php">Buy Cars</a></li>
+                <li><a href="motorcycles.php">Buy Motorcycle</a></li>
             </ul>
         </div>
     </nav>

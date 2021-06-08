@@ -8,7 +8,7 @@ table{
     text-align: left;
 }
 tr {
-    border-bottom: 1px solid #cbcbcb;
+    border-bottom: 1px solid #000000;
 }
 th, td{
     border: none;
@@ -16,7 +16,7 @@ th, td{
     padding: 2px;
 }
 tr:hover {
-    background: #F5F5F5;
+    background: #000000;
 }
 
 form {
@@ -24,7 +24,7 @@ form {
     margin: 50px auto;
     text-align: left;
     padding: 20px; 
-    border: 1px solid #bbbbbb; 
+    border: 1px solid #000000; 
     border-radius: 5px;
 }
 
@@ -42,7 +42,7 @@ form {
     padding: 5px 10px;
     font-size: 16px;
     border-radius: 5px;
-    border: 1px solid gray;
+    border: 1px solid rgb(0, 0, 0);
 }
 .btn {
     padding: 10px;
@@ -56,14 +56,14 @@ form {
     text-decoration: none;
     padding: 2px 5px;
     background: #2E8B57;
-    color: white;
+    color: rgb(0, 0, 0);
     border-radius: 3px;
 }
 
 .del_btn {
     text-decoration: none;
     padding: 2px 5px;
-    color: white;
+    color: rgb(0, 0, 0);
     border-radius: 3px;
     background: #800000;
 }
@@ -72,8 +72,9 @@ form {
     padding: 10px; 
     border-radius: 5px; 
     color: #3c763d; 
-    background: #dff0d8; 
+    background: #000000; 
     border: 1px solid #3c763d;
     width: 50%;
     text-align: center;
 }
+
