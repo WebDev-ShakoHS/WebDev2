@@ -37,7 +37,7 @@
 		?>
 	</div>
 <?php endif ?>
-	<form method="post" action="server.php" >
+	<form method="post" action="boostrap.php" >
 		<div class="input-group">
 			<label>Car Brand & Model</label>
 			<input type="text" name="Car Brand & Model" value="">
