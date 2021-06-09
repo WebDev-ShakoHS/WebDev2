@@ -7,9 +7,9 @@ $ticker = $buyprice = $sellprice = $profitloss = "";
 $ticker_err = $buyprice_err = $sellprice_err = $profitloss_err = "";
  
 // Processing form data when form is submitted
-if(isset($_POST["id"]) && !empty($_POST["id"])){
+if(isset($_POST["model_id"]) && !empty($_POST["model_id"])){
     // Get hidden input value
-    $id = $_POST["id"];
+    $id = $_POST["model_id"];
     
     // Validate name
     $input_ticker = trim($_POST["Ticker"]);
@@ -76,12 +76,12 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
     mysqli_close($link);
 } else{
     // Check existence of id parameter before processing further
-    if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
+    if(isset($_GET["model_id"]) && !empty(trim($_GET["model_id"]))){
         // Get URL parameter
-        $id =  trim($_GET["id"]);
+        $id =  trim($_GET["model_id"]);
         
         // Prepare a select statement
-        $sql = "SELECT * FROM trades WHERE id = ?";
+        $sql = "SELECT * FROM trades WHERE model_id = ?";
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
             mysqli_stmt_bind_param($stmt, "i", $param_id);
@@ -170,7 +170,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                             <input type="text" name="Profitloss" class="form-control" value="<?php echo $profitloss; ?>">
                             <span class="help-block"><?php echo $profitloss_err;?></span>
                         </div>
-                        <input type="hidden" name="id" value="<?php echo $id; ?>"/>
+                        <input type="hidden" name="model_id" value="<?php echo $id; ?>"/>
                         <input type="submit" class="btn btn-primary" value="Submit">
                         <a href="index.php" class="btn btn-default">Cancel</a>
                     </form>
