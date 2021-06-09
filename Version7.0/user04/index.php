@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<!--Version 7.0 
-	Name:
-	Date Completed:
-    -->
-
 <head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js"></script>
 
     <link rel="icon" type="image/x-icon" href="images/favicon copy.ico" />
 
@@ -19,67 +19,116 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="JS/finalscript.js"></script>
 
+    <style type="text/css">
+        .wrapper{
+            width: 650px;
+            margin: 0 auto;
+        }
+        .page-header h2{
+            margin-top: 0;
+        }
+        table tr td:last-child a{
+            margin-right: 15px;
+        }
+        .text{
+            font-size: 20px;
+            margin-top: 50px;
+            margin-left: 30px;
+            margin-right: 30px;
+            margin-bottom: 30px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('[data-toggle="tooltip"]').tooltip();   
+        });
+    </script>
 </head>
-
 <body>
+<div class="menu">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
 
-    <div class="menu">
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
 
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="topnav">
-                    <!--↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ Edit These Items in your Menu ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓-->
-                    <a href="index.html" class="nav-item nav-link active">Home</a>
-                    <a href="aboutUsDiscord.html" class="nav-item nav-link">About Us</a>
-                    <a href="leadershipSocialMedia.html" class="nav-item nav-link">Leadership</a>
-                    <a href="tradePortfolio.html" class="nav-item nav-link">Profits</a>
-                    <a href="http://localhost:8080/WebDev2/Version7.0/user04/api.php" class="nav-item nav-link">Stock Prices</a>
-                    <a href="http://localhost:8080/WebDev2/Version7.0/user04/index.php" class="nav-item nav-link">Trade Journal</a>
-                    <!----------------------------------^ Edit These Items in your Menu ^ ------------->
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+             <div class="topnav">
+                <a href="index.html" class="nav-item nav-link">Home</a>
+                <a href="aboutUsDiscord.html" class="nav-item nav-link ">About Us</a>
+                <a href="leadershipSocialMedia.html" class="nav-item nav-link">Leadership</a>
+                <a href="tradePortfolio.html" class="nav-item nav-link">Profits</a>
+                <a href="http://localhost:8080/WebDev2/Version7.0/user04/api.php" class="nav-item nav-link">Stock Prices</a>
+                <a href="http://localhost:8080/WebDev2/Version7.0/user04/index.php" class="nav-item nav-link active">Trade Journal</a>
+             </div>
+         </div>
+    </nav>
+</div>
+
+    <div class="wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="page-header clearfix">
+                        <h2 class="pull-left">Trade Details</h2>
+                        <a href="create.php" class="btn btn-success pull-right">Add New Trade</a>
+                    </div>
+                    <?php
+                    // Include config file
+                    require_once "config.php";
+                    
+                    // Attempt select query execution
+                    $sql = "SELECT * FROM trades";
+                    if($result = mysqli_query($link, $sql)){
+                        if(mysqli_num_rows($result) > 0){
+                            echo "<table class='table table-bordered table-striped'>";
+                                echo "<thead>";
+                                    echo "<tr>";
+                                        echo "<th>#</th>";
+                                        echo "<th>Ticker</th>";
+                                        echo "<th>Buyprice</th>";
+                                        echo "<th>sellprice</th>";
+                                        echo "<th>Profitloss</th>";
+                                        echo "<th>Action</th>";
+                                    echo "</tr>";
+                                echo "</thead>";
+                                echo "<tbody>";
+                                while($row = mysqli_fetch_array($result)){
+                                    echo "<tr>";
+                                        echo "<td>" . $row['model_id'] . "</td>";
+                                        echo "<td>" . $row['Ticker'] . "</td>";
+                                        echo "<td>" . $row['Buyprice'] . "</td>";
+                                        echo "<td>" . $row['sellprice'] . "</td>";
+                                        echo "<td>" . $row['Profitloss'] . "</td>";
+                                        echo "<td>";
+                                            echo "<a href='read.php?model_id=". $row['model_id'] ."' title='View Record' data-toggle='tooltip'><span class='glyphicon glyphicon-eye-open'></span></a>";
+                                            echo "<a href='update.php?model_id=". $row['model_id'] ."' title='Update Record' data-toggle='tooltip'><span class='glyphicon glyphicon-pencil'></span></a>";
+                                            echo "<a href='delete.php?model_id=". $row['model_id'] ."' title='Delete Record' data-toggle='tooltip'><span class='glyphicon glyphicon-trash'></span></a>";
+                                        echo "</td>";
+                                    echo "</tr>";
+                                }
+                                echo "</tbody>";                            
+                            echo "</table>";
+                            // Free result set
+                            mysqli_free_result($result);
+                        } else{
+                            echo "<p class='lead'><em>No records were found.</em></p>";
+                        }
+                    } else{
+                        echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+                    }
+ 
+                    // Close connection
+                    mysqli_close($link);
+                    ?>
                 </div>
-            </div>
-        </nav>
+            </div>        
+        </div>
     </div>
 
-    <div class="header">
-        <img class="space3" src="images/apple-touch-icon-180x180.png" alt="logo" />
-        <h1 class="space">The Option Guys</h1>
-    </div>
-   
-
-
-
-    <p class="space3 size3">
-        The Option Guys was started as a small group in March 2020 and since has grown much larger and has changed from
-        its original paid service to a free learning community. Everyone has their own personal vision and the rest of
-        the community supports them in achieving it by being involved in their personal and financial lives. No one
-        person is left behind and everyone is friendly and supportive of each other.
-    </p>
-    <ul class="list-group margin">
-        <li class="list-group-item list-group-item-success">Vision- To grow as people and a community while reaching
-            financial goals.</li>
-        <li class="list-group-item list-group-item-info">Mission- To become a stronger community where everyone helps
-            and teaches each other.</li>
-        <li class="list-group-item list-group-item-danger">Values- To Trust, Persist, Learn, and be there for everyone.
-        </li>
-    </ul>
-
-    <h1 class="pad">
-        Discord
-    </h1>
-
-    <p class="space3 size3">
-        With over a 1000 members, active at almost any time during the day, The Option Guys discord is a great place to
-        start your trading journey with members ranging from beginners to professional day traders. Our community is the
-        perfect place to join and make friends or make some extra money for something you've been wanting; either way,
-        you won't be disappointed with the outcome.
-    </p>
-
-    <img class="card-img-bottom card-image picture" src="images/Screen Shot 2021-05-23 at 2.03.19 PM.png"
-        alt="Card image">
-    <p class="card-text text-center">Screenshot of a chat in the discord</p>
-
-    <h2  class="text-center padding2"><a onmouseover="style.color='red'" onmouseout="style.color='black'" onmousedown="color(this,'red')" onmouseup="color(this,'green')" href="https://discord.gg/FHJAxSvpHP" onclick="myFunction()">Join Us Today!</a></h2></button>
+    <p class="space3 text text-center">
+        These are the details of the trades you have entered so far. Click on some of the options to view details, edit, or delete any of your past trades. WARNING- Any trades that you delete are not be able to be restored. While trading it is best to use proper risk-management and invest safely. Follow The Option Guys on Instagram and join the Discord for more free strategies, trades, and information.
+    </p>    
 </body>
 
 <footer class="page-footer font-small blue-grey lighten-5 margin">
@@ -196,5 +245,4 @@
         </div>
     </div>
 </footer>
-
 </html>

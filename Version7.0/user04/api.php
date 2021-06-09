@@ -1,3 +1,38 @@
+<?php
+
+$curl = curl_init();
+
+curl_setopt_array($curl, [
+	CURLOPT_URL => "https://yahoo-finance15.p.rapidapi.com/api/yahoo/qu/quote/AAPL,MSFT,FB,NFLX,AMZN,GOOGL",
+	CURLOPT_RETURNTRANSFER => true,
+	CURLOPT_FOLLOWLOCATION => true,
+	CURLOPT_ENCODING => "",
+	CURLOPT_MAXREDIRS => 10,
+	CURLOPT_TIMEOUT => 30,
+	CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+	CURLOPT_CUSTOMREQUEST => "GET",
+	CURLOPT_HTTPHEADER => [
+		"x-rapidapi-host: yahoo-finance15.p.rapidapi.com",
+		"x-rapidapi-key: e3cec6a7dbmsh6f1a6acdd1315dfp17d288jsn73a4cbdbedd1"
+	],
+]);
+
+$response = curl_exec($curl);
+$err = curl_error($curl);
+
+curl_close($curl);
+
+$data = json_decode($response,true);
+
+
+
+
+?>
+
+
+
+
+
 <!DOCTYPE html>
 
 <head>
@@ -12,60 +47,73 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="JS/finalscript.js"></script>
+
+    <title>Quotes</title>
+
+    <style>
+
+
+
+        .price {
+        line-height: 25px;
+        }
+
+        .bigger{
+        font-size: 18px;
+        margin-bottom: 7px;
+        margin-top: 7px;
+        }
+    </style>    
 </head>
 
+
 <body>
-    <div class="menu">
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+<div class="menu">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
 
 
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="topnav">
-                    <!--↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ Edit These Items in your Menu ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓-->
-                    <a href="index.html" class="nav-item nav-link">Home</a>
-                    <a href="aboutUsDiscord.html" class="nav-item nav-link active">About Us</a>
-                    <a href="leadershipSocialMedia.html" class="nav-item nav-link">Leadership</a>
-                    <a href="tradePortfolio.html" class="nav-item nav-link">Profits</a>
-                    <a href="http://localhost:8080/WebDev2/Version7.0/user04/api.php" class="nav-item nav-link">Stock Prices</a>
-                    <a href="http://localhost:8080/WebDev2/Version7.0/user04/index.php" class="nav-item nav-link">Trade Journal</a>
-                    <!----------------------------------^ Edit These Items in your Menu ^ ------------->
-                </div>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="topnav">
+                <!--↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ Edit These Items in your Menu ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓-->
+                <a href="index.html" class="nav-item nav-link">Home</a>
+                <a href="aboutUsDiscord.html" class="nav-item nav-link ">About Us</a>
+                <a href="leadershipSocialMedia.html" class="nav-item nav-link">Leadership</a>
+                <a href="tradePortfolio.html" class="nav-item nav-link">Profits</a>
+                <a href="http://localhost:8080/WebDev2/Version7.0/user04/api.php" class="nav-item nav-link active">Stock Prices</a>
+                <a href="http://localhost:8080/WebDev2/Version7.0/user04/index.php" class="nav-item nav-link">Trade Journal</a>
             </div>
-        </nav>
+        </div>
+    </nav>
+</div>
+
+<div>
+
+</div>
+
+<body>
+
+
+    
+
+    <div class="report-container">
+        <h1 class="space3"><?php echo $data->name; ?>Stock Prices</h1>
+        <div class="price bigger">
+            <div class="bigger space3"><Span>Apple: </span><?php echo $data[0]['ask'] ; ?></div>
+            <div class="bigger space3"><Span>Microsoft: </span> <?php echo $data[1]['ask'] ; ?></div>
+            <div class="bigger space3"><Span>Facebook: </span> <?php echo $data[2]['ask'] ; ?></div>
+            <div class="bigger space3"><Span>Netflix: </span><?php echo $data[3]['ask'] ; ?></div>
+            <div class="bigger space3"><Span>Amazon: </span><?php echo $data[4]['ask'] ; ?></div>
+            <div class="bigger space3"><Span>Google: </span><?php echo $data[5]['ask'] ; ?></div>
+        </div>
     </div>
+    
+    <p class="size space">
 
-    <h1 class="space">About Us</h1>
+        The stock market is hard to follow and impossible to predict and new traders and investors may find it challenging to make their way through the market without being swallowed by it or without losing money. Here are some top blue sticker companies whose stocks consistently grow and gain money. The prices update in real time and these are some of the most secure and reliable companies to invest in making them a great place to start or expand your portfolio with.
 
-
-    <div class="container padding">
-        <img src="images/cruise.jpeg" alt="Snow" style="width:100%;">
-        <div class="bottom-left size2">Join Us on Our Journey to Financial Freedom</div>
-    </div>
-
-    <h1 class="space padding margin">Who We Are</h1>
-
-    <p class="space3 size3">
-        <i>The Option Guys</i> is a trading community discord server that specializes in options trading. Established in
-        March 2020, we have now grown to a member base of over 1000 traders with cumulative profits of over $250,000.
-        Originally started as a paid service by Elk, Joey, and Martin, The Option Guys is now led by Aryan P. also known
-        as <i>Paryan</i> and is a free use open discord. The discord offers channels to just hang out and talk about
-        your day, Technical Analysis chats to learn and prepare for the opcoming trading sessions, and even callout
-        channels where experienced traders post their plays to the group all for no cost. As of May 2021, even different
-        training sessions are available for members such as debit/credit spread trainings, ghetto spread trainings,
-        covered calls and puts, and even a retirement investing plan channel.
     </p>
 
-    <div class="jumbotron">
-        <h2 class="h1-responsive">Join Us!</h2>
-        <p class="lead">Our discord is completely free of cost and offers a vast amount of knowledge and sense of community unrivaled by any other trading discord.</p>
-        <hr class="my-2">
-        <p> Click below to join the Discord.
-        </p>
-        <a class="btn btn-primary btn-lg" role="button" href="https://discord.gg/FHJAxSvpHP"  onclick="myFunction()">Join</a></button>
-    </div>
-
 </body>
-
 <footer class="page-footer font-small blue-grey lighten-5 margin">
 
     <div style="background-color: #04c40d;">
@@ -180,5 +228,4 @@
         </div>
     </div>
 </footer>
-
 </html>
