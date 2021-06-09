@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Validate message
     $input_message = trim($_POST["message"]);
     if (empty($input_message)) {
-        $message_err = "Please enter a message";
+        $message_err = "Please enter a message.";
     } else {
         $message = $input_message;
     }
