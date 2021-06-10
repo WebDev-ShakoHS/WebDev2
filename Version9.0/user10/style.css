@@ -1,0 +1,19 @@
+body {
+    background: rgb(255, 255, 255) no-repeat fixed center;
+  }
+/* Three image containers (use 25% for four, and 50% for two, etc) */
+.column {
+    flex: 33.33%;
+    padding: 0px;
+  }
+  
+  /* Clear floats after image containers */
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  .row {
+    display: flex;
+  }
+  
