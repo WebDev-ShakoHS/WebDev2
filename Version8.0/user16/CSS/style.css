@@ -1,0 +1,393 @@
+body {
+    color: rgb(243, 243, 243);
+    text-decoration-color: rgb(243, 243, 243);
+    background-color: #111314;
+    height: 150%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: rgb(243, 243, 243);
+    text-decoration-color: rgb(243, 243, 243);
+}
+
+.bottomSpaceMusic {
+    margin-bottom: 800px;
+}
+
+.rainbow {
+    /* Font options */
+    font-family: 'Comic Sans MS', fantasy;
+    text-shadow: 2px 2px 4px #000000;
+    /* Chrome, Safari, Opera */
+    -webkit-animation: rainbow 5s infinite;
+    /* Internet Explorer */
+    -ms-animation: rainbow 5s infinite;
+    /* Standar Syntax */
+    animation: rainbow 5s infinite;
+}
+
+/* Chrome, Safari, Opera */
+
+@-webkit-keyframes rainbow {
+    0% {
+        color: orange;
+    }
+    10% {
+        color: purple;
+    }
+    20% {
+        color: red;
+    }
+    30% {
+        color: CadetBlue;
+    }
+    40% {
+        color: yellow;
+    }
+    50% {
+        color: coral;
+    }
+    60% {
+        color: green;
+    }
+    70% {
+        color: cyan;
+    }
+    80% {
+        color: DeepPink;
+    }
+    90% {
+        color: DodgerBlue;
+    }
+    100% {
+        color: orange;
+    }
+}
+
+/* Internet Explorer */
+
+@-ms-keyframes rainbow {
+    0% {
+        color: orange;
+    }
+    10% {
+        color: purple;
+    }
+    20% {
+        color: red;
+    }
+    30% {
+        color: CadetBlue;
+    }
+    40% {
+        color: yellow;
+    }
+    50% {
+        color: coral;
+    }
+    60% {
+        color: green;
+    }
+    70% {
+        color: cyan;
+    }
+    80% {
+        color: DeepPink;
+    }
+    90% {
+        color: DodgerBlue;
+    }
+    100% {
+        color: orange;
+    }
+}
+
+/* Standar Syntax */
+
+@keyframes rainbow {
+    0% {
+        color: orange;
+    }
+    10% {
+        color: purple;
+    }
+    20% {
+        color: red;
+    }
+    30% {
+        color: CadetBlue;
+    }
+    40% {
+        color: yellow;
+    }
+    50% {
+        color: coral;
+    }
+    60% {
+        color: green;
+    }
+    70% {
+        color: cyan;
+    }
+    80% {
+        color: DeepPink;
+    }
+    90% {
+        color: DodgerBlue;
+    }
+    100% {
+        color: orange;
+    }
+}
+
+.actuallyBurnToDeath {
+    /* Font options */
+    font-family: 'Comic Sans MS', fantasy;
+    text-shadow: 2px 2px 4px #000000;
+    /* Chrome, Safari, Opera */
+    -webkit-animation: actuallyBurnToDeath 1s infinite;
+    /* Internet Explorer */
+    -ms-animation: actuallyBurnToDeath 1s infinite;
+    /* Standar Syntax */
+    animation: actuallyBurnToDeath 1s infinite;
+}
+
+/* Chrome, Safari, Opera */
+
+@-webkit-keyframes actuallyBurnToDeath {
+    0% {
+        color: black;
+    }
+    10% {
+        color: red;
+    }
+    20% {
+        color: black;
+    }
+    30% {
+        color: red;
+    }
+    40% {
+        color: black;
+    }
+    50% {
+        color: red;
+    }
+    60% {
+        color: black;
+    }
+    70% {
+        color: red;
+    }
+    80% {
+        color: black;
+    }
+    90% {
+        color: red;
+    }
+    100% {
+        color: black;
+    }
+}
+
+/* Internet Explorer */
+
+@-ms-keyframes actuallyBurnToDeath {
+    0% {
+        color: black;
+    }
+    10% {
+        color: red;
+    }
+    20% {
+        color: black;
+    }
+    30% {
+        color: red;
+    }
+    40% {
+        color: black;
+    }
+    50% {
+        color: red;
+    }
+    60% {
+        color: black;
+    }
+    70% {
+        color: red;
+    }
+    80% {
+        color: black;
+    }
+    90% {
+        color: red;
+    }
+    100% {
+        color: black;
+    }
+}
+
+/* Standard Syntax */
+
+@keyframes actuallyBurnToDeath {
+    0% {
+        color: black;
+    }
+    10% {
+        color: red;
+    }
+    20% {
+        color: black;
+    }
+    30% {
+        color: red;
+    }
+    40% {
+        color: black;
+    }
+    50% {
+        color: red;
+    }
+    60% {
+        color: black;
+    }
+    70% {
+        color: red;
+    }
+    80% {
+        color: black;
+    }
+    90% {
+        color: red;
+    }
+    100% {
+        color: black;
+    }
+}
+
+.seizure {
+    /* Font options */
+    font-family: 'Comic Sans MS', fantasy;
+    text-shadow: 2px 2px 4px #000000;
+    /* Chrome, Safari, Opera */
+    -webkit-animation: seizure 1s infinite;
+    /* Internet Explorer */
+    -ms-animation: seizure 1s infinite;
+    /* Standar Syntax */
+    animation: seizure 1s infinite;
+}
+
+/* Chrome, Safari, Opera */
+
+@-webkit-keyframes seizure {
+    0% {
+        color: black;
+    }
+    10% {
+        color: white;
+    }
+    20% {
+        color: black;
+    }
+    30% {
+        color: white;
+    }
+    40% {
+        color: black;
+    }
+    50% {
+        color: white;
+    }
+    60% {
+        color: black;
+    }
+    70% {
+        color: white;
+    }
+    80% {
+        color: black;
+    }
+    90% {
+        color: white;
+    }
+    100% {
+        color: black;
+    }
+}
+
+/* Internet Explorer */
+
+@-ms-keyframes seizure {
+    0% {
+        color: black;
+    }
+    10% {
+        color: white;
+    }
+    20% {
+        color: black;
+    }
+    30% {
+        color: white;
+    }
+    40% {
+        color: black;
+    }
+    50% {
+        color: white;
+    }
+    60% {
+        color: black;
+    }
+    70% {
+        color: white;
+    }
+    80% {
+        color: black;
+    }
+    90% {
+        color: white;
+    }
+    100% {
+        color: black;
+    }
+}
+
+/* Standard Syntax */
+
+@keyframes seizure {
+    0% {
+        color: black;
+    }
+    10% {
+        color: white;
+    }
+    20% {
+        color: black;
+    }
+    30% {
+        color: white;
+    }
+    40% {
+        color: black;
+    }
+    50% {
+        color: white;
+    }
+    60% {
+        color: black;
+    }
+    70% {
+        color: white;
+    }
+    80% {
+        color: black;
+    }
+    90% {
+        color: white;
+    }
+    100% {
+        color: black;
+    }
+}

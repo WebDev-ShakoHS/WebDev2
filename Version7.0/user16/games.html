@@ -1,0 +1,170 @@
+<html lang="en">
+<!--Version 7.0 
+	Name: Dylan Newcomb
+	Date Completed:
+    -->
+
+<head>
+
+    <title>T H E - S H E K E L - S C H E M E</title>
+
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="WebDev Version 4.0">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+    <!-- JavaScript -->
+    <!-- These are needed to get the responsive menu to work -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="Version7.0/user16/script.js"></script>
+
+    <!-- Custom styles for this template -->
+    <style type="text/css">
+    body {
+        background-image: url(https://media1.tenor.com/images/78e9e8880c144a6284f8c7799f51a318/tenor.gif?itemid=16027975);
+        background-repeat: repeat;
+    }
+
+    .seeIt {
+        background-color: rgba(255, 255, 255, 0.336);
+    }
+    </style>
+</head>
+
+
+<!---------------------------------- Begin the nav-bar ------------->
+<div class="menu">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav">
+                <!--↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ Edit These Items in your Menu ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓-->
+                <a href="index.html" class="nav-item nav-link">Home</a>
+                <a href="store.html" class="nav-item nav-link">Store</a>
+                <a href="games.html" class="nav-item nav-link active">Games</a>
+                <a href="form.html" class="nav-item nav-link">Credit Card Info</a>
+                <a href="aboutUs.html" class="nav-item nav-link">About us</a>
+                <!----------------------------------^ Edit These Items in your Menu ^ ------------->
+            </div>
+        </div>
+    </nav>
+</div>
+<!---------------------------------- End the nav-bar ------------->
+
+<body>
+    <div class="seeIt">
+    <h1>Rock, Paper, Scissors</h1>
+    <p>Select either rock, paper, or scissors and see if you can beat the computer!</p>
+
+    <p><strong>Remember:</strong> “Rock breaks scissors, scissors cuts paper, paper covers rock.” </p>
+    <div class='score'>
+
+    </div>
+    <div class='message'>
+
+    </div>
+    <button type='button'>Rock</button>
+    <button type='button'>Paper</button>
+    <button type='button'>Scissors</button>
+    <script>
+        const message = document.querySelector('.message');
+        const score = document.querySelector('.score');
+        const buttons = document.querySelectorAll('button');
+        const winnerScores = [0,0];
+        
+        //add event listeners to buttons
+        for ( let i = 0 ; i < buttons.length ; i++){
+            buttons[i].addEventListener('click', playGame);
+        }
+
+        function playGame(e){
+            //setup player's selection
+            let playerSelection = e.target.innerText;
+            //setup a random number to select for computer
+            //selects a number between 0 and 1 (1 not-inclusive)
+            let computerSelection = Math.random();
+
+            //if computerSelection is less than .34, computer selects Rock
+            if (computerSelection < .34){
+                computerSelection = 'Rock';
+            } else if (computerSelection <= .67){
+                computerSelection = 'Paper';
+            } else {
+                computerSelection = 'Scissors';
+            }
+            
+            //setup a function to compare winners and return result
+            let result = checkWinner(playerSelection, computerSelection);
+
+            //output scores to the DOM
+            if (result === 'Player'){
+                result += ' wins! You Hacked!';
+                //update score
+                winnerScores[0]++;
+            }
+
+            if (result === 'Computer'){
+                result += ' wins! You suck!';
+                winnerScores[1]++;
+            }
+
+            if (result === 'Draw'){
+                result += '. It\'s a tie! You suck.'
+            }
+
+            //output score into Score DIV
+            score.innerHTML = 'Player: [ ' + winnerScores[0]+ ' ] Computer: [ ' + winnerScores[1] + ' ]';
+
+            //output player and computer's selections
+            messenger('Player: <strong>' + playerSelection + '</strong> Computer: <strong>' + computerSelection + '</strong><br>' + result);
+        }
+
+        function messenger(selectionMessage){
+            message.innerHTML = selectionMessage;
+        }
+
+        function checkWinner(player, computer){
+            if (player === computer){
+                return 'Draw';
+            }
+
+            if (player === 'Rock'){
+                if(computer === 'Paper'){
+                    return 'Computer';
+                } else {
+                    return 'Player';
+                }
+            }
+
+            if (player === 'Paper'){
+                if (computer === 'Scissors'){
+                    return 'Computer';
+                } else {
+                    return 'Player';
+                }
+            }
+
+            if (player === 'Scissors'){
+                if (computer === 'Rock'){
+                    return 'Computer';
+                } else {
+                    return 'Player';
+                }
+            }
+        }
+    </script>
+    </div>
+</body>
+
+</html>

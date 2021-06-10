@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Music Player</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="CSS/style.css">
+
+</head>
+
+<style>
+    body {
+        background-image: url(https://thumbs.gfycat.com/DefensiveWarmheartedFlyingfish-max-1mb.gif);
+        background-size: 100%;
+        height: 150%;
+        background-repeat: no-repeat;
+    }
+</style>
+
+<body>
+
+    <!-------------Begin Navbar--------------->
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">My Epic Gamer Website 😎😎😎</a>
+        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarsExample01"
+            aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="navbar-collapse collapse" id="navbarsExample01">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a href="index.php" class="nav-item nav-link">Streamer Stats</a>
+                </li>
+                <li class="nav-item">
+                    <a href="weather.php" class="nav-item nav-link">Weather</a>
+                </li>
+                <li class="nav-item">
+                    <a href="login.php" class="nav-item nav-link">Log In / Sign up</a>
+                </li>
+                <li class="nav-item">
+                    <a href="musicVIBES.html" class="nav-item nav-link active">Music</a>
+                </li>
+                <li class="nav-item">
+                    <a href="games.html" class="nav-item nav-link">Games</a>
+                </li>
+                <li class="nav-item">
+                    <a href="aboutUs.html" class="nav-item nav-link">Page 6</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!------------- End Navbar---------->
+
+    <audio id='video1'>
+        <source src="music/iMissYou.mp3" type="audio/mp3">
+    </audio>
+    <audio id='video2'>
+        <source src="music/MrBrightside.mp3" type="audio/mp3">
+    </audio>
+    <audio id='video3'>
+        <source src="music/Jumper.mp3" type="audio/mp3">
+    </audio>
+    <audio id='video4'>
+        <source src="music/LearnToFly.mp3" type="audio/mp3">
+    </audio>
+    <audio id='video5'>
+        <source src="music/BasketCase.mp3" type="audio/mp3">
+    </audio>
+
+
+    <div class="keys">
+        <h1>My Favorite songs</h1>
+        <div><button id='playVid1'>Play I miss you (blink 182)</button></div>
+        <div><button id='playVid2'>Play Mr. Brightside (The Killers)</button></div>
+        <div><button id='playVid3'>Play Jumper (Third Eye Blind)</button></div>
+        <div><button id='playVid4'>Play Learn to Fly (Foo Fighters)</button></div>
+        <div><button id='playVid5'>Play Basket Case (Green Day)</button></div>
+        <h4>Shut up I like alt rock</h4>
+    </div>
+
+    <script>
+        document.getElementById('playVid1').onclick = function () {
+            document.getElementById('video1').play();
+        };
+        document.getElementById('playVid2').onclick = function () {
+            document.getElementById('video2').play();
+        };
+        document.getElementById('playVid3').onclick = function () {
+            document.getElementById('video3').play();
+        };
+        document.getElementById('playVid4').onclick = function () {
+            document.getElementById('video4').play();
+        };
+        document.getElementById('playVid5').onclick = function () {
+            document.getElementById('video5').play();
+        };
+    </script>
+    <p style='margin-bottom: 500px'></p>
+    <!---Footer Start-->
+    <style src="CSS/footer.css"></style>
+    <div class="container-fluid pb-0 mb-0 justify-content-center text-light ">
+        <footer>
+            <div class="row my-5 justify-content-center py-5">
+                <div class="col-11">
+                    <div class="row ">
+                        <div class="col-xl-8 col-md-4 col-sm-4 col-12 my-auto mx-auto a">
+                            <h3 class="text-muted mb-md-0 mb-5 bold-text">My Epic Gamer Website 😎😎😎</h3>
+                        </div>
+                        <div class="col-xl-2 col-md-4 col-sm-4 col-12">
+                            <h6 class="mb-3 mb-lg-4 bold-text "><b>Menu</b></h6>
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item">
+                                    <a href="index.php" class="nav-item nav-link">Streamer Stats</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="weather.php" class="nav-item nav-link">Weather</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="login.php" class="nav-item nav-link">Log In / Sign up</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="musicVIBES.html" class="nav-item nav-link">Music</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="games.html" class="nav-item nav-link">Games</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="aboutUs.html" class="nav-item nav-link">Page 6</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-xl-2 col-md-4 col-sm-4 col-12">
+                            <h6 class="mb-3 mb-lg-4 text-muted bold-text mt-sm-0 mt-5"><b>ADDRESS</b></h6>
+                            <p class="mb-1">your house</p>
+                            <p>yep</p>
+                        </div>
+                    </div>
+                    <div class="row ">
+                        <div class="col-xl-8 col-md-4 col-sm-4 col-auto my-md-0 mt-5 order-sm-1 order-3 align-self-end">
+                            <p class="social text-muted mb-0 pb-0 bold-text"> <span class="mx-2"><i
+                                        class="fa fa-facebook" aria-hidden="true"></i></span> <span class="mx-2"><i
+                                        class="fa fa-linkedin-square" aria-hidden="true"></i></span> <span
+                                    class="mx-2"><i class="fa fa-twitter" aria-hidden="true"></i></span> <span
+                                    class="mx-2"><i class="fa fa-instagram" aria-hidden="true"></i></span> </p><small
+                                class="rights"><span>&#174;</span> My Epic Gamer Website 😎😎😎 All Rights
+                                Reserved.</small>
+                        </div>
+                        <div class="col-xl-2 col-md-4 col-sm-4 col-auto order-1 align-self-end ">
+                            <h6 class="mt-55 mt-2 text-muted bold-text"><b>Your mom</b></h6><small> <span><i
+                                        class="fa fa-envelope" aria-hidden="true"></i></span> yourmom@mom.com</small>
+                        </div>
+                        <div class="col-xl-2 col-md-4 col-sm-4 col-auto order-2 align-self-end mt-3 ">
+                            <h6 class="text-muted bold-text"><b>Your dad</b></h6><small><span><i class="fa fa-envelope"
+                                        aria-hidden="true"></i></span> yourdad@dad.com</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!---Footer End-->
+</body>
+
+</html>

@@ -1,0 +1,749 @@
+.right-img {
+    align-items: right;
+}
+
+@import url(rainbow.css);
+@import url(https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+
+#clickMe {
+    background-color: blue;
+    border: 2px double black;
+    font-size: larger;
+}
+
+menu {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    width: 25%;
+    background-color: #f1f1f1;
+    height: 100%; 
+    position: fixed; 
+    overflow: auto;
+}
+
+.wideMargin {
+    margin: 15px;
+}
+
+footer {
+    font-size: 12px;
+    text-align: center;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.blankSpace {
+    margin-left: 8%;
+}
+
+@media (max-width: 299px) {
+    #faves {
+        color: red;
+    }
+}
+
+@media (max-width: 500px) and (min-width: 300px) {
+    #faves {
+        color: blue;
+    }
+}
+
+@media (min-width: 501px) {
+    #faves {
+        display: none;
+    }
+}
+
+.tableCard {
+    font-family: "Marker Felt", "Comic Sans MS", fantasy;
+    color: #003366;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    border-collapse: collapse;
+    border-spacing: 0px;
+    background-color: rgb(247, 0, 255);
+}
+
+.trCard {
+    border: 1px solid #ffffff;
+    text-align: center;
+    background-color: rgb(247, 0, 255);
+}
+
+.thCard {
+    text-align: center;
+    color: #ffffff;
+    background-color: rgb(247, 0, 255);
+}
+
+.shop-item-title {
+    text-align: center;
+    font-size: 30px;
+    margin: 0;
+    padding-top: 10px;
+}
+
+.aCard {
+    text-decoration: none;
+    background-color: rgb(247, 0, 255);
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0;
+}
+
+.shop-item {
+    width: 24%;
+    margin: 15px;
+    box-sizing: border-box;
+    float: left;
+    text-align: center;
+    border-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding-top: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: .4s;
+    background-color: rgb(247, 0, 255);
+}
+
+.shop-item:hover {
+    box-shadow: 0 0 11px rgba(33, 33, 33, .2);
+    transform: translate(0px, -8px);
+    transition: .6s;
+    background-color: rgb(4, 255, 16)yellow;
+}
+
+.shop-item-image {
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+}
+
+.shop-item-details {
+    text-align: center;
+    padding: 0 8px;
+}
+
+.shop-item-price {
+    font-size: 26px;
+    text-align: center;
+    color: #222f3e;
+    margin: 0;
+}
+
+.ulCard {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+}
+
+.liCard {
+    padding: 5px;
+}
+
+.fa {
+    color: #ff9f43;
+    font-size: 26px;
+    transition: .4s;
+}
+
+.fa:hover {
+    transform: scale(1.3);
+    transition: .6s;
+}
+
+.buttonCard {
+    text-align: center;
+    font-size: 24px;
+    color: #fff;
+    width: 100%;
+    padding: 15px;
+    border: 0px;
+    outline: none;
+    cursor: pointer;
+    margin-top: 5px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.buy-1 {
+    background-color: #2183a2;
+}
+
+.buy-2 {
+    background-color: #3b3e6e;
+}
+
+.buy-3 {
+    background-color: #0b0b0b;
+}
+
+@media(max-width: 1000px) {
+    .shop-item {
+        width: 46%;
+    }
+}
+
+@media(max-width: 750px) {
+    .shop-item {
+        width: 100%;
+    }
+}
+
+.rainbow {
+    /* Font options */
+    font-family: 'Comic Sans MS', fantasy;
+    text-shadow: 2px 2px 4px #000000;
+    /* Chrome, Safari, Opera */
+    -webkit-animation: rainbow 5s infinite;
+    /* Internet Explorer */
+    -ms-animation: rainbow 5s infinite;
+    /* Standar Syntax */
+    animation: rainbow 5s infinite;
+}
+
+/* Chrome, Safari, Opera */
+
+@-webkit-keyframes rainbow {
+    0% {
+        color: orange;
+    }
+    10% {
+        color: purple;
+    }
+    20% {
+        color: red;
+    }
+    30% {
+        color: CadetBlue;
+    }
+    40% {
+        color: yellow;
+    }
+    50% {
+        color: coral;
+    }
+    60% {
+        color: green;
+    }
+    70% {
+        color: cyan;
+    }
+    80% {
+        color: DeepPink;
+    }
+    90% {
+        color: DodgerBlue;
+    }
+    100% {
+        color: orange;
+    }
+}
+
+/* Internet Explorer */
+
+@-ms-keyframes rainbow {
+    0% {
+        color: orange;
+    }
+    10% {
+        color: purple;
+    }
+    20% {
+        color: red;
+    }
+    30% {
+        color: CadetBlue;
+    }
+    40% {
+        color: yellow;
+    }
+    50% {
+        color: coral;
+    }
+    60% {
+        color: green;
+    }
+    70% {
+        color: cyan;
+    }
+    80% {
+        color: DeepPink;
+    }
+    90% {
+        color: DodgerBlue;
+    }
+    100% {
+        color: orange;
+    }
+}
+
+/* Standar Syntax */
+
+@keyframes rainbow {
+    0% {
+        color: orange;
+    }
+    10% {
+        color: purple;
+    }
+    20% {
+        color: red;
+    }
+    30% {
+        color: CadetBlue;
+    }
+    40% {
+        color: yellow;
+    }
+    50% {
+        color: coral;
+    }
+    60% {
+        color: green;
+    }
+    70% {
+        color: cyan;
+    }
+    80% {
+        color: DeepPink;
+    }
+    90% {
+        color: DodgerBlue;
+    }
+    100% {
+        color: orange;
+    }
+}
+
+.actuallyBurnToDeath {
+    /* Font options */
+    font-family: 'Comic Sans MS', fantasy;
+    text-shadow: 2px 2px 4px #000000;
+    /* Chrome, Safari, Opera */
+    -webkit-animation: actuallyBurnToDeath 1s infinite;
+    /* Internet Explorer */
+    -ms-animation: actuallyBurnToDeath 1s infinite;
+    /* Standar Syntax */
+    animation: actuallyBurnToDeath 1s infinite;
+}
+
+/* Chrome, Safari, Opera */
+
+@-webkit-keyframes actuallyBurnToDeath {
+    0% {
+        color: black;
+    }
+    10% {
+        color: red;
+    }
+    20% {
+        color: black;
+    }
+    30% {
+        color: red;
+    }
+    40% {
+        color: black;
+    }
+    50% {
+        color: red;
+    }
+    60% {
+        color: black;
+    }
+    70% {
+        color: red;
+    }
+    80% {
+        color: black;
+    }
+    90% {
+        color: red;
+    }
+    100% {
+        color: black;
+    }
+}
+
+/* Internet Explorer */
+
+@-ms-keyframes actuallyBurnToDeath {
+    0% {
+        color: black;
+    }
+    10% {
+        color: red;
+    }
+    20% {
+        color: black;
+    }
+    30% {
+        color: red;
+    }
+    40% {
+        color: black;
+    }
+    50% {
+        color: red;
+    }
+    60% {
+        color: black;
+    }
+    70% {
+        color: red;
+    }
+    80% {
+        color: black;
+    }
+    90% {
+        color: red;
+    }
+    100% {
+        color: black;
+    }
+}
+
+/* Standard Syntax */
+
+@keyframes actuallyBurnToDeath {
+    0% {
+        color: black;
+    }
+    10% {
+        color: red;
+    }
+    20% {
+        color: black;
+    }
+    30% {
+        color: red;
+    }
+    40% {
+        color: black;
+    }
+    50% {
+        color: red;
+    }
+    60% {
+        color: black;
+    }
+    70% {
+        color: red;
+    }
+    80% {
+        color: black;
+    }
+    90% {
+        color: red;
+    }
+    100% {
+        color: black;
+    }
+}
+
+.seizure {
+    /* Font options */
+    font-family: 'Comic Sans MS', fantasy;
+    text-shadow: 2px 2px 4px #000000;
+    /* Chrome, Safari, Opera */
+    -webkit-animation: seizure 1s infinite;
+    /* Internet Explorer */
+    -ms-animation: seizure 1s infinite;
+    /* Standar Syntax */
+    animation: seizure 1s infinite;
+}
+
+/* Chrome, Safari, Opera */
+
+@-webkit-keyframes seizure {
+    0% {
+        color: black;
+    }
+    10% {
+        color: white;
+    }
+    20% {
+        color: black;
+    }
+    30% {
+        color: white;
+    }
+    40% {
+        color: black;
+    }
+    50% {
+        color: white;
+    }
+    60% {
+        color: black;
+    }
+    70% {
+        color: white;
+    }
+    80% {
+        color: black;
+    }
+    90% {
+        color: white;
+    }
+    100% {
+        color: black;
+    }
+}
+
+/* Internet Explorer */
+
+@-ms-keyframes seizure {
+    0% {
+        color: black;
+    }
+    10% {
+        color: white;
+    }
+    20% {
+        color: black;
+    }
+    30% {
+        color: white;
+    }
+    40% {
+        color: black;
+    }
+    50% {
+        color: white;
+    }
+    60% {
+        color: black;
+    }
+    70% {
+        color: white;
+    }
+    80% {
+        color: black;
+    }
+    90% {
+        color: white;
+    }
+    100% {
+        color: black;
+    }
+}
+
+/* Standard Syntax */
+
+@keyframes seizure {
+    0% {
+        color: black;
+    }
+    10% {
+        color: white;
+    }
+    20% {
+        color: black;
+    }
+    30% {
+        color: white;
+    }
+    40% {
+        color: black;
+    }
+    50% {
+        color: white;
+    }
+    60% {
+        color: black;
+    }
+    70% {
+        color: white;
+    }
+    80% {
+        color: black;
+    }
+    90% {
+        color: white;
+    }
+    100% {
+        color: black;
+    }
+}
+
+.btn {
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background: none;
+    cursor: pointer;
+    padding: 25px 80px;
+    display: inline-block;
+    margin: 15px 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    outline: none;
+    position: relative;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.btn:after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.moneyButton {
+    background-color: #44c767;
+    border-radius: 33px;
+    border: 7px solid #18ab29;
+    display: inline-block;
+    cursor: pointer;
+    color: #00ff11;
+    font-family: Impact;
+    font-size: 28px;
+    font-weight: bold;
+    padding: 32px 42px;
+    text-decoration: none;
+    text-shadow: 4px 2px 2px #2f6627;
+}
+
+.moneyButton:hover {
+    background-color: #5cbf2a;
+}
+
+.moneyButton:active {
+    position: relative;
+    top: 1px;
+}
+
+.dataButton {
+    display: inline-block;
+    padding: 17px 27px;
+    font-size: 16px;
+    cursor: pointer;
+    color: white;
+    background-color: purple;
+    border: none;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    border-radius: 8px;
+    box-shadow: 0 10px #998;
+}
+
+.dataButton:active {
+    background-color: #8842d5;
+    box-shadow: 0 6px #667;
+    transform: translateY(5px);
+}
+
+.deathButton {
+    background: #fc2626;
+    color: #fff;
+}
+
+.deathButton:hover {
+    background: #f20d0d;
+}
+
+.deathButton:active {
+    background: #f50000;
+    top: 2px;
+}
+
+.deathButton:before {
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    line-height: 3;
+    font-size: 140%;
+    width: 60px;
+}
+
+.deathButtonA {
+    padding: 25px 120px 25px 60px;
+    overflow: hidden;
+}
+
+.deathButtonA:before {
+    left: auto;
+    right: 10px;
+    z-index: 2;
+}
+
+.deathButtonA:after {
+    width: 30%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.1);
+    z-index: 1;
+    right: 0;
+    top: 0;
+    margin: -5px 0 0 -5px;
+    -webkit-transform-origin: 0 0;
+    -webkit-transform: rotate(-20deg);
+    -moz-transform-origin: 0 0;
+    -moz-transform: rotate(-20deg);
+    -ms-transform-origin: 0 0;
+    -ms-transform: rotate(-20deg);
+    transform-origin: 0 0;
+    transform: rotate(-20deg);
+}
+
+.deathButtonA:hover:after {
+    width: 40%;
+}
+
+.title {
+    color: red;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.title-large {
+    font-size: 2rem;
+}
+
+.title-small {
+    font-size: .5rem;
+}
+
+.red {
+    background-color: #ff0000;
+}
+
+td {
+    padding: 20px;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+}
