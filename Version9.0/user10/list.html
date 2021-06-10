@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--Version 3.0
+        Name:
+        Date Completed:
+    -->
+
+<head>
+
+  <title>List-Sneaker Mania</title>
+
+  <!-- Meta -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="SHS WebDev Version 7.0">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- JavaScript -->
+  <!-- These are needed to get the responsive menu to work -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  <!-- Custom styles for this template -->
+  <link rel="icon" type="image/x-icon" href="images/cookiefavicon.png" />
+  <style type="text/css">
+    .menu {
+      margin: 0px;
+    }
+
+    .wideMargin {
+      margin: 15px;
+    }
+
+    footer {
+      font-size: 12px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="menu">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <a href="http://shakonet.isd720.com" class="navbar-brand">Sneaker Mania</a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav">
+                <a onmouseover="style.color='red'" onmouseout="style.color='white'" href="main.html"
+                    class="nav-item nav-link active">Home</a>
+                <a onmouseover="style.color='red'" onmouseout="style.color='white'" href="AboutUs.html"
+                    class="nav-item nav-link">About Us</a>
+                <a onmouseover="style.color='red'" onmouseout="style.color='white'" href="list.html"
+                    class="nav-item nav-link">Lists</a>
+                <a onmouseover="style.color='red'" onmouseout="style.color='white'" href="accessories.html"
+                    class="nav-item nav-link">Accessories</a>
+                <a onmouseover="style.color='red'" onmouseout="style.color='white'" href="http://localhost:8080/WebDev2/Version8.0/user10/weather/ebayapi.php"
+                    class="nav-item nav-link">Shop Here</a>
+                 <a onmouseover="style.color='red'" onmouseout="style.color='white'" href="http://localhost:8080/WebDev2/Version9.0/user10/register.php"
+                    class="nav-item nav-link">Make An Account!</a>
+                <a href="mailto:sample@gmail.com?Subject=Hello" class="nav-item nav-link disabled"
+                    tabindex="-1"></a>
+                </a>
+            </div>
+            </div>--------------------^ Edit These Items in your Menu ^ ------------->
+         </div>
+        </div>
+        <div class="navbar-nav ml-auto">
+          <a href="#" class="nav-item nav-link disabled"></a>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <!---------------------------------- End the nav-bar ------------->
+
+<h2 style="color:#ffffff">Great Looking Shoes</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Brand,</th>
+            <th>Shoe Model,</th>
+            <th>Shoe Picture,</th>
+        </tr>
+    </thead>
+    <tr style="color:#000000; background-color:rgb(255, 255, 255);">
+        <td>1</td>
+        <td>Jordan:</td>
+        <td>Jordan 4's</td>
+        <td><img src="https://houseofheat.co/app/uploads/2019/09/air-jordan-4-metallic-pack-red-ct8527-112-release-date-info-1200x750.jpg" alt="Jordan 4's"width="128" height="128"></td>
+    </tr>
+    <tr style="color:#000000; background-color:rgb(255, 255, 255);">
+        <td>2</td>
+        <td>Crocs:</td>
+        <td>Teal</td>
+        <td><img src="data:image/jpeg;base64,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" alt="Crocs"width="128" height="128"></td>
+    </tr>
+    <tr style="color:#000000; background-color:rgb(255, 255, 255);">
+        <td>3</td>
+        <td>Yeezy:</td>
+        <td>Boost 350s</td>
+        <td><img src="https://static.highsnobiety.com/thumbor/odOMXQ6zFtfLFuF7aHSTkEOIBnc=/1600x1067/static.highsnobiety.com/wp-content/uploads/2020/07/16192332/adidas-yeezy-boost-350-v2-black-red-re-release-01.jpg" alt="Yeezys"width="128 height="128"></td></td>
+    </table>
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <!-- Footer -->
+ <footer class="page-footer font-small special-color-dark pt-4">
+
+    <!-- Footer Elements -->
+    <div class="container">
+
+      <!--Grid row-->
+      <div class="row">
+
+        <!--Grid column-->
+        <div class="col-md-6 mb-4">
+
+          <!-- Form -->
+          <form class="form-inline">
+            <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search Here!"
+              aria-label="Search">
+          </form>
+          <!-- Form -->
+
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-md-6 mb-4">
+
+          <form class="input-group">
+            <input type="text" class="form-control form-control-sm" placeholder="Your email" aria-label="Your email"
+              aria-describedby="basic-addon2">
+            <div class="input-group-append">
+              <button class="btn btn-sm btn-outline-white my-0" type="button">Sign up</button>
+            </div>
+          </form>
+
+        </div>
+        <!--Grid column-->
+
+      </div>
+      <!--Grid row-->
+
+    </div>
+    <!-- Footer Elements -->
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2021 Copyright:
+      <a href="AboutUs.html"></a>
+    </div>
+    <!-- Copyright -->
+
+  </footer>
+  <!-- Footer -->
