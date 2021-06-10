@@ -1,12 +1,12 @@
 <?php
-$apiKey = "API KEY"; //You will need to add in the 
+$apiKey = "cdccb1d91f399779f084ae16d8ac5b9a"; //You will need to add in the 
 $cityId = "5046997"; //5046997 Shakopee City Id
-$units = "metric";//metric-Celcius  imperial-Farhenheit
-if ($units == 'metric'){//Changes the $temp varaible to match 
-    $temp = "C";
+$units = "imperial";//metric-Celcius  imperial-Farhenheit
+if ($units == 'imperial'){//Changes the $temp varaible to match 
+    $temp = "F";
 }
 else {
-    $temp = "F";
+    $temp = "C";
 }
 $googleApiUrl = "http://api.openweathermap.org/data/2.5/weather?id=" . $cityId . "&lang=en&units=" . $units . "&APPID=" . $apiKey;
 
@@ -69,6 +69,12 @@ span.min-temperature {
 
 </head>
 <body>
+<?php 
+if ($data->main->temp_max >'70'){
+    echo ("<style> body{background-color:yellow;}</style>");
+}
+
+?>
 
     <div class="report-container">
         <h2><?php echo $data->name; ?> Weather Status</h2>

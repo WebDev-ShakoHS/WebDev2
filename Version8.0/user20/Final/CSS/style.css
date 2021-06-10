@@ -1,0 +1,136 @@
+.view {
+    background: url("https://wallpaperaccess.com/full/2248344.jpg")no-repeat center center;
+    background-size: cover;
+}
+
+html, body, header, .view {
+    height: 100%;
+}
+
+.indigo {
+    background-color: rgb(12, 119, 119);
+}
+
+.navbar {
+    -webkit-box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+    box-shadow: 0 2px 5px 0 rbg(0, 0, 0/16%), 0 2px 10px 0 rgb(0, 0, 0 / 12%);
+}
+
+.card img {
+    width: 500px;
+    height: 350px;
+}
+
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+
+h3 {
+    margin-bottom: 50px;
+    color: rgb(64, 88, 112);
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+h5 {
+    margin-top: 20px;
+    color: rgb(64, 88, 112);
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+h1 {
+    color: rgb(70, 131, 102);
+    font-family: monospace
+}
+
+body {
+    background-color: rgb(220, 228, 226);
+}
+
+.title {
+    color: rgb(64, 88, 112);
+    font-family: 'Brush Script MT', cursive;
+    font-size: 35px;
+}
+
+td {
+    padding:15px;
+}
+
+h4 {
+    color:rgb(64, 88, 112);
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size:20px;
+}
+
+.title {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size:20px;
+    color:rgb(64, 88, 112);
+}
+
+.round {
+    position: absolute;
+    border: 2px solid #fff;
+    width: 42px;
+    height: 42px;
+    border-radius: 100%;
+    
+}
+
+#cta{
+    width:100%; cursor: pointer; position: absolute;
+}
+
+#cta .arrow{left: 30%;}
+.arrow {position: absolute; bottom: 0;  margin-left:0px; width: 12px; height: 12px; background-size: contain; top:15px;}
+.segunda{margin-left: 8px;}
+.next {
+	background-image: url(data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiI+PHN0eWxlPi5zdDB7ZmlsbDojZmZmfTwvc3R5bGU+PHBhdGggY2xhc3M9InN0MCIgZD0iTTMxOS4xIDIxN2MyMC4yIDIwLjIgMTkuOSA1My4yLS42IDczLjdzLTUzLjUgMjAuOC03My43LjZsLTE5MC0xOTBjLTIwLjEtMjAuMi0xOS44LTUzLjIuNy03My43UzEwOSA2LjggMTI5LjEgMjdsMTkwIDE5MHoiLz48cGF0aCBjbGFzcz0ic3QwIiBkPSJNMzE5LjEgMjkwLjVjMjAuMi0yMC4yIDE5LjktNTMuMi0uNi03My43cy01My41LTIwLjgtNzMuNy0uNmwtMTkwIDE5MGMtMjAuMiAyMC4yLTE5LjkgNTMuMi42IDczLjdzNTMuNSAyMC44IDczLjcuNmwxOTAtMTkweiIvPjwvc3ZnPg==);
+}
+
+@keyframes bounceAlpha {
+  0% {opacity: 1; transform: translateX(0px) scale(1);}
+  25%{opacity: 0; transform:translateX(10px) scale(0.9);}
+  26%{opacity: 0; transform:translateX(-10px) scale(0.9);}
+  55% {opacity: 1; transform: translateX(0px) scale(1);}
+}
+
+.bounceAlpha {
+    animation-name: bounceAlpha;
+    animation-duration:1.4s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
+
+.arrow.primera.bounceAlpha {
+    animation-name: bounceAlpha;
+    animation-duration:1.4s;
+    animation-delay:0.2s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
+
+.round:hover .arrow{
+    animation-name: bounceAlpha;
+    animation-duration:1.4s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
+.round:hover .arrow.primera{
+    animation-name: bounceAlpha;
+    animation-duration:1.4s;
+    animation-delay:0.2s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
+
+.btn-rounded {
+    border-radius: 10em;
+}
+
+.btn-default {
+    color:#ffffff;
+    background-color: #2bbbad;
+}
+
