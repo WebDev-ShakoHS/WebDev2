@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title> The Early Days </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="shortcut icon" type="image/jpg" href="images/Games.ico" />
+    <link rel="stylesheet" href="stylesheet/Style.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="JS/SampleJS.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</head>
+
+<style>
+    footer {
+        text-align: center;
+        padding: 3px;
+        color: white;
+    }
+</style>
+
+<body>
+
+    <nav id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="http://localhost:8080/WebDev2/Version8.0/user05/Home1.php">Home Page</a>
+        <a href="http://localhost:8080/WebDev2/Version8.0/user05/Evolution2.php">Evolution</a>
+        <a href="#">1960s-1990s</a>
+        <a href="http://localhost:8080/WebDev2/Version8.0/user05/Dos4.php">1990s-2020s</a>
+        <a href="http://localhost:8080/WebDev2/Version8.0/user05/welcome.php">Add Games</a>
+        <a href="http://localhost:8080/WebDev2/Version8.0/user05/EBAYAPI.php">Search Games</a>
+    </nav>
+
+    <div id="main">
+        <button class="openbtn" onclick="openNav()">☰ Pages</button>
+    </div>
+
+    <div class="container">
+        <div class="jumbotron JUMBO">
+            <h1>The very First</h1>
+            <p class="tab">Video Games were created during the late 50s, and some of the first games created the
+                processes most games rely on today.</p>
+        </div>
+        <h1 class="HEAD">Classic Arcade Games</h1>
+        <ol class="Color">
+            <li>
+                Pac-Man
+            </li>
+            <li>
+                Space Invaders
+            </li>
+            <li>
+                Street Fighter II/Champion Edition
+            </li>
+            <li>
+                Ms. Pac-Man
+            </li>
+            <li>
+                NBA Jam
+            </li>
+        </ol>
+        <h2 class="HEAD">Overview On Early Gaming</h2>
+        <p style="padding: 10px;" class="Color">When developers created the very first games they never could’ve
+            imagined it to expand to such
+            high levels. Games in the early days were different, not only in the teams that were building them but also
+            in the resources they could use. Throughout the 60s-80s gaming was limited to small and basic designs. In
+            the 80s however, gaming evolved into a much bigger product with the start of arcade gaming and the audience
+            that those systems brought. Arcades brought along with them a new culture of going out, playing games with
+            some friends and just hanging out. Yet, as you will see, the 1990s was the revolution that gaming so
+            desperately needed.</p>
+    </div>
+
+</body>
+
+<footer class="Color">
+
+    <p>
+        <---- Author: Tyler Braun / Email to ----> <br>
+            <a href="mailto:226716@shakopeeschools.org">226716@shakopeeschools.org</a>
+    </p>
+
+    <div class="container">
+        <h2>Quick Access Tool Tips</h2>
+
+        <button id="TOP" onclick="button1()" type="button" class="btn btn-primary">Return To Top</button>
+    </div>
+
+    <ul class="pagination justify-content-center">
+        <li class="page-item"><a class="previous" href="http://localhost:8080/WebDev2/Version8.0/user05/Evolution2.php">Previous Page</a></li>
+        <li class="page-item"><a class="page-link" href="http://localhost:8080/WebDev2/Version8.0/user05/Home1.php">1</a></li>
+        <li class="page-item"><a class="page-link" href="http://localhost:8080/WebDev2/Version8.0/user05/Evolution2.php">2</a></li>
+        <li class="page-item disabled"><a class="page-link" href="javascript:void(0);">3</a></li>
+        <li class="page-item"><a class="page-link" href="http://localhost:8080/WebDev2/Version8.0/user05/Dos4.php">4</a></li>
+        <li class="page-item"><a class="page-link" href="http://localhost:8080/WebDev2/Version8.0/user05/welcome.php">5</a></li>
+        <li class="page-item"><a class="page-link" href="http://localhost:8080/WebDev2/Version8.0/user05/EBAYAPI.php">6</a></li>
+        <li class="page-item"><a class="page-link" href="http://localhost:8080/WebDev2/Version8.0/user05/Dos4.php">Next Page</a></li>
+    </ul>
+
+</footer>
+
+</html>

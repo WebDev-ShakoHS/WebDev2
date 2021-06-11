@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head style="background-color:#66ff33">
+
+  <title> Welcome To Gaming </title>
+
+  <title> Home </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="shortcut icon" type="image/jpg" href="images/Games.ico" />
+  <link rel="stylesheet" href="stylesheet/Style.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="JS/SampleJS.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</head>
+
+<style>
+  .carousel-inner>.item>img,
+  .carousel-inner>.item>a>img {
+    height: 30%;
+    width: 100%;
+    margin: auto;
+  }
+
+  footer {
+    text-align: center;
+    padding: 3px;
+    color: white;
+  }
+</style>
+
+<body>
+
+  <nav id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+    <a href="#">Home Page</a>
+    <a href="http://localhost:8080/WebDev2/Version8.0/user05/Evolution2.php">Evolution</a>
+    <a href="http://localhost:8080/WebDev2/Version8.0/user05/Uno3.php">1960s-1990s</a>
+    <a href="http://localhost:8080/WebDev2/Version8.0/user05/Dos4.php">1990s-2020s</a>
+    <a href="http://localhost:8080/WebDev2/Version8.0/user05/welcome.php">Add Games</a>
+    <a href="http://localhost:8080/WebDev2/Version8.0/user05/EBAYAPI.php">Search Games</a>
+  </nav>
+
+  <div id="main">
+    <button class="openbtn" onclick="openNav()">☰ Pages</button>
+  </div>
+
+  <div
+
+    <div class="Color " style="padding-left:0px">
+      <center>
+        <h1>Games, Games, and more Games...</h1>
+      </center>
+    </div>
+
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="1" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner body" role="listbox">
+        <div class="item active">
+          <img src="images/Game1Image.jpeg" alt="Nintendo">
+          <div class="carousel-caption">
+            <h3>'Super Mario World'</h3>
+            <p>A classic game made by Nintendo influenced millions of children.</p>
+          </div>
+        </div>
+
+        <div class="item body">
+          <img src="images/Game2Image.jpeg" alt="XBOX">
+          <div class="carousel-caption">
+            <h3>The Original XBOX</h3>
+            <p>One of the most revolutionary devices, the XBOX included four controller ports for easy couch co-op
+              gaming,
+              Multi-signal audio/video connections, and Hard drive for game saves.</p>
+          </div>
+        </div>
+
+        <div class="item body">
+          <img src="images/Game3Image.jpeg" alt="MOD">
+          <div class="carousel-caption">
+            <h3>Modern Gaming</h3>
+            <p>The most recent installment of COD (A FPS game) allows players all-around the world to communicate and
+              play
+              together in an online space.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Left and right controls -->
+      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+
+    <div class="Color">
+      <center>
+        <h1>
+          A Brief Overview on Gaming
+        </h1>
+      </center>
+
+      <center>
+        <p class="tab">
+          For generations gaming has brought communities together into a shared space with common interests.
+          Every-single-day most people interact with games in forms like Smartphones, PC, or when you don’t have WIFI
+          (Dinosaur game). To continue, the influence gaming has had on American society is exponential, with the very
+          first gaming event (Spacewar) to the most recent influencer like Ninja hosting the ball drop at Times Square.
+          Overall, gaming continues to evolve with the times and will continue to for the foreseeable future.
+        </p>
+      </center>
+    </div>
+  </div>
+
+</body>
+
+<footer class="Color">
+  <p>
+    <---- Author: Tyler Braun / Email to ----> <br>
+      <a href="mailto:226716@shakopeeschools.org">226716@shakopeeschools.org</a>
+  </p>
+
+  <div class="container">
+    <h2>Quick Access Tool Tips</h2>
+
+    <button id="TOP" onclick="button1()" type="button" class="btn btn-primary">Return To Top</button>
+  </div>
+
+  <ul class="pagination justify-content-center">
+        <li class="page-item disabled"><a class="previous" href="javascript:void(0);">Previous Page</a></li>
+        <li class="page-item disabled"><a class="page-link" href="javascript:void(0);">1</a></li>
+        <li class="page-item"><a class="page-link" href="http://localhost:8080/WebDev2/Version8.0/user05/Evolution2.php">2</a></li>
+        <li class="page-item"><a class="page-link" href="http://localhost:8080/WebDev2/Version8.0/user05/Uno3.php">3</a></li>
+        <li class="page-item"><a class="page-link" href="http://localhost:8080/WebDev2/Version8.0/user05/Dos4.php">4</a></li>
+        <li class="page-item"><a class="page-link" href="http://localhost:8080/WebDev2/Version8.0/user05/welcome.php">5</a></li>
+        <li class="page-item"><a class="page-link" href="http://localhost:8080/WebDev2/Version8.0/user05/EBAYAPI.php">6</a></li>
+        <li class="page-item"><a class="page-link" href="http://localhost:8080/WebDev2/Version8.0/user05/Evolution2.php">Next Page</a></li>
+    </ul>
+
+</footer>
+
+</html>
