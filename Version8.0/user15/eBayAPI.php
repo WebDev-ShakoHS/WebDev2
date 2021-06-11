@@ -6,7 +6,7 @@ $endpoint = 'http://svcs.ebay.com/services/search/FindingService/v1';  // URL to
 $version = '1.0.0';  // API version supported by your application
 $appid = 'RobertMa-Shakopee-PRD-169ec6b8e-bb30ba02';  // Replace with your own AppID
 $globalid = 'EBAY-US';  // Global ID of the eBay site you want to search (e.g., EBAY-DE)
-$query = 'screwdrivers';  // You may want to supply your own query
+$query = 'Soccer balls';  // You may want to supply your own query
 $safequery = urlencode($query);  // Make the query URL-friendly
 $i = '0';  // Initialize the item filter index to 0
 // Create a PHP array of the item filters you want to use in your request
@@ -114,7 +114,10 @@ else {
 
 <head>
     <title>eBay Search Results for <?php echo $query; ?></title>
-  
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <!-- CSS -->
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -130,6 +133,8 @@ else {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+    
     <style type="text/css">
         body {
             font-family: arial, sans-serif;
@@ -137,10 +142,22 @@ else {
 
     </style>
 </head>
+<div class="w3-top">
+    <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+      <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1"
+        href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+      <a href="login.php" class="w3-bar-item w3-button w3-theme-l1">Login</a>
+      <a href="index.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Home</a>
+      <a href="about.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">About</a>
+      <a href="experience.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Experience</a>
+      <a href="goals.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Goals</a> 
+      <a href="eBayAPI.php"class="w3-bar-item w3-button w3-hide-small w3-hover-white">Shop</a>
 
+    </div>
+  </div>
 <body>
 
-    <h1>eBay Search Results for <?php echo $query; ?></h1>
+    <h1>Shop<?php echo $query; ?></h1>
 
     <div class="container-fluid"
        

@@ -74,13 +74,13 @@ $currentTime = time();
     <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
       <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1"
         href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
-      <a href="index.html" class="w3-bar-item w3-button w3-theme-l1">Home</a>
-      <a href="about.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">About</a>
-      <a href="experience.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Experience </a>
-      <a href="goals.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Goals</a>
-      
-
-
+      <a href="login.php" class="w3-bar-item w3-button w3-theme-l1">Login</a>
+      <a href="index.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Home</a>
+      <a href="about.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">About</a>
+      <a href="experience.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Experience</a>
+      <a href="goals.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Goals</a> 
+      <a href="eBayAPI.php"class="w3-bar-item w3-button w3-hide-small w3-hover-white">Shop</a>
+      <a href="create.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Survey</a>
     </div>
   </div>
 
@@ -244,3 +244,5 @@ $currentTime = time();
 </body>
 
 </html>
+
+
