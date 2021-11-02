@@ -66,8 +66,8 @@ li a {
   text-decoration: none;
 }
 
-li a:hover {
-  background-color: grey;
+link a:hover {
+  background-color: orange;
 }
 
 li {
@@ -75,6 +75,11 @@ li {
 }
 
 .bottom-img{
+  position: fixed;
+  bottom: 0;
+}
+
+.bottom-right-img{
   position: fixed;
   bottom: 0;
 }
