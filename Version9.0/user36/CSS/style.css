@@ -217,8 +217,10 @@ p {
 }
 
 .weather-icon{
-  width: 300px;
-  height: 128px;
+  width: 10%;
+  height: 5%;
+  margin-left: 16%;
+  margin-right: 12%;
 }
 
 .weather-icon img{
@@ -227,15 +229,18 @@ p {
 }
 
 .temperature-value{
-  width: 300px;
-  height:60px;
+  width: 100%;
+  height:25%;
+  margin-top: 45%;
+  
 }
 
 .temperature-value p{
   padding: 0;
-  margin: 0;
+  margin-left: 25%;
+  margin-right: 25%;
   color: #293251;
-  font-size: 4em;
+  font-size: 3.5em;
   text-align: center;
   cursor: pointer;
 }
@@ -254,8 +259,7 @@ p {
 }
 
 .temperature-description p{
-  padding: 8px;
-  margin: 0;
+  padding: 0;
   color: #293251;
   text-align: center;
   font-size: 1.2em;
@@ -271,4 +275,18 @@ p {
   color: #293251;
   text-align: center;
   font-size: 0.8em;
+}
+
+.col-md-2-4 {
+  -ms-flex: 0 0 20%;
+  flex: 0 0 20%;
+  max-width: 20%;
+}
+
+.forecast {
+  text-align:center;
+}
+
+.date {
+  color: black;
 }

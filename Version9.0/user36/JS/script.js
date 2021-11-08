@@ -7,12 +7,13 @@ const tempElement = document.querySelector(".temperature-value p");
 const descElement = document.querySelector(".temperature-description p");
 const locationElement = document.querySelector(".location p");
 const notificationElement = document.querySelector(".notification");
+const dateElement = document.querySelector(".date");
 
 // App data
 const weather = {};
 
 weather.temperature = {
-    unit : "celsius"
+    unit: "celsius"
 }
 
 // APP CONSTS AND VARS
@@ -21,53 +22,72 @@ const KELVIN = 273;
 const key = "22906b9e73d5ad85f3188b6406281311";
 var latitude = -41.2924;
 var longitude = 174.7787;
+var i = 0;
+var a = 0;
+var b = 0;
 
 // GET WEATHER FROM API PROVIDER
-function getWeather(){
-    let api = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${key}`;
-    fetch(api)
-        .then(function(response){
-            let data = response.json();
-            return data;
-        })
-        
-        .then(function(data){
-            weather.temperature.value = Math.floor(data.main.temp - KELVIN);
-            weather.description = data.weather[0].description;
-            weather.iconId = data.weather[0].icon;
-            weather.city = data.name;
-            weather.country = data.sys.country;
-        })
-        .then(function(){
-            displayWeather();
-        });
+function getWeather() {
+    for (i = 0; i < 5; i++) {
+        let api = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${key}`;
+        fetch(api)
+            .then(function (response) {
+                let data = response.json();
+                return data;
+            })
+
+            .then(function (data) {
+                weather.temperature.value = Math.floor(data.daily[a].temp.min - KELVIN);
+                weather.description = data.daily[a].weather[0].description;
+                weather.iconId = data.daily[a].weather[0].icon;
+                weather.date = data.daily[a].dt;
+                a = a+1;
+            })
+            .then(function () {
+                displayWeather();
+            });
+    }
+}
+
+var time = "";
+function timeConverter() {
+    var a = new Date(weather.date * 1000);
+    var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    var year = a.getFullYear();
+    var month = months[a.getMonth()];
+    var date = a.getDate();
+    var hour = a.getHours();
+    time = date + ' ' + month + ' ' + year + ' ';
 }
 
 // DISPLAY WEATHER TO UI
-function displayWeather(){
-    iconElement.innerHTML = `<img src="images/weatherimages/${weather.iconId}.png"/>`;
-    tempElement.innerHTML = `${weather.temperature.value}°<span>C</span>`;
-    descElement.innerHTML = weather.description;
-    locationElement.innerHTML = `${weather.city}, ${weather.country}`;
+function displayWeather() {
+    timeConverter()
+    document.getElementsByClassName("weather-icon")[b].innerHTML = `<img src="images/weatherimages/${weather.iconId}.png"/>`;
+    document.getElementsByClassName("valuechild")[b].innerHTML = `${weather.temperature.value}°<span>C</span>`;
+    document.getElementsByClassName("descriptionchild")[b].innerHTML = weather.description;
+    document.getElementsByClassName("date")[b].innerHTML = time;
+    b = b+1;
 }
 
 // C to F conversion
-function celsiusToFahrenheit(temperature){
-    return (temperature * 9/5) + 32;
+function celsiusToFahrenheit(temperature) {
+    return (temperature * 9 / 5) + 32;
 }
 
 // WHEN THE USER CLICKS ON THE TEMPERATURE ELEMENET
-tempElement.addEventListener("click", function(){
-    if(weather.temperature.value === undefined) return;
-    
-    if(weather.temperature.unit == "celsius"){
+
+document.getElementsByClassName("valuechild")[2].addEventListener("click", function () {
+    if (weather.temperature.value === undefined) return;
+
+    if (weather.temperature.unit == "celsius") {
         let fahrenheit = celsiusToFahrenheit(weather.temperature.value);
         fahrenheit = Math.floor(fahrenheit);
-        
-        tempElement.innerHTML = `${fahrenheit}°<span>F</span>`;
+
+        document.getElementsByClassName("valuechild")[2].innerHTML = `${fahrenheit}°<span>F</span>`;
         weather.temperature.unit = "fahrenheit";
-    }else{
-        tempElement.innerHTML = `${weather.temperature.value}°<span>C</span>`;
+    } else {
+        document.getElementsByClassName("valuechild")[2].innerHTML = `${weather.temperature.value}°<span>C</span>`;
         weather.temperature.unit = "celsius"
     }
 });
