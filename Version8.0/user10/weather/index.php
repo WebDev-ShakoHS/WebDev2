@@ -77,7 +77,7 @@ span.min-temperature {
 
 </head>
 <body>
-
+<?php echo $response ?>
     <div class="report-container">
         <h2><?php echo $data->name; ?> Weather Status</h2>
         <div class="time">
