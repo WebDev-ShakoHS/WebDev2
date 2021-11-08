@@ -67,6 +67,7 @@ function displayWeather() {
     document.getElementsByClassName("valuechild")[b].innerHTML = `${weather.temperature.value}°<span>C</span>`;
     document.getElementsByClassName("descriptionchild")[b].innerHTML = weather.description;
     document.getElementsByClassName("date")[b].innerHTML = time;
+    setVariable();
     b = b+1;
 }
 
@@ -75,19 +76,103 @@ function celsiusToFahrenheit(temperature) {
     return (temperature * 9 / 5) + 32;
 }
 
+zeroValue = 0
+firstValue = 0
+secondValue = 0
+thirdValue = 0
+fourthValue = 0
+function setVariable () {
+    if (b == 0) {
+        zeroValue = weather.temperature.value
+    }
+    if (b == 1) {
+        firstValue = weather.temperature.value
+    }
+    if (b == 2 ) {
+        secondValue = weather.temperature.value
+    }
+    if (b == 3) {
+        thirdValue = weather.temperature.value
+    }
+    if (b == 4) {
+        fourthValue = weather.temperature.value
+    }
+
+}
+
 // WHEN THE USER CLICKS ON THE TEMPERATURE ELEMENET
+
+document.getElementsByClassName("valuechild")[0].addEventListener("click", function () {
+    if (weather.temperature.value === undefined) return;
+
+    if (weather.temperature.unit == "celsius") {
+        let fahrenheit = celsiusToFahrenheit(zeroValue);
+        fahrenheit = Math.floor(fahrenheit);
+
+        document.getElementsByClassName("valuechild")[0].innerHTML = `${fahrenheit}°<span>F</span>`;
+        weather.temperature.unit = "fahrenheit";
+    } else {
+        document.getElementsByClassName("valuechild")[0].innerHTML = `${zeroValue}°<span>C</span>`;
+        weather.temperature.unit = "celsius"
+    }
+});
+
+document.getElementsByClassName("valuechild")[1].addEventListener("click", function () {
+    if (weather.temperature.value === undefined) return;
+
+    if (weather.temperature.unit == "celsius") {
+        let fahrenheit = celsiusToFahrenheit(firstValue);
+        fahrenheit = Math.floor(fahrenheit);
+
+        document.getElementsByClassName("valuechild")[1].innerHTML = `${fahrenheit}°<span>F</span>`;
+        weather.temperature.unit = "fahrenheit";
+    } else {
+        document.getElementsByClassName("valuechild")[1].innerHTML = `${firstValue}°<span>C</span>`;
+        weather.temperature.unit = "celsius"
+    }
+});
 
 document.getElementsByClassName("valuechild")[2].addEventListener("click", function () {
     if (weather.temperature.value === undefined) return;
 
     if (weather.temperature.unit == "celsius") {
-        let fahrenheit = celsiusToFahrenheit(weather.temperature.value);
+        let fahrenheit = celsiusToFahrenheit(secondValue);
         fahrenheit = Math.floor(fahrenheit);
 
         document.getElementsByClassName("valuechild")[2].innerHTML = `${fahrenheit}°<span>F</span>`;
         weather.temperature.unit = "fahrenheit";
     } else {
-        document.getElementsByClassName("valuechild")[2].innerHTML = `${weather.temperature.value}°<span>C</span>`;
+        document.getElementsByClassName("valuechild")[2].innerHTML = `${secondValue}°<span>C</span>`;
+        weather.temperature.unit = "celsius"
+    }
+});
+
+document.getElementsByClassName("valuechild")[3].addEventListener("click", function () {
+    if (weather.temperature.value === undefined) return;
+
+    if (weather.temperature.unit == "celsius") {
+        let fahrenheit = celsiusToFahrenheit(thirdValue);
+        fahrenheit = Math.floor(fahrenheit);
+
+        document.getElementsByClassName("valuechild")[3].innerHTML = `${fahrenheit}°<span>F</span>`;
+        weather.temperature.unit = "fahrenheit";
+    } else {
+        document.getElementsByClassName("valuechild")[3].innerHTML = `${thirdValue}°<span>C</span>`;
+        weather.temperature.unit = "celsius"
+    }
+});
+
+document.getElementsByClassName("valuechild")[4].addEventListener("click", function () {
+    if (weather.temperature.value === undefined) return;
+
+    if (weather.temperature.unit == "celsius") {
+        let fahrenheit = celsiusToFahrenheit(fourthValue);
+        fahrenheit = Math.floor(fahrenheit);
+
+        document.getElementsByClassName("valuechild")[4].innerHTML = `${fahrenheit}°<span>F</span>`;
+        weather.temperature.unit = "fahrenheit";
+    } else {
+        document.getElementsByClassName("valuechild")[4].innerHTML = `${fourthValue}°<span>C</span>`;
         weather.temperature.unit = "celsius"
     }
 });
