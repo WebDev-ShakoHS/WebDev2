@@ -91,10 +91,7 @@ span.min-temperature {
                 class="weather-icon" /> <?php echo $data->main->temp_max; ?>&deg;<?php echo $temp; ?><span
                 class="min-temperature"><?php echo $data->main->temp_min; ?>&deg;<?php echo $temp; ?></span>
         </div>
-        <div class="time">
-            <div>Humidity: <?php echo $data->main->humidity; ?> %</div>
-            <div>Wind: <?php echo $data->wind->speed; ?> km/h</div>
-        </div>
+      
     </div>
 
 
