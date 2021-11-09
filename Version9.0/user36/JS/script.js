@@ -37,7 +37,7 @@ function getWeather() {
             })
 
             .then(function (data) {
-                weather.temperature.value = Math.floor(data.daily[a].temp.min - KELVIN);
+                weather.temperature.value = Math.floor(data.daily[a].temp.max - KELVIN);
                 weather.description = data.daily[a].weather[0].description;
                 weather.iconId = data.daily[a].weather[0].icon;
                 weather.date = data.daily[a].dt;
@@ -76,11 +76,11 @@ function celsiusToFahrenheit(temperature) {
     return (temperature * 9 / 5) + 32;
 }
 
-zeroValue = 0
-firstValue = 0
-secondValue = 0
-thirdValue = 0
-fourthValue = 0
+var zeroValue = 0
+var firstValue = 0
+var secondValue = 0
+var thirdValue = 0
+var fourthValue = 0
 function setVariable () {
     if (b == 0) {
         zeroValue = weather.temperature.value

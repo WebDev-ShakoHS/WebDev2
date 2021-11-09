@@ -219,7 +219,7 @@ p {
 .weather-icon{
   width: 10%;
   height: 5%;
-  margin-left: 16%;
+  margin-left: 22%;
   margin-right: 12%;
 }
 
@@ -289,4 +289,10 @@ p {
 
 .date {
   color: black;
+}
+
+.foreCon {
+  margin-bottom: none;
+  padding-bottom: none;
+  max-height: 50%;
 }
