@@ -100,6 +100,18 @@ function setVariable () {
 
 }
 
+var c = 0;
+document.getElementById("yes").addEventListener("click", function () {
+    document.getElementById("hehe").style.color = "red";
+    if (c < 2) {
+        c = c + 1;
+    }
+    if (c == 2) {
+        c = c - 2;
+        document.getElementById("hehe").style.color = "black";
+    }
+});
+
 // WHEN THE USER CLICKS ON THE TEMPERATURE ELEMENET
 
 document.getElementsByClassName("valuechild")[0].addEventListener("click", function () {
