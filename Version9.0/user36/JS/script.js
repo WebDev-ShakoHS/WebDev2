@@ -41,7 +41,7 @@ function getWeather() {
                 weather.description = data.daily[a].weather[0].description;
                 weather.iconId = data.daily[a].weather[0].icon;
                 weather.date = data.daily[a].dt;
-                a = a+1;
+                a = a + 1;
             })
             .then(function () {
                 displayWeather();
@@ -56,7 +56,6 @@ function timeConverter() {
     var year = a.getFullYear();
     var month = months[a.getMonth()];
     var date = a.getDate();
-    var hour = a.getHours();
     time = date + ' ' + month + ' ' + year + ' ';
 }
 
@@ -68,7 +67,7 @@ function displayWeather() {
     document.getElementsByClassName("descriptionchild")[b].innerHTML = weather.description;
     document.getElementsByClassName("date")[b].innerHTML = time;
     setVariable();
-    b = b+1;
+    b = b + 1;
 }
 
 // C to F conversion
@@ -76,19 +75,20 @@ function celsiusToFahrenheit(temperature) {
     return (temperature * 9 / 5) + 32;
 }
 
+// Sets variables for temperature conversion
 var zeroValue = 0
 var firstValue = 0
 var secondValue = 0
 var thirdValue = 0
 var fourthValue = 0
-function setVariable () {
+function setVariable() {
     if (b == 0) {
         zeroValue = weather.temperature.value
     }
     if (b == 1) {
         firstValue = weather.temperature.value
     }
-    if (b == 2 ) {
+    if (b == 2) {
         secondValue = weather.temperature.value
     }
     if (b == 3) {
@@ -99,18 +99,6 @@ function setVariable () {
     }
 
 }
-
-var c = 0;
-document.getElementById("yes").addEventListener("click", function () {
-    document.getElementById("hehe").style.color = "red";
-    if (c < 2) {
-        c = c + 1;
-    }
-    if (c == 2) {
-        c = c - 2;
-        document.getElementById("hehe").style.color = "black";
-    }
-});
 
 // WHEN THE USER CLICKS ON THE TEMPERATURE ELEMENET
 
@@ -189,4 +177,54 @@ document.getElementsByClassName("valuechild")[4].addEventListener("click", funct
     }
 });
 
+
+// Messing Around
+var c = 0;
+document.getElementById("yes").addEventListener("click", function () {
+    document.getElementById("hehe").style.color = "red";
+    if (c < 2) {
+        c = c + 1;
+    }
+    if (c == 2) {
+        c = c - 2;
+        document.getElementById("hehe").style.color = "black";
+    }
+});
+
+document.getElementById("yes2").addEventListener("click", function () {
+    if (c < 3) {
+        if (c == 1) {
+            document.getElementById("hehe").style.color = "green";
+        }
+        if (c > 0) {
+            c = c + 1;
+        }
+    }
+    if (c == 3) {
+        document.getElementById("hehe").style.color = "red";
+        c = c - 2;
+    }
+
+})
+
+document.getElementById("yes3").addEventListener("click", function () {
+    if (c < 4) {
+        if (c == 2) {
+            document.getElementById("hehe").style.color = "purple";
+        }
+        if (c > 0) {
+            c = c + 1;
+        }
+    }
+    if (c == 4) {
+        document.getElementById("hehe").style.color = "green";
+        c = c - 2;
+    }
+})
+
+document.getElementById("yes4").addEventListener("click", function () {
+    if (c == 2) {
+        alert("it works");
+    }
+})
 getWeather();
