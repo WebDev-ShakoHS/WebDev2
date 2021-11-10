@@ -32,6 +32,23 @@ li li li {
 li li li li {
     list-style-type: circle;
 }
+.stopwatch {
+    display: inline-block;
+    background-color: white;
+    border: 1px solid #eee;
+    padding: 5px;
+    margin: 5px;
+  }
+  
+  .stopwatch span {
+    font-weight: bold;
+    display: block;
+  }
+  
+  .stopwatch a {
+    padding-right: 5px;
+    text-decoration: none;
+  }
 
 h1 {
     font-family: "Fjalla One", sans-serif;
