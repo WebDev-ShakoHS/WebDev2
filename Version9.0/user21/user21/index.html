@@ -1,0 +1,264 @@
+<html lang="en">
+<!--Version 6.0 
+	Name: Ephraim Gunnell
+	Date Completed:
+    -->
+
+<head>
+    <title>GCWelcome </title>
+    <link rel="shortcut icon" type="image/png"
+        href="https://lh5.googleusercontent.com/j6ABaunElchVpx6NxT7B9dYyCciwvBGqynnLNhc8yk2tw2A8Et-42GZ6cQ-hK_KbhfxGAb2B8mZ957auQdmURt0=w16383">
+    <!--CSS-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="CSS/test.css">
+
+
+    <!--Script-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <!--Meta-->
+    <meta name="description" content="GCWelcome">
+
+    <style>
+        body {
+            background: rgb(71, 187, 255);
+            position: fixed;
+            margin-left: 100px;
+            border-radius: 30px;
+            background-image: linear-gradient(0deg, #3297f5, #4fe5ff, #15c8ff);
+            background-size: 400% 400%;
+            animation: 4s ease-in;
+            box-shadow: 2px 2px 10px #3cc1ff;
+            transition: 6s;
+            box-shadow: 3px 3px 40px #f7f200;
+        }
+    </style>
+    <SCRIPT LANGUAGE="JavaScript">
+
+        IMAGE01 = "on.gif"
+        IMAGE02 = "off.gif"
+
+        function imgover(imgname) {
+            imgname.src = IMAGE01
+        }
+
+        function imgout(imgname) {
+            imgname.src = IMAGE02
+        }
+    </SCRIPT>
+    <script>
+
+
+
+        var limit = "0:30"
+
+        var doctitle = document.title
+        var parselimit = limit.split(":")
+        parselimit = parselimit[0] * 60 + parselimit[1] * 1
+
+        function beginrefresh() {
+            if (parselimit == 1)
+                window.location.reload()
+            else {
+                parselimit -= 1
+                curmin = Math.floor(parselimit / 60)
+                cursec = parselimit % 60
+                if (curmin != 0)
+                    curtime = curmin + " minutes and " + cursec + " seconds left until page refresh!"
+                else
+                    curtime = cursec + " Until Refresh"
+                document.title = doctitle + ' (' + curtime + ')'
+                setTimeout("beginrefresh()", 2000)
+            }
+        }
+
+        if (window.addEventListener)
+            window.addEventListener("load", beginrefresh, false)
+        else if (window.attachEvent)
+            window.attachEvent("load", beginrefresh)
+    </script>
+</head>
+
+<body>
+
+    <script>
+
+        alert("Welcome to the GC Site!")
+        var name = prompt('"Please confirm you are still here by signing your name", "Enter name here" ')
+        var Address = prompt('"Please tell us where you live and be honest", "Enter address here"')
+        var Phonenumber = prompt('"Please help us contact you by entering your number", "Phone number"')
+    </script>
+
+    <script>
+        document.writein(name);
+        document.writein(Address);
+        document.writeln(Phonenunber);
+    </script>
+
+    <ul class="nav-type">
+        <IMG NAME="IMAGE01" SRC="off.gif" WIDTH=10 HEIGHT=10 BORDER=0>
+
+        <li><a style="color: rgba(0, 0, 0, 0.712)" href="index.html" class="active">Home</a></li>
+        <li><a style="color:rgb(255, 255, 255)" class="btn lg" href="About.html" class="active1">About</a></li>
+        <li><a style="color:rgb(255, 255, 255)" class="btn lg" href="info.html" class="active2">Rules/info</a></li>
+        <li><a style="color:rgb(255, 255, 255)" class="btn lg" href="Why.html" class="active3">Why?</a></li>
+
+    </ul>
+    <script>
+
+        var Digital = new Date()
+        var hours = Digital.getHours()
+
+        //Configure message below to your own.
+        if (hours >= 5 && hours <= 11) //MESSAGE FOR MORNING
+            document.write('<b>Welcome to our site. Good morning ' + name + ' you live at ' + Address + '.</b>')
+        else if (hours == 12) //MESSAGE FOR NOON
+            document.write('<b>It is high noon. Thanks for dropping by ' + name + ' also how is it at ' + Address + '!</b>')
+        else if (hours >= 13 && hours <= 17) //MESSAGE FOR AFTERNOON
+            document.write('<b>Good afternoon, and thanks for visiting ' + name + ' mind if I call ' + Phonenumber + '</b>')
+        else if (hours >= 18 && hours <= 20) //MESSAGE FOR EVENING (6pm-8pm)
+            document.write('<b>Good evening. Hope you are enjoying the gentle breeze ' + name + '.</b>')
+        else if (hours >= 21 && hours <= 11) //MESSAGE FOR NIGHT (9pm-11pm)
+            document.write('<b>Glad to see you this time of the night ' + name + '.</b>')
+        else //MESSAGE FOR LATE NIGHT, EARLY MORNING (12pm-4am)
+            document.write('<b>Wow, thanks for choosing to visit our site over sleep ' + name + '!</b>')
+
+    </script>
+
+    <header style="background-color: #383737;">
+
+        <div class="container">
+            <h1 class="display-3"><strong>
+                    Welcome to the Semi-Offical GC Website!
+                </strong></h1>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h2>Who are we?</h2>
+                        <p>We are a growing group of people that have interests in gaming, anime and much more. You can
+                            connect with all of your friends to have fun and hang out.</p>
+
+                    </div>
+                    <div class="col-md-4">
+                        <h2>Gc - Gaming crew</h2>
+                        <p>We cover all platforms like iOS, Android, PC, Mac, Nintendo Switch, Xbox, Xbox Series and
+                            PlayStation. Due to all of the gaming platforms we cover, we also play a lot of games. We
+                            have side servers for some games. We also have a Discord Server that you can join for easy
+                            communication, with voice chat and text chat.</p>
+
+                        <div class="container">
+                            <div class="app-title">
+                                <p>Weather</p>
+                            </div>
+                            <div class="notification"> </div>
+                            <div class="weather-container">
+                                <div class="weather-icon">
+                                    <img src="icons/unknown.png" alt="">
+                                </div>
+                                <div class="temperature-value">
+                                    <p> - °<span>C</span></p>
+                                </div>
+                                <div class="temperature-description">
+                                    <p> - </p>
+                                </div>
+                                <div class="location">
+                                    <p> - </p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <script src="app.js"></script>
+
+                    </div>
+                    <div class="col-md-4">
+                        <h2>Music?!?!</h2>
+                        <p>Sometimes we talk about our favorite playlists and songs. We used to listen to music
+                            together, but we don't anymore. On the bright side, you can send your favorite playlists in
+                            our Discord Server and can get them featured.</p>
+
+                    </div>
+                </div>
+
+                <hr>
+
+            </div>
+    </header>
+    <h2 style="background-color: #383737;">
+        <script language="JavaScript1.2">
+
+
+
+            var message = " Why make a point just to say it’s not actually a point? - GC Founder"
+            var neonbasecolor = "cyan"
+            var neontextcolor = "yellow"
+            var flashspeed = 50
+
+            var n = 0
+            if (document.all || document.getElementById) {
+                document.write('')
+                for (m = 0; m < message.length; m++)
+                    document.write('<span id="neonlight' + m + '">' + message.charAt(m) + '</span>')
+                document.write('')
+            }
+            else
+                document.write(message)
+
+            function crossref(number) {
+                var crossobj = document.all ? eval("document.all.neonlight" + number) : document.getElementById("neonlight" + number)
+                return crossobj
+            }
+
+            function neon() {
+
+                //Change all letters to base color
+                if (n == 0) {
+                    for (m = 0; m < message.length; m++)
+                        //eval("document.all.neonlight"+m).style.color=neonbasecolor
+                        crossref(m).style.color = neonbasecolor
+                }
+
+                //cycle through and change individual letters to neon color
+                crossref(n).style.color = neontextcolor
+
+                if (n < message.length - 1)
+                    n++
+                else {
+                    n = 0
+                    clearInterval(flashing)
+                    setTimeout("beginneon()", 1500)
+                    return
+                }
+            }
+
+            function beginneon() {
+                if (document.all || document.getElementById)
+                    flashing = setInterval("neon()", flashspeed)
+            }
+            beginneon()
+
+
+        </script>
+    </h2>
+</body>
+<footer>
+    <div>
+        <ul>
+            <li><a href="https://sites.google.com/view/gcmain/home?authuser=0" target="_blank">Official Website</a></li>
+            <li><a href="http://www.google.com/url?q=http%3A%2F%2Fdiscord.gg%2FxHF8Ymr&sa=D&sntz=1&usg=AFQjCNHUjrgvFmZnncEfeyoUSyGAEHt9FA"
+                    target="_blank">Discord</a>
+            </li>
+            <li><a>aidanmusil@gmail.com</a></li>
+            <li>
+
+        </ul>
+    </div>
+</footer>
+
+</html>
