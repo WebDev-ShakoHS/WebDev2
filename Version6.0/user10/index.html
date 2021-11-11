@@ -25,15 +25,17 @@
     <link rel="stylesheet" href="CSS/style.css">
     <link href="http://fonts.googleapis.com/css?family=Corben:bold" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Nobile" rel="stylesheet" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
 
 
     <style>
-
         #myContainer {
             width: 820px;
             height: 400px;
             position: relative;
-          
+
         }
 
         #myAnimation {
@@ -42,158 +44,247 @@
             position: absolute;
             background-color: rgb(0, 0, 0);
         }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
     </style>
 
-
+<!--Where most of the functions are-->
     <nav class="topnav">
+        <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none" id="mySidebar">
+            <button class="w3-bar-item w3-button w3-large"
+            onclick="w3_close()">Close &times;</button>
+            <a href="https://payday.fandom.com/wiki/Timeline" class="w3-bar-item w3-button">Payday 2 Lore</a>
+            <a href="https://titanfall2.fandom.com/wiki/Lore" class="w3-bar-item w3-button">Titan Fall 2 Lore</a>
+          </div>
+          
+          <div id="main">
+          
+          <div class="w3-teal">
+            <button id="openNav" class="w3-button w3-teal w3-xlarge" onclick="w3_open()">&#9776;</button>
+          
+          <script>
+          function w3_open() {
+            document.getElementById("main").style.marginLeft = "25%";
+            document.getElementById("mySidebar").style.width = "25%";
+            document.getElementById("mySidebar").style.display = "block";
+            document.getElementById("openNav").style.display = 'none';
+          }
+          function w3_close() {
+            document.getElementById("main").style.marginLeft = "0%";
+            document.getElementById("mySidebar").style.display = "none";
+            document.getElementById("openNav").style.display = "inline-block";
+          }
+          </script>
+          
         <a class="active" href="index.html">Home</a>
         <a href="payday 2.html">PayDay 2</a>
         <a href="TitanFall.html">Titan Fall 2</a>
         <a href="Survery Says.html"> Survery SaYS</a>
+        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+
+<ul id="myUL">
+  <li><a href="https://gttod.com/">Get to The Orange Door</a></li>
+  <li><a href="https://www.ea.com/games/apex-legends">Apex Lengends</a></li>
+
+  <li><a href="https://www.ea.com/games/titanfall/titanfall-2">Titan Fall 2</a></li>
+  <li><a href="https://www.paydaythegame.com/payday2/">Payday 2</a></li>
+
+  <li><a href="https://www.paladins.com/">paladins</a></li>
+  <li><a href="https://www.bulletsperminute.com/">Bullets per minute</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Doom_(franchise)">Doom</a></li>
+</ul>
+<script>
+    function myFunction() {
+      // Declare variables
+      var input, filter, ul, li, a, i, txtValue;
+      input = document.getElementById('myInput');
+      filter = input.value.toUpperCase();
+      ul = document.getElementById("myUL");
+      li = ul.getElementsByTagName('li');
+    
+      // Loop through all list items, and hide those who don't match the search query
+      for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          li[i].style.display = "";
+        } else {
+          li[i].style.display = "none";
+        }
+      }
+    }
+    </script>
     </nav>
 </head>
 
 
-
+<!---The "Content" is-->
 <body id="bgg-pg3">
-<<<<<<< HEAD
-    <div class="navbar">
-        <a href="#roll">Roll</a>
-        <a href="#exit">Exit</a>
-        <div class="dropdown">
-        <button class="dropbtn" onclick="myFunction()">Upgrade
-          <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-content" id="myDropdown">
-          <a href="#" onclick="myFunc();">Add a side to your Dice</a>
-          <a href="#">Remove a side to your Dice</a>
-          <a href="#">Add an additional Roll</a>
-        </div>
-        </div> 
+
+    <div id="context-menu">
+        <div class='item'>Option 1</div>
+        <div class="item">Option 2</div>
+        <div class="item">Option 3</div>
+        <div class="item">Option 4</div>
+        <div class="item">Option 5</div>
       </div>
-      
-      <h3>Dropdown Menu inside a Navigation Bar</h3>
-      <p>Click on the "Dropdown" link to see the dropdown menu.</p>
-      
-      <script>
-      
-      function myFunc() {
-        alert('You clicked a submenu item')
-      }
-      /* When the user clicks on the button, 
-      toggle between hiding and showing the dropdown content */
-      function myFunction() {
-        document.getElementById("myDropdown").classList.toggle("show");
-      }
-      
-      // Close the dropdown if the user clicks outside of it
-      window.onclick = function(e) {
-        if (!e.target.matches('.dropbtn')) {
-        var myDropdown = document.getElementById("myDropdown");
-          if (myDropdown.classList.contains('show')) {
-            myDropdown.classList.remove('show');
-          }
-        }
-      }
-      </script>
-    
-    <script>
-        function checkAge(age) {
-            if (age >= 18) {
-                return true;
-            } else {
-                return confirm('Do you have permission from your parents?');
-            }
-        }
+<!--its unique and pretty nice(code below)-->
+            <script>
+                const contextMenu = document.getElementById("context-menu");
+                const scope = document.querySelector("body");
 
-        let age = prompt('How old are you?', 18);
+                scope.addEventListener("contextmenu", (event) => {
+                    event.preventDefault();
 
-        if (checkAge(age)) {
-            alert('Access granted');
-        } else {
-            alert('Access denied');
-        }</script>
-=======
+                    const { clientX: mouseX, clientY: mouseY } = event;
 
->>>>>>> parent of 3e45c210 (v6 added)
+                    contextMenu.style.top = `${mouseY}px`;
+                    contextMenu.style.left = `${mouseX}px`;
+
+                    contextMenu.classList.add("visible");
+                });
+                scope.addEventListener("click", (e) => {
+                    if (e.target.offsetParent != contextMenu) {
+                        contextMenu.classList.remove("visible");
+                    }
+                });
+                scope.addEventListener("contextmenu", (event) => {
+                    event.preventDefault();
+
+                    const { clientX: mouseX, clientY: mouseY } = event;
+
+                    contextMenu.style.top = `${mouseY}px`;
+                    contextMenu.style.left = `${mouseX}px`;
+
+                    contextMenu.classList.remove("visible");
+
+                    setTimeout(() => {
+                        contextMenu.classList.add("visible");
+                    });
+                });
+                const normalizePozition = (mouseX, mouseY) => {
+                    // ? compute what is the mouse position relative to the container element (scope)
+                    const {
+                        left: scopeOffsetX,
+                        top: scopeOffsetY,
+                    } = scope.getBoundingClientRect();
+
+                    const scopeX = mouseX - scopeOffsetX;
+                    const scopeY = mouseY - scopeOffsetY;
+
+                    // ? check if the element will go out of bounds
+                    const outOfBoundsOnX =
+                        scopeX + contextMenu.clientWidth > scope.clientWidth;
+
+                    const outOfBoundsOnY =
+                        scopeY + contextMenu.clientHeight > scope.clientHeight;
+
+                    let normalizedX = mouseX;
+                    let normalizedY = mouseY;
+
+                    // ? normalzie on X
+                    if (outOfBoundsOnX) {
+                        normalizedX =
+                            scopeOffsetX + scope.clientWidth - contextMenu.clientWidth;
+                    }
+
+                    // ? normalize on Y
+                    if (outOfBoundsOnY) {
+                        normalizedY =
+                            scopeOffsetY + scope.clientHeight - contextMenu.clientHeight;
+                    }
+
+                    return { normalizedX, normalizedY };
+                };
+                scope.addEventListener("contextmenu", (event) => {
+                    event.preventDefault();
+
+                    const { offsetX: mouseX, offsetY: mouseY } = event;
+
+                    const { normalizedX, normalizedY } = normalizePozition(mouseX, mouseY);
+
+                    contextMenu.style.top = `${normalizedY}px`;
+                    contextMenu.style.left = `${normalizedX}px`;
+
+                    contextMenu.classList.remove("visible");
+
+                    setTimeout(() => {
+                        contextMenu.classList.add("visible");
+                    });
+                });
+
+            </script>
     <center>
         <h1><b>Games Ahead Of Its Time</b></h1>
     </center>
-    <main class="wideMargin">
-        <script>
 
-            const context = canvas.getContext('2d');
+    <h1 class="text-left my-3 title" tabindex="0">Which Game is Better</h1>
+    <h3 id="topHeading">Games</h3>
+    <div id="knowledge">
+        <li>Titan Fall 2
+            <ul>
+                <li>Active player base?</li>
+                <li>Advance Movment</li>
+                <li>muilt console</li>
+            </ul>
+        </li>
+        <li>PayDay 2
+            <ul>
+                <li>Active player base</li>
+                <li>Dev support</li>
+                <li>many things to do</li>
+                <li>Mod support</li>
 
-            context.strokeStyle = 'blue';
-            context.strokeRect(100, 100, 50, 50);
-        </script>
+            </ul>
+        </li>
+    </div>
+    <p>
+        These are the things I know in the <strong>Gaming</strong> <u>world</u>.
+    </p>
+    <p>
+        PayDay 2 is the better game thats it.
+    </p>
+    <p>
+    <h1>Website Crasher</h1>
 
-        <h1 class="text-left my-3 title" tabindex="0">Which Game is Better</h1>
-        <h3 id="topHeading">Games</h3>
-        <div id="knowledge">
-            <li>Titan Fall 2
-                <ul>
-                    <li>Active player base?</li>
-                    <li>Advance Movment</li>
-                    <li>muilt console</li>
-                </ul>
-            </li>
-            <li>PayDay 2
-                <ul>
-                    <li>Active player base</li>
-                    <li>Dev support</li>
-                    <li>many things to do</li>
-                    <li>Mod support</li>
+    <form action="/action_page.php">
+        <input type="submit">
 
-                </ul>
-            </li>
-        </div>
-        <p>
-            These are the things I know in the <strong>Gaming</strong> <u>world</u>.
-        </p>
-        <p>
-            PayDay 2 is the better game thats it.
-        </p>
-        <p>
-        <h1>Website Crasher</h1>
-
-        <form action="/action_page.php">
-            <input type="submit">
-
-        </form>
+    </form>
 
 
-        </table>
-        </div>
+    </table>
+    </div>
+ <!---hey it uses a function and if you use it you will look at it and you will be on the website longer where all the ads pop up and make me money sooo, it works-->
+    <p>
+        <button onclick="myMove()">Move the Box</button>
+    </p>
 
-        <p>
-            <button onclick="myMove()">Move the Box</button>
-        </p>
+    <div id="myContainer">
+        <div id="myAnimation"></div>
+    </div>
 
-        <div id="myContainer">
-            <div id="myAnimation"></div>
-        </div>
-
-        <script>
-            var id = null;
-            function myMove() {
-                var elem = document.getElementById("myAnimation");
-                var pos = 0;
-                clearInterval(id);
-                id = setInterval(frame, 1);
-                function frame() {
-                    if (pos == 1400) {
-                        clearInterval(id);
-                    } else {
-                        pos++;
-                        elem.style.top = pos + 'px';
-                        elem.style.left = pos + 'px';
-                    }
+    <script>
+        var id = null;
+        function myMove() {
+            var elem = document.getElementById("myAnimation");
+            var pos = 0;
+            clearInterval(id);
+            id = setInterval(frame, 20);
+            function frame() {
+                if (pos == 1400) {
+                    clearInterval(id);
+                } else {
+                    pos++;
+                    elem.style.top = pos + 'px';
+                    elem.style.left = pos + 'px';
                 }
             }
-        </script>
-        
-        <script src='JavaScript.js'></script>
+        }
+    </script>
+
 </body>
 
 
