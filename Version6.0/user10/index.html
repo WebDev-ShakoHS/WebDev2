@@ -23,17 +23,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <!-- Custom -->
     <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/Muneu.css">
     <link href="http://fonts.googleapis.com/css?family=Corben:bold" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Nobile" rel="stylesheet" type="text/css">
 
 
     <style>
-
         #myContainer {
             width: 820px;
             height: 400px;
             position: relative;
-          
+
         }
 
         #myAnimation {
@@ -50,6 +50,7 @@
         <a href="payday 2.html">PayDay 2</a>
         <a href="TitanFall.html">Titan Fall 2</a>
         <a href="Survery Says.html"> Survery SaYS</a>
+        <a href="Weahter.html"> Weather</a>
     </nav>
 </head>
 
@@ -57,6 +58,23 @@
 
 <body id="bgg-pg3">
 
+    
+    <script>
+        function checkAge(age) {
+            if (age >= 18) {
+                return true;
+            } else {
+                return confirm('Do you have permission from your parents?');
+            }
+        }
+
+        let age = prompt('How old are you?', 18);
+
+        if (checkAge(age)) {
+            alert('Access granted');
+        } else {
+            alert('Access denied');
+        }</script>
     <center>
         <h1><b>Games Ahead Of Its Time</b></h1>
     </center>
@@ -133,8 +151,7 @@
                 }
             }
         </script>
-        
-        <script src='JavaScript.js'></script>
+
 </body>
 
 
