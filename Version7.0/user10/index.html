@@ -32,11 +32,11 @@
         /* Internal Styling Here */
     </style>
 
-<nav class="topnav">
-    <a class="active" href="index.html">Reaction Time test</a>
-    <a href="tictactoe.html">Tic Tac Toe</a>
-    <a href="RussioasnGun.html">NUMBER GUESS</a>
-</nav>
+    <nav class="topnav">
+        <a class="active" href="index.html">Reaction Time test</a>
+        <a href="tictactoe.html">Tic Tac Toe</a>
+        <a href="RussioasnGun.html">NUMBER GUESS</a>
+    </nav>
 </head>
 
 
@@ -50,8 +50,8 @@
             <script>
                 function printWindow() {
 
-            <script>
-                alert('Go Sabers!');
+                    <script>
+                        alert('Go Sabers!');
             </script>
             <!--PRINT-->
             <script>
@@ -68,8 +68,8 @@
             <!-- FOCUS-->
             <script>
 
-                    document.getElementById("focusButton").focus({ preventScroll: false });
-                    document.getElementById("focusButton").focus();
+                document.getElementById("focusButton").focus({preventScroll: false });
+                document.getElementById("focusButton").focus();
                 }
             </script>
             <!-- CLICK-->
@@ -185,27 +185,27 @@
             </div>
         </div>
         <script id="lists">
-            function firstSelector() {
-                document.querySelector("li").style.backgroundColor = "#dc3545";
+                function firstSelector() {
+                    document.querySelector("li").style.backgroundColor = "#dc3545";
             }
-            function secondSelector() {
+                function secondSelector() {
                 var x = document.querySelectorAll("li");
                 var i;
                 for (i = 0; i < x.length; i = i + 2) {
                     x[i].style.backgroundColor = "#17a2b8";
                 }
             }
-            function thirdSelector() {
-                document.querySelector("ol ol li").style.backgroundColor = "#6c757d";
+                function thirdSelector() {
+                    document.querySelector("ol ol li").style.backgroundColor = "#6c757d";
             }
         </script>
         <script id="shopping">
-            const list = document.querySelector('ul');
-            const input = document.getElementById('item');
-            const button = document.getElementById('aggregating-list');
+                const list = document.querySelector('ul');
+                const input = document.getElementById('item');
+                const button = document.getElementById('aggregating-list');
 
-            button.onclick = function () {
-                let myItem = input.value;
+                button.onclick = function () {
+                    let myItem = input.value;
                 input.value = '';
 
                 const listItem = document.createElement('li');
@@ -228,38 +228,38 @@
         </script>
         <script language="JavaScript">
 
-            var startTime = new Date();
-            var endTime = new Date();
-            var startPressed = false;
-            var bgChangeStarted = false;
-            var maxWait = 20;
-            var timerID;
-            var stopBtnX;
-            var stopBtnY;
+                var startTime = new Date();
+                var endTime = new Date();
+                var startPressed = false;
+                var bgChangeStarted = false;
+                var maxWait = 20;
+                var timerID;
+                var stopBtnX;
+                var stopBtnY;
 
-            function getRandom(min, max) {
-                min = Math.ceil(-200);
+                function getRandom(min, max) {
+                    min = Math.ceil(-200);
                 max = Math.floor(200);
                 stopBtnX = Math.floor(Math.random() * (max - min + 1) + min);
                 stopBtnY = Math.floor(Math.random() * (max - min + 1) + min);
             }
 
-            function startTest() {
-                document.body.style.background = document.response.bgColorChange.options[document.response.bgColorChange.selectedIndex].text;
+                function startTest() {
+                    document.body.style.background = document.response.bgColorChange.options[document.response.bgColorChange.selectedIndex].text;
                 bgChangeStarted = true;
                 startTime = new Date();
 
                 var i;
                 for (i = 1; i < 4; i++) {
                     getRandom();
-                    document.getElementById("stopBtn" + i).innerHTML = '<input style="padding: 0 20px; position: relative; left:' + stopBtnX + 'px; top:'+ stopBtnY + 'px;" type="button" value="' + i + '" onClick="stopTest()">';
+                document.getElementById("stopBtn" + i).innerHTML = '<input style="padding: 0 20px; position: relative; left:' + stopBtnX + 'px; top:'+ stopBtnY + 'px;" type="button" value="' + i + '" onClick="stopTest()">';
                 }
                 
             }
 
-            function remark(responseTime) {
+                    function remark(responseTime) {
                 var responseString = "";
-                if (responseTime < 0.10)
+                    if (responseTime < 0.10)
                     responseString = "Well done!";
                 if (responseTime >= 0.10 && responseTime < 0.20)
                     responseString = "Nice!";
@@ -271,48 +271,48 @@
                     responseString = "Have you been day dreaming again?";
                 if (responseTime >= 1.1)
                     responseString = "Did you fall asleep?";
-                return responseString;
+                    return responseString;
             }
 
-            function stopTest() {
+                    function stopTest() {
                 if (bgChangeStarted) {
-                    endTime = new Date();
+                        endTime = new Date();
                     var responseTime = (endTime.getTime() - startTime.getTime()) / 1000;
                     document.body.style.background = "white";
                     alert("Your response time is: " + responseTime + " seconds " + "\n" + remark(responseTime));
                     startPressed = false;
                     bgChangeStarted = false;
                 }
-                else {
+                    else {
                     if (!startPressed) {
                         alert("press start first to start test");
                     }
                     else {
                         clearTimeout(timerID);
-                        startPressed = false;
-                        alert("cheater! you pressed too early!");
+                    startPressed = false;
+                    alert("cheater! you pressed too early!");
                     }
                 }
             }
 
-            var randMULTIPLIER = 0x015a4e35;
-            var randINCREMENT = 1;
-            var today = new Date();
-            var randSeed = today.getSeconds();
+                    var randMULTIPLIER = 0x015a4e35;
+                    var randINCREMENT = 1;
+                    var today = new Date();
+                    var randSeed = today.getSeconds();
 
-            function randNumber() {
-                randSeed = (randMULTIPLIER * randSeed + randINCREMENT) % (1 << 31);
+                    function randNumber() {
+                        randSeed = (randMULTIPLIER * randSeed + randINCREMENT) % (1 << 31);
                 return ((randSeed >> 15) & 0x7fff) / 32767;
             }
 
-            function startit() {
+                    function startit() {
                 if (startPressed) {
-                    alert("Already started. Press stop to stop");
+                        alert("Already started. Press stop to stop");
                     return;
                 }
-                else 
-                {
-                    getRandom();
+                    else
+                    {
+                        getRandom();
                     startPressed = true;
                     timerID = setTimeout('startTest()', 6000 * randNumber());
                 }
@@ -337,153 +337,153 @@
             <span id="stopBtn1"> <input style="display:none;" type="button" value="stop" onClick="stopTest()"></span>
             <span id="stopBtn2"><input style="display:none;" type="button" value="stop" onClick="stopTest()"></span>
             <span id="stopBtn3"><input style="display:none;" type="button" value="stop" onClick="stopTest()"></span>
-        </form>     
-       
+        </form>
+
     </main>
 
     <div id="container" style="height: 3000px; width: 1000px;">
         <a href="#"><button type="button" id="focusButton" style="margin-top: 3000px;">You focused on me!</button></a>
-  </div>
-            <div class="container-fluid mt-3 mb-3">
-                <div class="row">
-                    <!--PRINT-->
-                    <div class="col-md-1">
-                        <button class="btn btn-dark btn-md" value="print this page" onclick="printWindow()">Print this
-                            page</button>
-                    </div>
-                    <!--LENGTH-->
-                    <div class="col-md-3">
-                        <button class="btn btn-dark btn-md" onclick="getLength()">The title has this many
-                            characters</button>
-                    </div>
-                    <div class="col-md-1">
-                        <p id="length"></p>
-                    </div>
-                    <!--FOCUS-->
-                    <div class="col-md-1">
-                        <button class="btn btn-dark btn-md" onclick="getFocus()">Focus</button>
-                    </div>
-                    <!-- CLICK-->
-                    <div class="col-md-1">
-                        <form>
-                            <input type="checkbox" id="Check" onmouseover="clickSimulation()">
-                            <input type="checkbox" id="Check" onmouseover="clickSimulation()">
-                        </form>
-                    </div>
-                    <!--DATE-->
-                    <div class="col-md-1">
-                        <button class="btn btn-dark btn-md" onclick="getDate()">Get Date</button>
-                    </div>
-                    <div class="col-md-3">
-                        <p id="date"></p>
-                    </div>
-                </div>
+    </div>
+    <div class="container-fluid mt-3 mb-3">
+        <div class="row">
+            <!--PRINT-->
+            <div class="col-md-1">
+                <button class="btn btn-dark btn-md" value="print this page" onclick="printWindow()">Print this
+                    page</button>
+            </div>
+            <!--LENGTH-->
+            <div class="col-md-3">
+                <button class="btn btn-dark btn-md" onclick="getLength()">The title has this many
+                    characters</button>
+            </div>
+            <div class="col-md-1">
+                <p id="length"></p>
+            </div>
+            <!--FOCUS-->
+            <div class="col-md-1">
+                <button class="btn btn-dark btn-md" onclick="getFocus()">Focus</button>
+            </div>
+            <!-- CLICK-->
+            <div class="col-md-1">
+                <form>
+                    <input type="checkbox" id="Check" onmouseover="clickSimulation()">
+                    <input type="checkbox" id="Check" onmouseover="clickSimulation()">
+                </form>
+            </div>
+            <!--DATE-->
+            <div class="col-md-1">
+                <button class="btn btn-dark btn-md" onclick="getDate()">Get Date</button>
+            </div>
+            <div class="col-md-3">
+                <p id="date"></p>
             </div>
         </div>
-        <hr>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-5">
-                    <h1>Heading for a long list</h1>
-                    <ol>
-                        <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-                        <li>Aliquam tincidunt mauris eu risus.</li>
-                        <li>Vestibulum auctor dapibus neque.
-                            <ol>
-                                <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-                                <li>Aliquam tincidunt mauris eu risus.
-                                    <ol>
-                                        <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                                            <ol>
-                                                <li>Lorem ipsum dolor sit amet, consectetuer.</li>
-                                            </ol>
-                                        </li>
-                                        <li>Aliquam tincidunt mauris eu risus.</li>
-                                        <li>Vestibulum auctor dapibus neque.</li>
-                                    </ol>
-                                </li>
-                                <li>Vestibulum auctor dapibus neque.</li>
-                                <li>Aliquam tincidunt mauris eu risus.</li>
-                            </ol>
-                        </li>
-                        <li>Aliquam tincidunt mauris eu risus.</li>
-                        <li>Vestibulum auctor dapibus neque.</li>
-                    </ol>
-
-                </div>
-
-                <div class="col-md-2 text-center">
-                    <button class="btn btn-danger btn-lg mt-3 container" onclick="firstSelector()">Try it
-                        1</button>
-
-                    <button class="btn btn-info btn-lg mt-3 container" onclick="secondSelector()">Try it
-                        2</button>
-
-                    <button class="btn btn-secondary btn-lg mt-3 container" onclick="thirdSelector()">Try it
-                        3</button>
-
-                    <button class="btn btn-primary btn-lg mt-3 container" onclick="window.location.reload()">Try
-                        it
-                        4</button>
-                </div>
-
-                <div class="col-md-5">
-                    <h1>My shopping list</h1>
-
-                    <div>
-                        <label for="item">Enter a new item:</label>
-                        <input type="text" name="item" id="item">
-                        <button id="aggregating-list">Add item</button>
-                    </div>
-
-                    <ul>
-
-                    </ul>
-                </div>
+    </div>
+    </div>
+    <hr>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-5">
+                <h1>Heading for a long list</h1>
+                <ol>
+                    <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+                    <li>Aliquam tincidunt mauris eu risus.</li>
+                    <li>Vestibulum auctor dapibus neque.
+                        <ol>
+                            <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+                            <li>Aliquam tincidunt mauris eu risus.
+                                <ol>
+                                    <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                                        <ol>
+                                            <li>Lorem ipsum dolor sit amet, consectetuer.</li>
+                                        </ol>
+                                    </li>
+                                    <li>Aliquam tincidunt mauris eu risus.</li>
+                                    <li>Vestibulum auctor dapibus neque.</li>
+                                </ol>
+                            </li>
+                            <li>Vestibulum auctor dapibus neque.</li>
+                            <li>Aliquam tincidunt mauris eu risus.</li>
+                        </ol>
+                    </li>
+                    <li>Aliquam tincidunt mauris eu risus.</li>
+                    <li>Vestibulum auctor dapibus neque.</li>
+                </ol>
 
             </div>
+
+            <div class="col-md-2 text-center">
+                <button class="btn btn-danger btn-lg mt-3 container" onclick="firstSelector()">Try it
+                    1</button>
+
+                <button class="btn btn-info btn-lg mt-3 container" onclick="secondSelector()">Try it
+                    2</button>
+
+                <button class="btn btn-secondary btn-lg mt-3 container" onclick="thirdSelector()">Try it
+                    3</button>
+
+                <button class="btn btn-primary btn-lg mt-3 container" onclick="window.location.reload()">Try
+                    it
+                    4</button>
+            </div>
+
+            <div class="col-md-5">
+                <h1>My shopping list</h1>
+
+                <div>
+                    <label for="item">Enter a new item:</label>
+                    <input type="text" name="item" id="item">
+                    <button id="aggregating-list">Add item</button>
+                </div>
+
+                <ul>
+
+                </ul>
+            </div>
+
         </div>
-        <script id="lists">
-            function firstSelector() {
-                document.querySelector("li").style.backgroundColor = "#dc3545";
+    </div>
+    <script id="lists">
+                    function firstSelector() {
+                        document.querySelector("li").style.backgroundColor = "#dc3545";
             }
-            function secondSelector() {
+                    function secondSelector() {
                 var x = document.querySelectorAll("li");
-                var i;
-                for (i = 0; i < x.length; i++) {
-                    x[i].style.backgroundColor = "#17a2b8";
+                    var i;
+                    for (i = 0; i < x.length; i++) {
+                        x[i].style.backgroundColor = "#17a2b8";
                 }
             }
-            function thirdSelector() {
-                document.querySelector("ol ol li").style.backgroundColor = "#6c757d";
+                    function thirdSelector() {
+                        document.querySelector("ol ol li").style.backgroundColor = "#6c757d";
             }
-        </script>
-        <script id="shopping">
-            const list = document.querySelector('ul');
-            const input = document.querySelector('input');
-            const button = document.getElementById('aggregating-list');
+    </script>
+    <script id="shopping">
+                    const list = document.querySelector('ul');
+                    const input = document.querySelector('input');
+                    const button = document.getElementById('aggregating-list');
 
-            button.onclick = function () {
-                let myItem = input.value;
-                input.value = '';
+                    button.onclick = function () {
+                        let myItem = input.value;
+                    input.value = '';
 
-                const listItem = document.createElement('li');
-                const listText = document.createElement('span');
-                const listBtn = document.createElement('button');
+                    const listItem = document.createElement('li');
+                    const listText = document.createElement('span');
+                    const listBtn = document.createElement('button');
 
-                listItem.appendChild(listText);
-                listText.textContent = myItem;
-                listItem.appendChild(listBtn);
-                listBtn.textContent = 'Delete';
-                list.appendChild(listItem);
+                    listItem.appendChild(listText);
+                    listText.textContent = myItem;
+                    listItem.appendChild(listBtn);
+                    listBtn.textContent = 'Delete';
+                    list.appendChild(listItem);
 
-                listBtn.onclick = function (e) {
-                    list.removeChild(listItem);
+                    listBtn.onclick = function (e) {
+                        list.removeChild(listItem);
                 }
 
-                input.focus();
+                    input.focus();
             }
-        </script>
+    </script>
     </main>
     <div id="container" style="height: 3000px; width: 1000px;">
         <a href="#"><button type="button" id="focusButton" style="margin-top: 3000px;">You focused on me!</button></a>
