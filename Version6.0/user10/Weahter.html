@@ -25,98 +25,177 @@
         <a href="Survery Says.html"> Survery SaYS</a>
         <a href="Weahter.html"> Weather</a>
     </nav>
+
+    <style>
+        .DivMenu {
+            position: absolute;
+            left: -200px;
+            top: -1000px;
+            width: 180px;
+            z-index: 100;
+            background-color: darkorange;
+            border: 1px groove lightgrey;
+        }
+
+        .TDMenu {
+            color: darkblue;
+            font-family: verdana;
+            font-size: 70%;
+            width: 100%;
+            cursor: default;
+        }
+    </style>
 </head>
 
 
 <body>
-    <div id="context-menu">
-        <div class="item">i tried</div>
-        <div class="item">The seconed try</div>
-        <div class="item">third attempt</div>
-        
-
-    </div>
-    <script>const contextMenu = document.getElementById("context-menu");
-        const scope = document.querySelector("body");
-
-        scope.addEventListener("contextmenu", (event) => {
-            event.preventDefault();
-
-            const { clientX: mouseX, clientY: mouseY } = event;
-
-            contextMenu.style.top = `${mouseY}px`;
-            contextMenu.style.left = `${mouseX}px`;
-
-            contextMenu.classList.remove("visible");
-
-            setTimeout(() => {
-                contextMenu.classList.add("visible");
-            });
-        });
-
-        scope.addEventListener("click", (e) => {
-            if (e.target.offsetParent != contextMenu) {
-                contextMenu.classList.remove("visible");
-            }
-        });
-        const normalizePozition = (mouseX, mouseY) => {
-            // ? compute what is the mouse position relative to the container element (scope)
-            const {
-                left: scopeOffsetX,
-                top: scopeOffsetY,
-            } = scope.getBoundingClientRect();
-
-            const scopeX = mouseX - scopeOffsetX;
-            const scopeY = mouseY - scopeOffsetY;
-
-            // ? check if the element will go out of bounds
-            const outOfBoundsOnX =
-                scopeX + contextMenu.clientWidth > scope.clientWidth;
-
-            const outOfBoundsOnY =
-                scopeY + contextMenu.clientHeight > scope.clientHeight;
-
-            let normalizedX = mouseX;
-            let normalizedY = mouseY;
-
-            // ? normalzie on X
-            if (outOfBoundsOnX) {
-                normalizedX =
-                    scopeOffsetX + scope.clientWidth - contextMenu.clientWidth;
-            }
-
-            // ? normalize on Y
-            if (outOfBoundsOnY) {
-                normalizedY =
-                    scopeOffsetY + scope.clientHeight - contextMenu.clientHeight;
-            }
-
-            return { normalizedX, normalizedY };
-        };
-        scope.addEventListener("contextmenu", (event) => {
-            event.preventDefault();
-
-            const { offsetX: mouseX, offsetY: mouseY } = event;
-
-            const { normalizedX, normalizedY } = normalizePozition(mouseX, mouseY);
-
-            contextMenu.style.top = `${normalizedY}px`;
-            contextMenu.style.left = `${normalizedX}px`;
-
-            contextMenu.classList.remove("visible");
-
-            setTimeout(() => {
-                contextMenu.classList.add("visible");
-            });
-        });
-    </script>
 
 
-<script>let x = myFunction(4, 3);   // Function is called, return value will end up in x
+    <div id="JsMenuDiv" class="DivMenu" onmouseout="return hideMenu(this)">
+        <TD id="MenuSaveAs" RollOver RollOut onclick="goPage('Default4.aspx')" class="TDMenu">
 
-    function myFunction(a, b) {
-      return a * b;             // Function returns the product of a and b
-    }</script>
+
+            <script>
+
+                function document_onmouseover() {
+                    var srcElement = event.srcElement;
+                    if (srcElement.tagName == "TD" && typeof (srcElement.RollOver) != "undefined") {
+                        srcElement.style.color = "white";
+                        srcElement.style.backgroundColor = "darkblue";
+                    }
+                }
+                function document_onmouseout() {
+                    var srcElement = event.srcElement;
+                    if (srcElement.tagName == "TD" && typeof (srcElement.RollOut) != "undefined") {
+                        srcElement.style.color = "darkblue";
+                        srcElement.style.backgroundColor = "darkorange";
+                    }
+                }
+
+                document.onmouseover = document_onmouseover;
+                document.onmouseout = document_onmouseout;
+                function showMenu(menuToShow) {
+                    var srcElement = event.srcElement;
+                    var xPos = parseInt(srcElement.offsetLeft);
+                    var yPos = parseInt(srcElement.offsetTop);
+                    menuToShow.style.left = xPos + (srcElement.width)
+                    menuToShow.style.top = yPos + 40;
+                }
+
+                function hideMenu(menuToHide) {
+                    if (event.toElement != menuToHide &&
+                        menuToHide.contains(event.toElement) == false) {
+                        menuToHide.style.left = -200;
+                        menuToHide.style.top = -1000;
+                    }
+                }
+
+            </script>
+
+
+
+
+
+
+
+
+
+            <script>
+                if (document.getElementById('item').clicked == true) {
+
+                }
+            </script>
+
+
+            <div id="context-menu">
+                <div class="item">i tried</div>
+                <div class="item">The seconed try</div>
+                <div class="item">third attempt</div>
+
+
+
+            </div>
+            <script>const contextMenu = document.getElementById("context-menu");
+                const scope = document.querySelector("body");
+
+                scope.addEventListener("contextmenu", (event) => {
+                    event.preventDefault();
+
+                    const { clientX: mouseX, clientY: mouseY } = event;
+
+                    contextMenu.style.top = `${mouseY}px`;
+                    contextMenu.style.left = `${mouseX}px`;
+
+                    contextMenu.classList.remove("visible");
+
+                    setTimeout(() => {
+                        contextMenu.classList.add("visible");
+                    });
+                });
+
+                scope.addEventListener("click", (e) => {
+                    if (e.target.offsetParent != contextMenu) {
+                        contextMenu.classList.remove("visible");
+                    }
+                });
+                const normalizePozition = (mouseX, mouseY) => {
+                    // ? compute what is the mouse position relative to the container element (scope)
+                    const {
+                        left: scopeOffsetX,
+                        top: scopeOffsetY,
+                    } = scope.getBoundingClientRect();
+
+                    const scopeX = mouseX - scopeOffsetX;
+                    const scopeY = mouseY - scopeOffsetY;
+
+                    // ? check if the element will go out of bounds
+                    const outOfBoundsOnX =
+                        scopeX + contextMenu.clientWidth > scope.clientWidth;
+
+                    const outOfBoundsOnY =
+                        scopeY + contextMenu.clientHeight > scope.clientHeight;
+
+                    let normalizedX = mouseX;
+                    let normalizedY = mouseY;
+
+                    // ? normalzie on X
+                    if (outOfBoundsOnX) {
+                        normalizedX =
+                            scopeOffsetX + scope.clientWidth - contextMenu.clientWidth;
+                    }
+
+                    // ? normalize on Y
+                    if (outOfBoundsOnY) {
+                        normalizedY =
+                            scopeOffsetY + scope.clientHeight - contextMenu.clientHeight;
+                    }
+
+                    return { normalizedX, normalizedY };
+                };
+                scope.addEventListener("contextmenu", (event) => {
+                    event.preventDefault();
+
+                    const { offsetX: mouseX, offsetY: mouseY } = event;
+
+                    const { normalizedX, normalizedY } = normalizePozition(mouseX, mouseY);
+
+                    contextMenu.style.top = `${normalizedY}px`;
+                    contextMenu.style.left = `${normalizedX}px`;
+
+                    contextMenu.classList.remove("visible");
+
+                    setTimeout(() => {
+                        contextMenu.classList.add("visible");
+                    });
+                });
+            </script>
+
+
+            <script>let x = myFunction(4, 3);   // Function is called, return value will end up in x
+
+                function myFunction(a, b) {
+                    return a * b;             // Function returns the product of a and b
+                }</script>
 </body>
 
 
