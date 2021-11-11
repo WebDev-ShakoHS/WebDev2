@@ -267,6 +267,57 @@
                 </div>
             </div>
             <script src="JS/script.js"></script>
+            <script>
+                // Messing Around
+                var c = 0;
+                document.getElementById("yes").addEventListener("click", function () {
+                    document.getElementById("hehe").style.color = "red";
+                    if (c < 2) {
+                        c = c + 1;
+                    }
+                    if (c == 2) {
+                        c = c - 2;
+                        document.getElementById("hehe").style.color = "black";
+                    }
+                });
+
+                document.getElementById("yes2").addEventListener("click", function () {
+                    if (c < 3) {
+                        if (c == 1) {
+                            document.getElementById("hehe").style.color = "green";
+                        }
+                        if (c > 0) {
+                            c = c + 1;
+                        }
+                    }
+                    if (c == 3) {
+                        document.getElementById("hehe").style.color = "red";
+                        c = c - 2;
+                    }
+
+                })
+
+                document.getElementById("yes3").addEventListener("click", function () {
+                    if (c < 4) {
+                        if (c == 2) {
+                            document.getElementById("hehe").style.color = "purple";
+                        }
+                        if (c > 0) {
+                            c = c + 1;
+                        }
+                    }
+                    if (c == 4) {
+                        document.getElementById("hehe").style.color = "green";
+                        c = c - 2;
+                    }
+                })
+
+                document.getElementById("yes4").addEventListener("click", function () {
+                    if (c == 2) {
+                        alert("it works");
+                    }
+                })
+            </script>
             <div class="row calltoaction">
                 <h2 class="text-center col-md-12">Explore the Wondrous Lands of New Zealand!</h2>
                 <a href="https://www.airnewzealand.com/ord" target="_blank" class="btn btn-customCA btn-lg active">Buy
