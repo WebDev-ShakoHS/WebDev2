@@ -1,18 +1,1104 @@
 <html lang="en">
-    <!--Version 6.0 
+<!--Version 6.0 
 	Name:
 	Date Completed:
     -->
-    <head>
-        
-        <title>Web Development User #32</title>
-    
-    </head>
-    
-    <body>
-        
-        <center>My name is User #32</center>
-    
-    </body>
+
+<head>
+    <title>Best tetris games</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon-16x16.png" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="WebDev Version 4.0">
+
+    <!-- CSS -->
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Animate -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <!-- Custom -->
+    <link rel="stylesheet" href="CSS/style.css">
+
+    <!-- JavaScript -->
+    <!-- These are needed to get the responsive menu to work -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <!-- Custom styles for this template -->
+    <style type="text/css">
+        menu {
+            margin: 0;
+            padding: 0;
+        }
+
+        .wideMargin {
+            margin: 15px;
+        }
+
+        footer {
+            font-size: 12px;
+            text-align: center;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: rgb(51, 51, 51);
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: rgb(255, 255, 255);
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover {
+            background-color: blue;
+        }
+
+        li {
+            display: inline;
+        }
+
+        body {
+            background-image: url("https://www.vancouverarchives.ca/wp-content/uploads/brick-retro-tetris-game_79145-60.jpg");
+        }
+
+        TD {
+            color: #ccc;
+            font-family: arial;
+            font-size: 12px
+        }
+
+        BODY {
+            font-family: arial
+        }
+
+        .cell {
+            width: 8px;
+            height: 15px;
+            font-size: 1px;
+            border: 2px solid #000;
+        }
+
+        #greatScore {
+            visibility: hidden;
+            position: absolute;
+            top: 215;
+            left: 175
+        }
+    </style>
+</head>
+<menu>
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <a href="http://shakonet.isd720.com" class="navbar-brand">Tetris</a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav">
+
+                <a href="index.html" class="nav-item nav-link active">Home</a>
+                <a href="What's Tetris.html" class="nav-item nav-link active">What's Tetris</a>
+                <a href="list.html" class="nav-item nav-link active" tabindex="-1">Lists</a>
+                <a href="About me.html" class="nav-item nav-link active" tabindex="-1">About Me</a>
+
+
+            </div>
+
+        </div>
+    </nav>
+</menu>
+</div>
+</head>
+
+<body>
+    <div class="container-fluid">
+
+        <div class="row" style="height:42vh;">
+            <div class="col-md-2">
+                <a href="https://pinfinityar.com/collections/tetris" target="_blank"
+                    onclick="openAndTrackOutboundLink('https', 'pinfinityar.com/collections/tetris', true, 'left', 'Pinfinity_AR-Pins1_V' ); return false;"><img
+                        src="https://cdn.shopify.com/s/files/1/0325/5530/2971/files/PFT004-packaging-trns_480x480.png?v=1608342401"
+                        style="display:block;min-width:150px;max-width:228px;min-height:600px;max-height:600px;margin-top:6px;background-color:#fafafa;border-style:solid;border-width:1px;border-radius:0px;border-color:#cccccc;"></a>
+            </div>
+            <div class="col-md-8">
+                <div>
+                    <script>
+
+                        var currentObj = new Array(4)
+                        var currentType
+                        var currentColor
+                        var nextType
+                        var nextColor
+                        var orientation
+                        var t
+                        var bgColor = "#000"
+                        var speed
+                        var populated = {}
+                        var score
+                        var maxRow = 20
+                        var maxCol = 10
+                        var filledRows
+                        var colors = {
+                            'c1': '#ff0000', // red
+                            'c2': '#0000ff', // blue
+                            'c3': '#ff00ff', // pink
+                            'c4': '#ff9933', // orange
+                            'c5': '#ffff00', // yellow
+                            'c6': '#33cc33', // green
+                            'c7': '00ffff'
+                        }  // light blue
+
+                        // for score formula
+                        var level
+                        var lm // Line Multiple (how many lines eliminated at once)
+                        var drop
+
+                        function startGame() {
+                            getElementById('startButton').style.visibility = 'hidden'
+                            getElementById('startButton').blur()
+                            reset()
+                            startNewObject()
+                        }
+
+                        function reset() {
+                            for (var i = 1; i <= maxRow; i++) {
+                                for (var j = 1; j <= maxCol; j++) {
+                                    var obj = getElementById(buildID(i, j))
+                                    setObj(obj, bgColor)
+                                }
+                            }
+                            orientation = 1
+                            speed = 500
+                            populated = {}
+                            score = 0
+                            level = 1
+                            filledRows = 0
+                            nextType = 0
+                            nextColor = ''
+
+                            getElementById('level').innerHTML = level
+                            getElementById('score').innerHTML = ''
+                            getElementById('filledRows').innerHTML = ''
+                        }
+
+                        function startNewObject() {
+                            if (initObj()) {
+                                lm = 0
+                                drop = 0
+                                t = setInterval("moveObj()", speed)
+                                getNextPiece()
+                            } else {
+                                // game over
+                                getElementById('startButton').style.visibility = 'visible'
+                                var scoresFrame = getScoresFrame()
+                                if (scoresFrame && score > scoresFrame.forms[0].score2Beat.value) {
+                                    greatScore()
+                                }
+                            }
+                        }
+
+                        function initObj() {
+                            orientation = 1
+                            if (nextType) {
+                                currentType = nextType
+                            } else {
+                                currentType = getRandomType()
+                            }
+                            currentColor = eval('colors.c' + currentType)
+                            if (currentType == 1) {
+
+                                return createObj(['c1_4', 'c1_5', 'c1_6', 'c1_7'])
+                            } else if (currentType == 2) {
+
+                                return createObj(['c1_5', 'c1_6', 'c2_5', 'c2_6'])
+                            } else if (currentType == 3) {
+
+                                return createObj(['c1_4', 'c2_4', 'c2_5', 'c2_6'])
+                            } else if (currentType == 4) {
+
+                                return createObj(['c1_5', 'c2_4', 'c2_5', 'c2_6'])
+                            } else if (currentType == 5) {
+
+                                return createObj(['c1_6', 'c2_4', 'c2_5', 'c2_6'])
+                            } else if (currentType == 6) {
+
+                                return createObj(['c1_5', 'c2_5', 'c2_6', 'c3_6'])
+                            } else if (currentType == 7) {
+
+                                return createObj(['c1_6', 'c2_5', 'c2_6', 'c3_5'])
+                            }
+                            return 0
+                        }
+
+                        function getRandomType() {
+                            var rand = Math.ceil((Math.random() * 7))
+                            if (nextType) return rand
+                            if (rand == currentType) {
+                                if (rand == 1) {
+                                    return ++rand
+                                }
+                                return --rand
+                            }
+                            return rand
+                        }
+
+                        function createObj(IDs) {
+                            for (var i = 0; i < IDs.length; i++) {
+                                if (eval('populated.' + IDs[i])) {
+                                    return 0
+                                }
+                            }
+                            for (var i = 0; i < IDs.length; i++) {
+                                var id = IDs[i]
+                                var obj = getElementById(id)
+                                setObj(obj, currentColor)
+                                currentObj[i] = id
+                            }
+                            return 1
+                        }
+
+                        function moveObj() {
+                            var newObj = new Array(4)
+                            for (var i = 0; i < currentObj.length; i++) {
+                                var posArray = getPosition(currentObj[i])
+                                var row = posArray[0]
+                                var col = posArray[1]
+                                var newPos = buildID(row - 0 + 1, col)
+                                var obj = getElementById(newPos)
+                                if (!obj || eval('populated.' + newPos)) {
+                                    clearInterval(t)
+                                    recordPosition()
+                                    updateScore(10)
+                                    checkForFullRows()
+                                    if (lm) {
+                                        if (lm == 1) {
+                                            lm = 10
+                                        } else if (lm == 2) {
+                                            lm = 25
+                                        } else if (lm == 3) {
+                                            lm = 75
+                                        } else if (lm == 4) {
+                                            lm = 300
+                                        }
+                                        updateScore((level * 4 * lm) + drop)
+                                    }
+                                    startNewObject()
+                                    return
+                                }
+                                newObj[i] = newPos
+                            }
+                            if (drop) drop++
+                            moveObjToNewPos(newObj, '')
+                        }
+
+                        function moveObjToNewPos(newObj, newOrientation) {
+                            for (var i = 0; i < newObj.length; i++) {
+                                var obj = getElementById(newObj[i])
+                                if (!obj || eval('populated.' + newObj[i])) return
+                            }
+                            for (var i = 0; i < currentObj.length; i++) {
+                                var obj = getElementById(currentObj[i])
+                                setObj(obj, bgColor)
+                            }
+                            for (var i = 0; i < newObj.length; i++) {
+                                currentObj[i] = newObj[i]
+                                var obj = getElementById(newObj[i])
+                                setObj(obj, currentColor)
+                            }
+                            if (newOrientation) orientation = newOrientation
+                        }
+
+                        function recordPosition() {
+                            for (var i = 0; i < currentObj.length; i++) {
+                                eval('populated.' + currentObj[i] + ' = 1')
+                            }
+                        }
+
+                        function captureKey(e) {
+                            if (!drop && t) {
+                                if (e.keyCode == 37) {
+                                    // left arrow (shift left)
+                                    shiftObj("l")
+                                } else if (e.keyCode == 39) {
+                                    // right arrow (shift right)
+                                    shiftObj("r")
+                                } else if (e.keyCode == 38) {
+                                    // Up arrow (rotate)
+                                    rotateObj()
+                                } else if (e.keyCode == 40) {
+                                    // Down arrow (rotate)
+                                    rotateObj()
+                                } else if (e.keyCode == 32) {
+                                    // space
+                                    dropObj()
+                                }
+                            }
+                            if (e.keyCode == 80) {
+                                if (t) {
+                                    clearInterval(t)
+                                    t = ''
+                                } else {
+                                    t = setInterval("moveObj()", speed)
+                                }
+                            }
+                            if (e.keyCode == 13 && getElementById('greatScore').style.visibility == 'visible') {
+                                saveScore()
+                            }
+                        }
+
+                        function shiftObj(direction) {
+                            var newObj = new Array(4)
+                            for (var i = 0; i < currentObj.length; i++) {
+                                var posArray = getPosition(currentObj[i])
+                                var row = posArray[0]
+                                var col = posArray[1]
+                                var newPos = "c" + row + "_"
+                                if (direction == "l") {
+                                    newPos += col - 1
+                                } else if (direction == "r") {
+                                    newPos += (col - 0 + 1)
+                                }
+                                var obj = getElementById(newPos)
+                                if (!obj || eval('populated.' + newPos)) {
+                                    return
+                                }
+                                newObj[i] = newPos
+                            }
+                            moveObjToNewPos(newObj, '')
+                        }
+
+                        function rotateObj() {
+                            var newObj = new Array(4)
+                            var newOrientation
+                            if (currentType == 1) {
+                                // ****
+                                newObj[1] = currentObj[1]
+                                var posArray = getPosition(currentObj[1])
+                                var row = posArray[0]
+                                var col = posArray[1]
+                                if (orientation == 1) {
+                                    newObj[0] = buildID(row - 1, col)
+                                    newObj[2] = buildID(row - 0 + 1, col)
+                                    newObj[3] = buildID(row - 0 + 2, col)
+                                    newOrientation = 2
+                                } else if (orientation == 2) {
+                                    newObj[0] = buildID(row, col - 1)
+                                    newObj[2] = buildID(row, col - 0 + 1)
+                                    newObj[3] = buildID(row, col - 0 + 2)
+                                    newOrientation = 1
+                                }
+                            } else if (currentType == 2) {
+                                // can't rotate a square
+                            } else if (currentType == 3) {
+                                // *
+                                // ***
+                                newObj[2] = currentObj[2]
+                                var posArray = getPosition(currentObj[2])
+                                var row = posArray[0]
+                                var col = posArray[1]
+                                if (orientation == 1) {
+                                    newObj[0] = buildID(row - 1, col - 0 + 1)
+                                    newObj[1] = buildID(row - 1, col)
+                                    newObj[3] = buildID(row - 0 + 1, col)
+                                    newOrientation = 2
+                                } else if (orientation == 2) {
+                                    newObj[0] = buildID(row - 0 + 1, col - 0 + 1)
+                                    newObj[1] = buildID(row, col - 0 + 1)
+                                    newObj[3] = buildID(row, col - 1)
+                                    newOrientation = 3
+                                } else if (orientation == 3) {
+                                    newObj[0] = buildID(row - 0 + 1, col - 1)
+                                    newObj[1] = buildID(row - 0 + 1, col)
+                                    newObj[3] = buildID(row - 1, col)
+                                    newOrientation = 4
+                                } else if (orientation == 4) {
+                                    newObj[0] = buildID(row - 1, col - 1)
+                                    newObj[1] = buildID(row, col - 1)
+                                    newObj[3] = buildID(row, col - 0 + 1)
+                                    newOrientation = 1
+                                }
+                            } else if (currentType == 4) {
+                                //  *
+                                // ***
+                                newObj[2] = currentObj[2]
+                                var posArray = getPosition(currentObj[2])
+                                var row = posArray[0]
+                                var col = posArray[1]
+                                if (orientation == 1) {
+                                    newObj[0] = buildID(row, col - 0 + 1)
+                                    newObj[1] = buildID(row - 1, col)
+                                    newObj[3] = buildID(row - 0 + 1, col)
+                                    newOrientation = 2
+                                } else if (orientation == 2) {
+                                    newObj[0] = buildID(row - 0 + 1, col)
+                                    newObj[1] = buildID(row, col - 0 + 1)
+                                    newObj[3] = buildID(row, col - 1)
+                                    newOrientation = 3
+                                } else if (orientation == 3) {
+                                    newObj[0] = buildID(row, col - 1)
+                                    newObj[1] = buildID(row - 0 + 1, col)
+                                    newObj[3] = buildID(row - 1, col)
+                                    newOrientation = 4
+                                } else if (orientation == 4) {
+                                    newObj[0] = buildID(row - 1, col)
+                                    newObj[1] = buildID(row, col - 1)
+                                    newObj[3] = buildID(row, col - 0 + 1)
+                                    newOrientation = 1
+                                }
+                            } else if (currentType == 5) {
+                                //   *
+                                // ***
+                                newObj[2] = currentObj[2]
+                                var posArray = getPosition(currentObj[2])
+                                var row = posArray[0]
+                                var col = posArray[1]
+                                if (orientation == 1) {
+                                    newObj[0] = buildID(row - 0 + 1, col - 0 + 1)
+                                    newObj[1] = buildID(row - 0 + 1, col)
+                                    newObj[3] = buildID(row - 1, col)
+                                    newOrientation = 2
+                                } else if (orientation == 2) {
+                                    newObj[0] = buildID(row - 0 + 1, col - 1)
+                                    newObj[1] = buildID(row, col - 1)
+                                    newObj[3] = buildID(row, col - 0 + 1)
+                                    newOrientation = 3
+                                } else if (orientation == 3) {
+                                    newObj[0] = buildID(row - 1, col - 1)
+                                    newObj[1] = buildID(row - 1, col)
+                                    newObj[3] = buildID(row - 0 + 1, col)
+                                    newOrientation = 4
+                                } else if (orientation == 4) {
+                                    newObj[0] = buildID(row - 1, col - 0 + 1)
+                                    newObj[1] = buildID(row, col - 0 + 1)
+                                    newObj[3] = buildID(row, col - 1)
+                                    newOrientation = 1
+                                }
+                            } else if (currentType == 6) {
+                                // *
+                                // **
+                                //  *
+                                newObj[1] = currentObj[1]
+                                var posArray = getPosition(currentObj[1])
+                                var row = posArray[0]
+                                var col = posArray[1]
+                                if (orientation == 1) {
+                                    newObj[0] = buildID(row, col - 0 + 1)
+                                    newObj[2] = buildID(row - 0 + 1, col)
+                                    newObj[3] = buildID(row - 0 + 1, col - 1)
+                                    newOrientation = 2
+                                } else if (orientation == 2) {
+                                    newObj[0] = buildID(row - 1, col)
+                                    newObj[2] = buildID(row, col - 0 + 1)
+                                    newObj[3] = buildID(row - 0 + 1, col - 0 + 1)
+                                    newOrientation = 1
+                                }
+                            } else if (currentType == 7) {
+                                //  *
+                                // **
+                                // *
+                                newObj[1] = currentObj[1]
+                                var posArray = getPosition(currentObj[1])
+                                var row = posArray[0]
+                                var col = posArray[1]
+                                if (orientation == 1) {
+                                    newObj[0] = buildID(row - 0 + 1, col - 0 + 1)
+                                    newObj[2] = buildID(row - 0 + 1, col)
+                                    newObj[3] = buildID(row, col - 1)
+                                    newOrientation = 2
+                                } else if (orientation == 2) {
+                                    newObj[0] = buildID(row - 1, col - 0 + 1)
+                                    newObj[2] = buildID(row, col - 0 + 1)
+                                    newObj[3] = buildID(row - 0 + 1, col)
+                                    newOrientation = 1
+                                }
+                            }
+                            if (currentType != 2) moveObjToNewPos(newObj, newOrientation)
+                        }
+
+                        function dropObj() {
+                            drop = 1
+                            clearInterval(t)
+                            t = setInterval("moveObj()", 1)
+                        }
+
+                        function getPosition(pos) {
+                            var re = /^c(\d+)_(\d+)$/
+                            var let = re.exec(pos)
+                            var row = RegExp.$1
+                            var col = RegExp.$2
+                            var myArray = new Array(row, col)
+                            return myArray
+                        }
+
+                        function checkForFullRows() {
+                            for (var i = 1; i <= maxRow; i++) {
+                                var count = 0
+                                for (var j = 1; j <= maxCol; j++) {
+                                    if (eval('populated.' + buildID(i, j))) count++
+                                }
+                                if (count == 10) {
+                                    removeRow(i)
+                                    if (filledRows % 10 == 0) {
+                                        // increment level and speed
+                                        if (level < 9) {
+                                            level++
+                                            getElementById('level').innerHTML = level
+                                            speed = speed * .8
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        function removeRow(row) {
+                            lm++
+                            filledRows++
+                            getElementById('filledRows').innerHTML = filledRows
+                            // remove the row
+                            for (var i = 1; i <= maxCol; i++) {
+                                var pos = buildID(row, i)
+                                var obj = getElementById(pos)
+                                setObj(obj, bgColor)
+                                eval('populated.' + pos + ' = 0')
+                            }
+                            // now, shift upper rows down
+                            for (var i = row - 1; i > 0; i--) {
+                                for (var j = 1; j <= 10; j++) {
+                                    var pos = buildID(i, j)
+                                    var obj = getElementById(pos)
+                                    var posColor = obj.bgColor
+                                    if (posColor != bgColor) {
+                                        var newPos = buildID(i - 0 + 1, j)
+                                        var newObj = getElementById(newPos)
+                                        setObj(newObj, posColor)
+                                        eval('populated.' + newPos + ' = 1')
+                                        setObj(obj, bgColor)
+                                        eval('populated.' + pos + ' = 0')
+                                    }
+                                }
+                            }
+                        }
+
+                        function getNextPiece() {
+
+                            // reset table to blank
+                            for (var i = 1; i <= 3; i++) {
+                                for (var j = 1; j <= 4; j++) {
+                                    var obj = getElementById('n' + i + '_' + j)
+                                    setObj(obj, bgColor)
+                                }
+                            }
+
+                            nextType = getRandomType()
+                            nextColor = eval('colors.c' + nextType)
+                            if (nextType == 1) {
+                                createNextObj(['n1_1', 'n1_2', 'n1_3', 'n1_4'])
+                            } else if (nextType == 2) {
+                                createNextObj(['n1_2', 'n1_3', 'n2_2', 'n2_3'])
+                            } else if (nextType == 3) {
+                                createNextObj(['n1_1', 'n2_1', 'n2_2', 'n2_3'])
+                            } else if (nextType == 4) {
+                                createNextObj(['n1_2', 'n2_1', 'n2_2', 'n2_3'])
+                            } else if (nextType == 5) {
+                                createNextObj(['n1_3', 'n2_1', 'n2_2', 'n2_3'])
+                            } else if (nextType == 6) {
+                                createNextObj(['n1_2', 'n2_2', 'n2_3', 'n3_3'])
+                            } else if (nextType == 7) {
+                                createNextObj(['n1_3', 'n2_2', 'n2_3', 'n3_2'])
+                            }
+                        }
+
+                        function createNextObj(IDs) {
+                            for (var i = 0; i < IDs.length; i++) {
+                                var obj = getElementById(IDs[i])
+                                setObj(obj, nextColor)
+                            }
+                        }
+
+                        function buildID(row, col) {
+                            return "c" + row + "_" + col
+                        }
+
+                        function setObj(obj, color) {
+                            obj.bgColor = color
+                            obj.style.borderColor = color
+                            if (color == bgColor) {
+                                obj.style.borderStyle = 'solid'
+                            } else {
+                                obj.style.borderStyle = 'outset'
+                            }
+                        }
+
+                        function updateScore(num) {
+                            score += num
+                            getElementById('score').innerHTML = score
+                        }
+
+                        function greatScore() {
+                            getElementById('greatScore').style.visibility = 'visible'
+                            getElementById('initials').focus()
+                        }
+
+                        function saveScore() {
+                            var scoresFrame = getScoresFrame()
+                            if (scoresFrame) {
+                                var scoresForm = scoresFrame.forms[0]
+                                scoresForm.score.value = score
+                                scoresForm.initials.value = getElementById('initials').value
+                                scoresForm.submit()
+                            }
+                            getElementById('initials').blur()
+                            getElementById('greatScore').style.visibility = 'hidden'
+                        }
+
+                        function getScoresFrame() {
+                            var scoresFrame = getElementById('scoresFrame')
+                            if (scoresFrame && scoresFrame.contentDocument) {
+                                // firefox
+                                return scoresFrame.contentDocument
+                            } else {
+                                // ie
+                                return document.scoresFrame.document
+                            }
+                        }
+
+                        function getElementById(id) {
+                            return document.getElementById(id)
+                        }
+
+                    </script>
+                </div>
+
+
+                <body onkeydown="return captureKey(event)" data-new-gr-c-s-check-loaded="14.1038.0"
+                    data-gr-ext-installed="">
+
+
+                    <table style="margin: auto;">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <table bgcolor="#000000" border="1">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <table cellspacing="100" hight="250px" width="200px">
+                                                        <script>
+
+
+                                                            for (var i = 1; i <= maxRow; i++) {
+                                                                table += '<tr bgColor="' + bgColor + '">\n'
+                                                                for (var j = 1; j <= maxCol; j++) {
+                                                                    table += '<td class=cell id=' + buildID(i, j) + '>&nbsp;</td>\n'
+                                                                }
+                                                                table += '</tr>\n'
+                                                            }
+                                                            document.write(table)
+
+                                                        </script>
+                                                        <tbody>
+                                                            <tr bgcolor="#000">
+                                                                <td class="cell" id="c1_1">&nbsp;</td>
+                                                                <td class="cell" id="c1_2">&nbsp;</td>
+                                                                <td class="cell" id="c1_3">&nbsp;</td>
+                                                                <td class="cell" id="c1_4">&nbsp;</td>
+                                                                <td class="cell" id="c1_5">&nbsp;</td>
+                                                                <td class="cell" id="c1_6">&nbsp;</td>
+                                                                <td class="cell" id="c1_7">&nbsp;</td>
+                                                                <td class="cell" id="c1_8">&nbsp;</td>
+                                                                <td class="cell" id="c1_9">&nbsp;</td>
+                                                                <td class="cell" id="c1_10">&nbsp;</td>
+                                                            </tr>
+                                                            <tr bgcolor="#000">
+                                                                <td class="cell" id="c2_1">&nbsp;</td>
+                                                                <td class="cell" id="c2_2">&nbsp;</td>
+                                                                <td class="cell" id="c2_3">&nbsp;</td>
+                                                                <td class="cell" id="c2_4">&nbsp;</td>
+                                                                <td class="cell" id="c2_5">&nbsp;</td>
+                                                                <td class="cell" id="c2_6">&nbsp;</td>
+                                                                <td class="cell" id="c2_7">&nbsp;</td>
+                                                                <td class="cell" id="c2_8">&nbsp;</td>
+                                                                <td class="cell" id="c2_9">&nbsp;</td>
+                                                                <td class="cell" id="c2_10">&nbsp;</td>
+                                                            </tr>
+                                                            <tr bgcolor="#000">
+                                                                <td class="cell" id="c3_1">&nbsp;</td>
+                                                                <td class="cell" id="c3_2">&nbsp;</td>
+                                                                <td class="cell" id="c3_3">&nbsp;</td>
+                                                                <td class="cell" id="c3_4">&nbsp;</td>
+                                                                <td class="cell" id="c3_5">&nbsp;</td>
+                                                                <td class="cell" id="c3_6">&nbsp;</td>
+                                                                <td class="cell" id="c3_7">&nbsp;</td>
+                                                                <td class="cell" id="c3_8">&nbsp;</td>
+                                                                <td class="cell" id="c3_9">&nbsp;</td>
+                                                                <td class="cell" id="c3_10">&nbsp;</td>
+                                                            </tr>
+                                                            <tr bgcolor="#000">
+                                                                <td class="cell" id="c4_1">&nbsp;</td>
+                                                                <td class="cell" id="c4_2">&nbsp;</td>
+                                                                <td class="cell" id="c4_3">&nbsp;</td>
+                                                                <td class="cell" id="c4_4">&nbsp;</td>
+                                                                <td class="cell" id="c4_5">&nbsp;</td>
+                                                                <td class="cell" id="c4_6">&nbsp;</td>
+                                                                <td class="cell" id="c4_7">&nbsp;</td>
+                                                                <td class="cell" id="c4_8">&nbsp;</td>
+                                                                <td class="cell" id="c4_9">&nbsp;</td>
+                                                                <td class="cell" id="c4_10">&nbsp;</td>
+                                                            </tr>
+                                                            <tr bgcolor="#000">
+                                                                <td class="cell" id="c5_1">&nbsp;</td>
+                                                                <td class="cell" id="c5_2">&nbsp;</td>
+                                                                <td class="cell" id="c5_3">&nbsp;</td>
+                                                                <td class="cell" id="c5_4">&nbsp;</td>
+                                                                <td class="cell" id="c5_5">&nbsp;</td>
+                                                                <td class="cell" id="c5_6">&nbsp;</td>
+                                                                <td class="cell" id="c5_7">&nbsp;</td>
+                                                                <td class="cell" id="c5_8">&nbsp;</td>
+                                                                <td class="cell" id="c5_9">&nbsp;</td>
+                                                                <td class="cell" id="c5_10">&nbsp;</td>
+                                                            </tr>
+                                                            <tr bgcolor="#000">
+                                                                <td class="cell" id="c6_1">&nbsp;</td>
+                                                                <td class="cell" id="c6_2">&nbsp;</td>
+                                                                <td class="cell" id="c6_3">&nbsp;</td>
+                                                                <td class="cell" id="c6_4">&nbsp;</td>
+                                                                <td class="cell" id="c6_5">&nbsp;</td>
+                                                                <td class="cell" id="c6_6">&nbsp;</td>
+                                                                <td class="cell" id="c6_7">&nbsp;</td>
+                                                                <td class="cell" id="c6_8">&nbsp;</td>
+                                                                <td class="cell" id="c6_9">&nbsp;</td>
+                                                                <td class="cell" id="c6_10">&nbsp;</td>
+                                                            </tr>
+                                                            <tr bgcolor="#000">
+                                                                <td class="cell" id="c7_1">&nbsp;</td>
+                                                                <td class="cell" id="c7_2">&nbsp;</td>
+                                                                <td class="cell" id="c7_3">&nbsp;</td>
+                                                                <td class="cell" id="c7_4">&nbsp;</td>
+                                                                <td class="cell" id="c7_5">&nbsp;</td>
+                                                                <td class="cell" id="c7_6">&nbsp;</td>
+                                                                <td class="cell" id="c7_7">&nbsp;</td>
+                                                                <td class="cell" id="c7_8">&nbsp;</td>
+                                                                <td class="cell" id="c7_9">&nbsp;</td>
+                                                                <td class="cell" id="c7_10">&nbsp;</td>
+                                                            </tr>
+                                                            <tr bgcolor="#000">
+                                                                <td class="cell" id="c8_1">&nbsp;</td>
+                                                                <td class="cell" id="c8_2">&nbsp;</td>
+                                                                <td class="cell" id="c8_3">&nbsp;</td>
+                                                                <td class="cell" id="c8_4">&nbsp;</td>
+                                                                <td class="cell" id="c8_5">&nbsp;</td>
+                                                                <td class="cell" id="c8_6">&nbsp;</td>
+                                                                <td class="cell" id="c8_7">&nbsp;</td>
+                                                                <td class="cell" id="c8_8">&nbsp;</td>
+                                                                <td class="cell" id="c8_9">&nbsp;</td>
+                                                                <td class="cell" id="c8_10">&nbsp;</td>
+                                                            </tr>
+                                                            <tr bgcolor="#000">
+                                                                <td class="cell" id="c9_1">&nbsp;</td>
+                                                                <td class="cell" id="c9_2">&nbsp;</td>
+                                                                <td class="cell" id="c9_3">&nbsp;</td>
+                                                                <td class="cell" id="c9_4">&nbsp;</td>
+                                                                <td class="cell" id="c9_5">&nbsp;</td>
+                                                                <td class="cell" id="c9_6">&nbsp;</td>
+                                                                <td class="cell" id="c9_7">&nbsp;</td>
+                                                                <td class="cell" id="c9_8">&nbsp;</td>
+                                                                <td class="cell" id="c9_9">&nbsp;</td>
+                                                                <td class="cell" id="c9_10">&nbsp;</td>
+                                                            </tr>
+                                                            <tr bgcolor="#000">
+                                                                <td class="cell" id="c10_1">&nbsp;</td>
+                                                                <td class="cell" id="c10_2">&nbsp;</td>
+                                                                <td class="cell" id="c10_3">&nbsp;</td>
+                                                                <td class="cell" id="c10_4">&nbsp;</td>
+                                                                <td class="cell" id="c10_5">&nbsp;</td>
+                                                                <td class="cell" id="c10_6">&nbsp;</td>
+                                                                <td class="cell" id="c10_7">&nbsp;</td>
+                                                                <td class="cell" id="c10_8">&nbsp;</td>
+                                                                <td class="cell" id="c10_9">&nbsp;</td>
+                                                                <td class="cell" id="c10_10">&nbsp;</td>
+                                                            </tr>
+                                                            <tr bgcolor="#000">
+                                                                <td class="cell" id="c11_1">&nbsp;</td>
+                                                                <td class="cell" id="c11_2">&nbsp;</td>
+                                                                <td class="cell" id="c11_3">&nbsp;</td>
+                                                                <td class="cell" id="c11_4">&nbsp;</td>
+                                                                <td class="cell" id="c11_5">&nbsp;</td>
+                                                                <td class="cell" id="c11_6">&nbsp;</td>
+                                                                <td class="cell" id="c11_7">&nbsp;</td>
+                                                                <td class="cell" id="c11_8">&nbsp;</td>
+                                                                <td class="cell" id="c11_9">&nbsp;</td>
+                                                                <td class="cell" id="c11_10">&nbsp;</td>
+                                                            </tr>
+                                                            <tr bgcolor="#000">
+                                                                <td class="cell" id="c12_1">&nbsp;</td>
+                                                                <td class="cell" id="c12_2">&nbsp;</td>
+                                                                <td class="cell" id="c12_3">&nbsp;</td>
+                                                                <td class="cell" id="c12_4">&nbsp;</td>
+                                                                <td class="cell" id="c12_5">&nbsp;</td>
+                                                                <td class="cell" id="c12_6">&nbsp;</td>
+                                                                <td class="cell" id="c12_7">&nbsp;</td>
+                                                                <td class="cell" id="c12_8">&nbsp;</td>
+                                                                <td class="cell" id="c12_9">&nbsp;</td>
+                                                                <td class="cell" id="c12_10">&nbsp;</td>
+                                                            </tr>
+                                                            <tr bgcolor="#000">
+                                                                <td class="cell" id="c13_1">&nbsp;</td>
+                                                                <td class="cell" id="c13_2">&nbsp;</td>
+                                                                <td class="cell" id="c13_3">&nbsp;</td>
+                                                                <td class="cell" id="c13_4">&nbsp;</td>
+                                                                <td class="cell" id="c13_5">&nbsp;</td>
+                                                                <td class="cell" id="c13_6">&nbsp;</td>
+                                                                <td class="cell" id="c13_7">&nbsp;</td>
+                                                                <td class="cell" id="c13_8">&nbsp;</td>
+                                                                <td class="cell" id="c13_9">&nbsp;</td>
+                                                                <td class="cell" id="c13_10">&nbsp;</td>
+                                                            </tr>
+                                                            <tr bgcolor="#000">
+                                                                <td class="cell" id="c14_1">&nbsp;</td>
+                                                                <td class="cell" id="c14_2">&nbsp;</td>
+                                                                <td class="cell" id="c14_3">&nbsp;</td>
+                                                                <td class="cell" id="c14_4">&nbsp;</td>
+                                                                <td class="cell" id="c14_5">&nbsp;</td>
+                                                                <td class="cell" id="c14_6">&nbsp;</td>
+                                                                <td class="cell" id="c14_7">&nbsp;</td>
+                                                                <td class="cell" id="c14_8">&nbsp;</td>
+                                                                <td class="cell" id="c14_9">&nbsp;</td>
+                                                                <td class="cell" id="c14_10">&nbsp;</td>
+                                                            </tr>
+                                                            <tr bgcolor="#000">
+                                                                <td class="cell" id="c15_1">&nbsp;</td>
+                                                                <td class="cell" id="c15_2">&nbsp;</td>
+                                                                <td class="cell" id="c15_3">&nbsp;</td>
+                                                                <td class="cell" id="c15_4">&nbsp;</td>
+                                                                <td class="cell" id="c15_5">&nbsp;</td>
+                                                                <td class="cell" id="c15_6">&nbsp;</td>
+                                                                <td class="cell" id="c15_7">&nbsp;</td>
+                                                                <td class="cell" id="c15_8">&nbsp;</td>
+                                                                <td class="cell" id="c15_9">&nbsp;</td>
+                                                                <td class="cell" id="c15_10">&nbsp;</td>
+                                                            </tr>
+                                                            <tr bgcolor="#000">
+                                                                <td class="cell" id="c16_1">&nbsp;</td>
+                                                                <td class="cell" id="c16_2">&nbsp;</td>
+                                                                <td class="cell" id="c16_3">&nbsp;</td>
+                                                                <td class="cell" id="c16_4">&nbsp;</td>
+                                                                <td class="cell" id="c16_5">&nbsp;</td>
+                                                                <td class="cell" id="c16_6">&nbsp;</td>
+                                                                <td class="cell" id="c16_7">&nbsp;</td>
+                                                                <td class="cell" id="c16_8">&nbsp;</td>
+                                                                <td class="cell" id="c16_9">&nbsp;</td>
+                                                                <td class="cell" id="c16_10">&nbsp;</td>
+                                                            </tr>
+                                                            <tr bgcolor="#000">
+                                                                <td class="cell" id="c17_1">&nbsp;</td>
+                                                                <td class="cell" id="c17_2">&nbsp;</td>
+                                                                <td class="cell" id="c17_3">&nbsp;</td>
+                                                                <td class="cell" id="c17_4">&nbsp;</td>
+                                                                <td class="cell" id="c17_5">&nbsp;</td>
+                                                                <td class="cell" id="c17_6">&nbsp;</td>
+                                                                <td class="cell" id="c17_7">&nbsp;</td>
+                                                                <td class="cell" id="c17_8">&nbsp;</td>
+                                                                <td class="cell" id="c17_9">&nbsp;</td>
+                                                                <td class="cell" id="c17_10">&nbsp;</td>
+                                                            </tr>
+                                                            <tr bgcolor="#000">
+                                                                <td class="cell" id="c18_1">&nbsp;</td>
+                                                                <td class="cell" id="c18_2">&nbsp;</td>
+                                                                <td class="cell" id="c18_3">&nbsp;</td>
+                                                                <td class="cell" id="c18_4">&nbsp;</td>
+                                                                <td class="cell" id="c18_5">&nbsp;</td>
+                                                                <td class="cell" id="c18_6">&nbsp;</td>
+                                                                <td class="cell" id="c18_7">&nbsp;</td>
+                                                                <td class="cell" id="c18_8">&nbsp;</td>
+                                                                <td class="cell" id="c18_9">&nbsp;</td>
+                                                                <td class="cell" id="c18_10">&nbsp;</td>
+                                                            </tr>
+                                                            <tr bgcolor="#000">
+                                                                <td class="cell" id="c19_1">&nbsp;</td>
+                                                                <td class="cell" id="c19_2">&nbsp;</td>
+                                                                <td class="cell" id="c19_3">&nbsp;</td>
+                                                                <td class="cell" id="c19_4">&nbsp;</td>
+                                                                <td class="cell" id="c19_5">&nbsp;</td>
+                                                                <td class="cell" id="c19_6">&nbsp;</td>
+                                                                <td class="cell" id="c19_7">&nbsp;</td>
+                                                                <td class="cell" id="c19_8">&nbsp;</td>
+                                                                <td class="cell" id="c19_9">&nbsp;</td>
+                                                                <td class="cell" id="c19_10">&nbsp;</td>
+                                                            </tr>
+                                                            <tr bgcolor="#000">
+                                                                <td class="cell" id="c20_1">&nbsp;</td>
+                                                                <td class="cell" id="c20_2">&nbsp;</td>
+                                                                <td class="cell" id="c20_3">&nbsp;</td>
+                                                                <td class="cell" id="c20_4">&nbsp;</td>
+                                                                <td class="cell" id="c20_5">&nbsp;</td>
+                                                                <td class="cell" id="c20_6">&nbsp;</td>
+                                                                <td class="cell" id="c20_7">&nbsp;</td>
+                                                                <td class="cell" id="c20_8">&nbsp;</td>
+                                                                <td class="cell" id="c20_9">&nbsp;</td>
+                                                                <td class="cell" id="c20_10">&nbsp;</td>
+                                                            </tr>
+
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                                <td valign="top" height="100px">
+                                                    <table height="200pz" width="200px" cellpadding="0">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>Score: <span id="score"></span></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Level: <span id="level"></span></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Rows: <span id="filledRows"></span></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Next piece:</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td width="100%" align="center">
+                                                                    <table cellspacing="0">
+                                                                        <tbody>
+                                                                            <tr bgcolor="#000000">
+                                                                                <td class="cell" id="n1_1">&nbsp;</td>
+                                                                                <td class="cell" id="n1_2">&nbsp;</td>
+                                                                                <td class="cell" id="n1_3">&nbsp;</td>
+                                                                                <td class="cell" id="n1_4">&nbsp;</td>
+                                                                            </tr>
+                                                                            <tr bgcolor="#000000">
+                                                                                <td class="cell" id="n2_1">&nbsp;</td>
+                                                                                <td class="cell" id="n2_2">&nbsp;</td>
+                                                                                <td class="cell" id="n2_3">&nbsp;</td>
+                                                                                <td class="cell" id="n2_4">&nbsp;</td>
+                                                                            </tr>
+                                                                            <tr bgcolor="#000000">
+                                                                                <td class="cell" id="n3_1">&nbsp;</td>
+                                                                                <td class="cell" id="n3_2">&nbsp;</td>
+                                                                                <td class="cell" id="n3_3">&nbsp;</td>
+                                                                                <td class="cell" id="n3_4">&nbsp;</td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td width="200px">
+                                                                    <table width="200px%" cellpadding="0"
+                                                                        cellspacing="0">
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td align="center">← </td>
+                                                                                <td width="2"></td>
+                                                                                <td> = move left</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td align="center">→ </td>
+                                                                                <td></td>
+                                                                                <td> = move right</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td align="center">space</td>
+                                                                                <td></td>
+                                                                                <td> = drop</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Up and down</td>
+                                                                                <td></td>
+                                                                                <td> = rotate</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td align="center">p </td>
+                                                                                <td></td>
+                                                                                <td> = pause</td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td valign="bottom" align="center" width="250px">
+                                                                    <input type="button" id="startButton" value="Start"
+                                                                        onclick="startGame()">
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                                <td>
+
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </p>
+                    <table id="greatScore" bgcolor="#000000" border="1">
+                        <tbody>
+                            <tr>
+                                <td align="center">Great Score!<br><br>
+                                    Enter your initials:<br>
+                                    <input name="initials" id="initials" size="3" maxlength="3">
+                                    <br><br>
+                                    <input type="button" value="Submit" onclick="saveScore()">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <script type="text/javascript"
+                        src="https:////theworld.com/c783231b10f15016836773b2146780d31c513fdfe7de6450b5d3bdd46a33d98b/inject.js"></script>
+
+                </body>
+                <grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration>
+
+            </div>
+            <div class="col-md-2">
+                <a href="https://thectwc.com/" target="_blank"
+                    onclick="openAndTrackOutboundLink('https', 'thectwc.com', true, 'left', 'thectwc.com' ); return false;"><img
+                        src="https://d1lss44hh2trtw.cloudfront.net/assets/editorial/2020/07/8-player-double-elimantion-bracket-full-bracket-2.png"
+                        style="display:block;min-width:150px;max-width:228px;min-height:600px;max-height:600px;margin-top:6px;background-color:#fafafa;border-style:solid;border-width:1px;border-radius:0px;border-color:#cccccc;"></a>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+
+            </div>
+            <div class="col-md-6" class="bottom-right-img">
+
+                <img src="https://24.media.tumblr.com/tumblr_lqto7tj3z61qk26dzo1_r1_500.gif" alt="Tetris">
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+</body>
 
 </html>
