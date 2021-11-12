@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather App - JavaScript</title>
+    <link rel="stylesheet" href="font/Rimouski.css">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div id="container" class="container">
+        <div class="app-title">
+            <p>Weather</p>
+        </div>
+        <div class="notification"> </div>
+        <div id="weather-container" class="weather-container">
+            <div class="weather-icon">
+                <img src="icons/unknown.png" alt="">
+            </div>
+            <div class="temperature-value">
+                <p>- °<span>C</span></p>
+            </div>
+            <div class="temperature-description">
+                <p> - </p>
+            </div>
+            <div class="location">
+                <p>-</p>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+    <script>
+    if (weather.temperature.unit == "celsius") {
+        document.getElementById("weather-container").style.background = "blue";
+    }
+    tempElement.addEventListener("click", function(){
+        if (weather.temperature.unit == "celsius") {
+            document.getElementById("weather-container").style.background = "blue";
+        }
+        if (weather.temperature.unit == "fahrenheit") {
+            document.getElementById("weather-container").style.background = "red";
+        }
+        if (weather.temperature.unit == "celsius") {
+            if (weather.temperature.value <= 10) {
+                document.getElementById("container").style.background = "orange";
+            }
+            if (weather.temperature.value > 10) {
+                document.getElementById("container").style.background = "green";
+            }
+        }
+        if (weather.temperature.unit == "fahrenheit") {
+            if (weather.temperature.value <= 50) {
+                document.getElementById("container").style.background = "purple";
+            }
+            if (weather.temperature.value >50) {
+                document.getElementById("container").style.background = "yellow";
+            }
+        }
+    });    
+    </script>
+</body>
+
+</html>
+
+

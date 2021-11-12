@@ -1,8 +1,8 @@
 <?php
-$apiKey = "API KEY"; //You will need to add in the 
+$apiKey = "22906b9e73d5ad85f3188b6406281311"; //You will need to add in the 
 $cityId = "5046997"; //5046997 Shakopee City Id
-$units = "metric";//metric-Celcius  imperial-Farhenheit
-if ($units == 'metric'){//Changes the $temp varaible to match 
+$units = "imperial";//metric-Celcius  imperial-Farhenheit
+if ($units =='metric'){//Changes the $temp varaible to match 
     $temp = "C";
 }
 else {
@@ -35,6 +35,13 @@ body {
     font-family: Arial;
     font-size: 0.95em;
     color: #929292;
+    background-color: <?php 
+        if ($data->main->temp >=50) {
+            echo "red";
+        }
+        if ($data->main->temp <50) {
+            echo "blue";
+        } ?>;
 }
 
 .report-container {
@@ -43,6 +50,14 @@ body {
     border-radius: 2px;
     width: 550px;
     margin: 0 auto;
+    background-color: white;
+    color: <?php
+        if ($data->main->temp >=50) {
+            echo "red";
+        }
+        if ($data->main->temp <50) {
+            echo "blue";
+        } ?>;    
 }
 
 .weather-icon {
@@ -81,7 +96,8 @@ span.min-temperature {
             <img
                 src="http://openweathermap.org/img/w/<?php echo $data->weather[0]->icon; ?>.png"
                 class="weather-icon" /> <?php echo $data->main->temp_max; ?>&deg;<?php echo $temp; ?><span
-                class="min-temperature"><?php echo $data->main->temp_min; ?>&deg;<?php echo $temp; ?></span>
+                class="min-temperature"><?php echo $data->main->temp_min; ?>&deg;<?php echo $temp; ?>
+                <?php echo $data->main->temp; ?>&deg;<?php echo $temp; ?></span>
         </div>
         <div class="time">
             <div>Humidity: <?php echo $data->main->humidity; ?> %</div>

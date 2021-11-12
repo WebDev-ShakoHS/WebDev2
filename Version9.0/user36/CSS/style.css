@@ -1,0 +1,298 @@
+.body-wideMargin {
+  margin: 5%;
+  font-size: 100%;
+  line-height: 1.5;
+  font-family: Roboto;
+}
+button{
+  padding:5px;
+}
+
+ol {
+
+  list-style-type: decimal-leading-zero;
+}
+
+ol ol {
+  margin-left: 0.9em;
+}
+
+ol li {
+
+  line-height: 1.5;
+}
+
+
+h1 {
+  font-family: "Fjalla One", sans-serif;
+  font-size: 2em;
+  text-transform: uppercase;
+  font-weight: 400;
+  border-bottom: 1px solid black;
+  margin-bottom: 1em;
+}
+
+h2 {
+  font-weight: bold;
+  margin-top:2.5%;
+  color: white;
+  text-shadow: 
+  -1px -1px 0 #000,
+  1px -1px 0 #000,
+  -1px 1px 0 #000,
+  1px 1px 0 #000;  
+}
+
+h6 {
+  border-style: solid;
+  border-color: black;
+  border-width: 0 0 5px 0;
+  color: black;
+
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.imagetext {
+  color:white;
+  font-family: "Fjalla One", sans-serif;
+  font-size: 4em;
+  text-transform: uppercase;
+  font-weight: 400;
+  text-align: center;
+  border-bottom: 4px solid white;
+}
+
+.carousel-inner img {
+  width: 100%;
+  height: 100%;
+}
+
+.overview {
+  padding:8%;
+  padding-top:5%;
+  padding-bottom:3%;
+  margin: 2.5%;
+  text-align:center;
+}
+
+section {
+  padding-bottom:5%;
+}
+
+.links {
+  color:black;
+  line-height: 2.25em;
+  font-size: 85%;
+}
+
+.links:hover {
+  color:black;
+}
+
+footer {
+  background-color: white;
+  padding: 2.5%;
+  border: solid black 2px;
+}
+
+.subfooter {
+  background-color: gray;
+  padding: 0.25%;
+  padding-top: 1%;
+  padding-left: 10%;
+  line-height: 1em;
+}
+
+hr {
+  margin-bottom: 8.5%;
+  background-color:black;
+  height:1px;
+  border: none;
+}
+
+.calltoaction {
+  margin-bottom:5%;
+  background-image: url(https://images.indagare.com/wp-content/uploads/LP-MemberStories-NewZealand4.jpg);
+}
+
+.btn-customCA {
+  color: white;
+  background-color: black;
+  margin-left:auto;
+  margin-right:auto;
+  margin-bottom: 5%;
+  margin-top: 4%;
+  max-width: 100px;
+  height: 80%;
+  border-radius: 25%;
+}
+
+.btn-customCA:hover {
+  color:gray;
+}
+
+th {
+  font-size: 45px;
+}
+
+p {
+  line-height: 175%;
+}
+
+.title {
+  text-align: center;
+  padding: 5%;
+  padding-bottom: 1%;
+  margin-bottom: 5%;
+  margin-left:11.5%;
+  margin-right:11.5%;
+}
+
+.image {
+  max-width:100%;
+}
+
+.responsive {
+  max-width:100%;
+  height:auto;
+}
+
+.video {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom:5%;
+  min-height: 100%;
+  min-width:100%;
+  width:100%;
+  height:100%;
+}
+
+.outer-container{
+  width: 300px;    
+  background-color: #FFF;
+  display: block;
+  margin: 0 auto;
+  border-radius: 10px;
+  padding-bottom : 50px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.app-title{
+  width: 300px;
+  height: 50px;
+  border-radius: 10px 10px 0 0;
+}
+
+.app-title p{
+  text-align: center;
+  padding: 15px;
+  margin: 0 auto;
+  font-size: 1.2em;
+  color: #293251;
+}
+
+.notification{
+  background-color: #f8d7da;
+  display: none;
+}
+
+.notification p{
+  color: #721c24;
+  font-size: 1.2em;
+  margin: 0;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.weather-container{
+  width: 300px;
+  height: 260px;
+  background-color: #F4F9FF;
+}
+
+.weather-icon{
+  width: 10%;
+  height: 5%;
+  margin-left: 22%;
+  margin-right: 12%;
+}
+
+.weather-icon img{
+  display: block;
+  margin: 0 auto;
+}
+
+.temperature-value{
+  width: 100%;
+  height:25%;
+  margin-top: 45%;
+  
+}
+
+.temperature-value p{
+  padding: 0;
+  margin-left: 25%;
+  margin-right: 25%;
+  color: #293251;
+  font-size: 3.5em;
+  text-align: center;
+  cursor: pointer;
+}
+
+.temperature-value p:hover{
+  color: black;
+}
+
+.temperature-value span{
+  color: #293251;
+  font-size: 0.5em;
+}
+
+.temperature-description{
+  color: black;
+}
+
+.temperature-description p{
+  padding: 0;
+  color: #293251;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.location{
+  color: black;
+}
+
+.location p{
+  margin: 0;
+  padding: 0;
+  color: #293251;
+  text-align: center;
+  font-size: 0.8em;
+}
+
+.col-md-2-4 {
+  -ms-flex: 0 0 20%;
+  flex: 0 0 20%;
+  max-width: 20%;
+}
+
+.forecast {
+  text-align:center;
+}
+
+.date {
+  color: black;
+}
+
+.foreCon {
+  margin-bottom: none;
+  padding-bottom: none;
+  max-height: 50%;
+}
