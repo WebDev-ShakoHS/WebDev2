@@ -1,34 +1,13 @@
-table {
-	font-family: "Marker Felt", "Comic Sans MS", fantasy;
-	color: #003366;
-	margin-left: auto;
-	margin-right: auto;
-	text-align: left;
-	border-collapse: collapse;
-	cellspacing: 0px;
-}
-
-tr {
-	border: 1px solid #ffffff;
-	text-align: center;
-	background-color:#9FB6CD; 
-}
-
-th {
-	text-align: center;
-	color: #ffffff;
-	background-color: #003366;
-}
 .button {
 	background-color: #4CAF50;
 	border: none;
 	color: white;
-	padding: 20px;
-	text-align: center;
+	padding: 40px;
+	text-align: left;
 	text-decoration: none;
 	display: inline-block;
-	font-size: 16px;
-	margin: 4px 2px;
+	font-size: 23px;
+	margin: 10Px 7px;
 	cursor: pointer;
 }
 
@@ -55,7 +34,19 @@ table{
 
 h1, h2, h3, h4, h5, h6{
 	text-align:center;
-	
+}
+.buttonLARGE{
+	font-size: medium;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.buttonSMALL{
+	font-size: medium;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.button3{
+	font-size: medium;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
 .title{
 	color: red;
 	font-family: 'Trebuchet MS', sans-serif; 
@@ -68,4 +59,85 @@ h1, h2, h3, h4, h5, h6{
   .title-small {
 	font-size: .5rem;
   }
+  *{
+    text-align:right;
+    border: 2px solid black;
+}
+#knowledge > * {
+	border: 3px red solid;
+  }
+  p + * {
+	background-color: #FFFF00;
+  }
+  div li::marker{
+	color: red;
+  }
+  div li::marker{
+	content:"😜 ";
+  }
 
+
+
+  @import url(rainbow.css);
+  .background-red {
+    background-color: red;
+}
+
+.background-orange {
+    background-color: orange;
+}
+
+.background-yellow {
+    background-color: yellow;
+}
+
+.background-green {
+    background-color: green;
+}
+
+.background-blue {
+    background-color: blue;
+}
+
+.background-indigo {
+    background-color: indigo;
+}
+
+.background-violet {
+    background-color: violet;
+}
+ 
+td:hover {
+	background-color: black;
+  }
+  /* unvisited link */
+a:link {
+	color: red;
+  }
+  
+  /* visited link */
+  a:visited {
+	color: orange;
+  }
+  
+  /* mouse over link */
+  a:hover {
+	color: hotpink;
+  }
+  
+  /* selected link */
+  a:active {
+	color: blue;
+  }
+  p {
+	display: visible;
+	background-color: yellow;
+	padding: 20px;
+  }
+  
+  div:hover p {
+	display: block;
+  }
+  p:first-child {
+	color: green;
+  } 

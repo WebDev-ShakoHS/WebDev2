@@ -7,7 +7,7 @@
 
 <head>
 
-    <title>Hire Me For Your Web Development Needs</title>
+    <title>Gallery</title>
 
     <!-- Meta -->
     <meta charset="utf-8">
@@ -16,13 +16,9 @@
     <meta name="description" content="WebDev Version 4.0">
 
     <!-- CSS -->
-    <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- Animate -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
-    <!-- Custom -->
+    <link rel="stylesheet" href="CSS/gallery.css">
     <link rel="stylesheet" href="CSS/style.css">
 
     <!-- JavaScript -->
@@ -46,6 +42,10 @@
             font-size: 12px;
             text-align: center;
         }
+
+        #rainbow {
+            width: 100%;
+        }
     </style>
 </head>
 
@@ -61,10 +61,10 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav">
                     <!--↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ Edit These Items in your Menu ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓-->
-                    <a href="index.html" class="nav-item nav-link active">Home</a>
+                    <a href="index.html" class="nav-item nav-link">Home</a>
                     <a href="display.html" class="nav-item nav-link">Display</a>
                     <a href="portfolio.html" class="nav-item nav-link">Portfolio</a>
-                    <a href="gallery.html" class="nav-item nav-link">Gallery</a>
+                    <a href="gallery.html" class="nav-item nav-link active">Gallery</a>
                     <!--↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ Edit These Items in your Menu ↑↑↑↑↑↑↑↑↑↑↑↑↑↑-->
                 </div>
                 <div class="navbar-nav ml-auto">
@@ -77,74 +77,85 @@
 
     <main class="wideMargin">
 
-        <h1 class="text-left my-3 title" tabindex="0">Check out my work!</h1>
+        <h1 class="text-left my-3 title" tabindex="0">Check out my favorite images</h1>
         <!-- Edit this line for the title of your page -->
 
         <!--↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ Put your content below this line ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓-->
-        <h3 id="topHeading">I'm a Web Developer</h3>
-        <table id="hireButtons">
-            <tr>
-                <td>
-                    <button>Hire me</button>
-                </td>
-                <td>
-                    <button class="button">Hire me</button>
-                </td>
-                <td>
-                    <button class="button button1">Hire me</button>
-                </td>
-                <td>
-                    <button class="button button2">Hire me</button>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <button class="button button2 red">Hire me</button>
-                </td>
-                <td>
-                    <td>
-                        <button>Text you want on your button</button>
-                      </td>
-                </td>
-                <td>
-                    <td>
-                        <button>Text you want on your button</button>
-                      </td>
-                </td>
-                <td>
-                    <td>
-                        <button>Text you want on your button</button>
-                      </td>
-                </td>
-            </tr>
-        </table>
-        <div style="padding-top: 5px;">
-            <!-- spacing div-->
 
-            <span class="title title-large">Example of a Heading Title</span>
-
-            <div class="content">
-
-                <p>
-                    Page content..
-                </p>
-
-                <p>
-                    Some more page content..
-                </p>
-
+        <div id="gallery">
+            <p>Hover over the images to get the answer</p>
+            <div class="container">
+              <div class="flipper">
+                <div class="front">
+                  <img src="images/dog.webp" alt="very cute animal">
+                  <p class="caption">dog</p>
+                </div>
+                <div class="back">
+                  <a href="https://en.wikipedia.org/wiki/Dog" target="_blank">
+                    <h1>Dogs</h1>
+                  </a>
+                  <p class="description">probably my favorite animal of right now.</p>
+                </div>
+              </div>
             </div>
 
-            <p id="morecontent">
-                Even more content
-            </p>
 
-            <!--↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ Make sure all your content is above this line ↑↑↑↑↑↑↑↑↑-->
+          
+            <div class="container">
+              <div class="flipper">
+                <div class="front">
+                  <img src="images/humans.webp" alt="people on the earth">
+                  <p class="caption"> Humans</p>
+                </div>
+                <div class="back">
+                  <a href="https://en.wikipedia.org/wiki/Human" target="_blank">
+                    <h1>Humans</h1>
+                  </a>
+                  <p class="description">all of us people on earth</p>
+                </div>
+              </div>
+            </div>
+
+
+          
+            <div class="container">
+              <div class="flipper">
+                <div class="front">
+                  <img src="images/ctss.webp" alt="cute animals">
+                  <p class="caption">cats</p>
+                </div>
+                <div class="back">
+                  <a href="https://en.wikipedia.org/wiki/Cat" target="_blank">
+                    <h1>cats</h1>
+                  </a>
+                  <p class="description"> very cool animal</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="" target="_blank">
+          <div class="container">
+            <div class="flipper">
+              <div class="front">
+                <img src="images/ssd.jpg" alt="rectangular box with blue sticker on it">
+                <p class="caption">Computer Part</p>
+              </div>
+              <div class="back">
+                <a href="https://en.wikipedia.org/wiki/Solid-state_storage" target="_blank">
+                  <h1>SSD</h1>
+                </a>
+                <p class="description"> A solid-state drive (SSD) is a solid-state storage device that uses integrated circuit assemblies to store data persistently, typically using flash memory, and functioning as secondary storage in the hierarchy of computer storage. </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ Make sure all your content is above this line ↑↑↑↑↑↑↑↑↑-->
     </main>
 
     <!---------------------------------- Begin the footer ------------->
     <footer>
-        <span class="title title small">Example of a Footer Title</span>
+        <span class="title">Example of a Footer Title</span>
         <table id="footerTable">
             <tr>
                 <td>
@@ -160,10 +171,6 @@
         </table>
     </footer>
     <!---------------------------------- End the footer ------------->
-
-    <table id="hireButtons">
-
-        <table id="footerTable">
 </body>
 
 </html>
