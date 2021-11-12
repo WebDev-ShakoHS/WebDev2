@@ -5,13 +5,15 @@
     -->
 
 <head>
-
+    <a class="weatherwidget-io" href="https://forecast7.com/en/44d80n93d53/shakopee/" data-label_1="SHAKOPEE" data-label_2="WEATHER" data-theme="clear" >SHAKOPEE WEATHER</a>
+    <script>
+    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+    </script>
     <title>TitanFall 2</title>
 
 
     <link rel="icon" type="image/x-icon" href="images/favicon (1).ico" />
-    <meta names="description" content="Titan Fall the fall of titans"
-    <!-- CSS -->
+    <meta names="description" content="Titan Fall the fall of titans" <!-- CSS -->
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- Font Awesome -->
@@ -45,21 +47,78 @@
         }
     </style>
     </div>
-    <div class="topnav">
+    <nav class="topnav">
+        <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none" id="mySidebar">
+            <button class="w3-bar-item w3-button w3-large"
+            onclick="w3_close()">Close &times;</button>
+            <a href="https://payday.fandom.com/wiki/Timeline" class="w3-bar-item w3-button">Payday 2 Lore</a>
+            <a href="https://titanfall2.fandom.com/wiki/Lore" class="w3-bar-item w3-button">Titan Fall 2 Lore</a>
+          </div>
+          
+          <div id="main">
+          
+          <div class="w3-teal">
+            <button id="openNav" class="w3-button w3-teal w3-xlarge" onclick="w3_open()">&#9776;</button>
+          
+          <script>
+          function w3_open() {
+            document.getElementById("main").style.marginLeft = "25%";
+            document.getElementById("mySidebar").style.width = "25%";
+            document.getElementById("mySidebar").style.display = "block";
+            document.getElementById("openNav").style.display = 'none';
+          }
+          function w3_close() {
+            document.getElementById("main").style.marginLeft = "0%";
+            document.getElementById("mySidebar").style.display = "none";
+            document.getElementById("openNav").style.display = "inline-block";
+          }
+          </script>
+          
         <a class="active" href="index.html">Home</a>
         <a href="payday 2.html">PayDay 2</a>
         <a href="TitanFall.html">Titan Fall 2</a>
         <a href="Survery Says.html"> Survery SaYS</a>
-    </div>
+        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
 
+<ul id="myUL">
+  <li><a href="https://gttod.com/">Get to The Orange Door</a></li>
+  <li><a href="https://www.ea.com/games/apex-legends">Apex Lengends</a></li>
+
+  <li><a href="https://www.ea.com/games/titanfall/titanfall-2">Titan Fall 2</a></li>
+  <li><a href="https://www.paydaythegame.com/payday2/">Payday 2</a></li>
+
+  <li><a href="https://www.paladins.com/">paladins</a></li>
+  <li><a href="https://www.bulletsperminute.com/">Bullets per minute</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Doom_(franchise)">Doom</a></li>
+</ul>
+<script>
+    function myFunction() {
+      // Declare variables
+      var input, filter, ul, li, a, i, txtValue;
+      input = document.getElementById('myInput');
+      filter = input.value.toUpperCase();
+      ul = document.getElementById("myUL");
+      li = ul.getElementsByTagName('li');
+    
+      // Loop through all list items, and hide those who don't match the search query
+      for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          li[i].style.display = "";
+        } else {
+          li[i].style.display = "none";
+        }
+      }
+    }
+    </script>
+    </nav>
 
 </head>
 
 
 <body id="bg-pg1">
-
-
-
+<!--Removed all the videos so it could be turned in :)-->
 
     <center>
         <font size="+6" style="color:whitesmoke;"><b>Titan Fall 2</b></font>
@@ -84,22 +143,22 @@
         </video>
     </center>
     <center style="color:whitesmoke;">
- so i will tell you about what titan fall and titan fall 2 effects, titan fall and titan fall 2 basically.<p>
-    Made a new genre the movment games. games that have many movment opinions and a diffenrt way to be faster
- </p> 
+        so i will tell you about what titan fall and titan fall 2 effects, titan fall and titan fall 2 basically.<p>
+            Made a new genre the movment games. games that have many movment opinions and a diffenrt way to be faster
+        </p>
     </center>
     <center> <video width="920px" height="540px" controls>
-        <source src="images/yt5s.com-The Hacker Destroying a Franchise - Titanfall 2.mp4" type="video/mp4">
-        </source>
-    </video>
-</center>
+            <source src="images/yt5s.com-The Hacker Destroying a Franchise - Titanfall 2.mp4" type="video/mp4">
+            </source>
+        </video>
+    </center>
     <center>
         <footer id="Foot">
             <span class="title">Check me out on my Social</span>
             <table id="footerTable">
                 <tr>
                     <td>
-                        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley"target="_blank" <i
+                        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley" target="_blank" <i
                             class="fa fa-facebook fa-3x" aria-hidden="true"></i>
                     </td>
                     <td>
@@ -107,7 +166,8 @@
                             class="fa fa-twitter fa-3x" aria-hidden="true"></i>
                     </td>
                     <td>
-                        <a href="https://www.youtube.com/watch?v=2BrIPhuUxBQ&ab_channel=MelissaRobinette" target="_blank" <i class="fa fa-instagram fa-3x" aria-hidden="true">
+                        <a href="https://www.youtube.com/watch?v=2BrIPhuUxBQ&ab_channel=MelissaRobinette"
+                            target="_blank" <i class="fa fa-instagram fa-3x" aria-hidden="true">
                     </td>
                     </td>
                 </tr>

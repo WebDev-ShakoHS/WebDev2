@@ -1,3 +1,5 @@
+@import url(rainbow.css);
+
 .button {
 	background-color: #4CAF50;
 	border: none;
@@ -11,12 +13,30 @@
 	cursor: pointer;
 }
 
-.button1 {
+.button-largeradius {
 	border-radius: 8px;
 }
 
-.button2 {
+.button-smallradius {
 	border-radius: 30%;
+}
+
+.buttondelay {
+	transition-duration: 0.35s;
+	-webkit-transition-duration: 0.35s; 
+}
+
+.buttonshadow {
+	box-shadow: 0 9px 17px 0 rgba(0,0,0,0.3), 0 7px 21px 0 rgba(0,0,0,0.20);
+}
+
+.buttonshadow-hover:hover {
+	box-shadow: 0 9px 17px 0 rgba(0,0,0,0.3), 0 7px 21px 0 rgba(0,0,0,0.20);
+}
+
+.buttonhover:hover {
+	background-color: rgb(71, 22, 247);
+	color: rgb(255, 31, 31);
 }
 
 .red {
@@ -35,31 +55,16 @@ table{
 h1, h2, h3, h4, h5, h6{
 	text-align:center;
 }
+
 .title{
 	color: red;
 	font-family: 'Trebuchet MS', sans-serif; 
   }
   
-  .title-large {
+.title-large {
 	font-size: 2rem;
   }
   
-  .title-small {
+.title-small {
 	font-size: .5rem;
   }
-  #morecontent {
-	background-color: yellow;
-  }
-  @import url(rainbow.css);
-          /* selected link */
-		  a:active {
-            color: #1f1fa8;
-        }
-
-        a.highlight:hover {
-            color: #ff0000;
-        }
-
-        div:hover {
-            background-color: rgba(143, 62, 103, 0.247);
-        }
