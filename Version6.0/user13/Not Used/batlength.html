@@ -43,7 +43,7 @@
 </head>
 
 <body>
-  
+ 
     <!---------------------------------- Begin the nav-bar ------------->
     <div class="menu">
         <nav class="navbar navbar-expand-md navbar-dark bg-dark">
@@ -59,9 +59,8 @@
                     <a href="bat.html" class="nav-item nav-link active">Baseball Bats</a>
                     <a href="glove.html" class="nav-item nav-link active">Gloves</a>
                     <a href="grip.html" class="nav-item nav-link active">Accessories</a>
-                    <a href="weather.php" class="nav-item nav-link active">Bat Size</a>
-                    <a href="ebay.php" class="nav-item nav-link active">Bats on eBay</a>
-                    
+                   
+                    <a href="batlength.html" class="nav-item nav-link active">Measure</a>
                     <!----------------------------------^ Edit These Items in your Menu ^ ------------->
                 </div>
                 <div class="navbar-nav ml-auto">
@@ -71,18 +70,145 @@
         </nav>
     </div>
     <!---------------------------------- End the nav-bar ------------->
+    <FORM name="live">
 
+        Please enter your age::<INPUT TYPE="text" NAME="age" VALUE="" SIZE=20>
+        Example: (november 1,1966) <BR><BR><BR>
+        <INPUT TYPE="button" NAME="start" VALUE="Start Timer" ONCLICK="lifetimer(this.form)">
+
+        <INPUT TYPE="reset" NAME="resetb" VALUE="Reset Age">
+
+        <BR><BR>
+
+        <TABLE border=0>
+            <TR>
+                <TD>You are days old:</TD>
+
+                <TD>
+
+                    <INPUT TYPE="text" NAME="time1" VALUE="" size=8>
+
+                </TD>
+
+            </TR>
+
+            <TR>
+                <TD>Plus hours old:</TD>
+
+                <TD>
+
+                    <INPUT TYPE="text" NAME="time2" VALUE="" size=8>
+
+                </TD>
+
+            </TR>
+
+            <TR>
+                <TD>Plus minutes old:</TD>
+
+                <TD><INPUT TYPE="text" NAME="time3" VALUE="" size=8></TD>
+            </TR>
+
+            <TR>
+                <TD>Plus seconds old:</TD>
+
+                <TD><INPUT TYPE="text" NAME="time4" VALUE="" size=8></TD>
+
+            </TR>
+        </TABLE>
+    
+    
+    <table>
+    </TR>
+
+    <TR>
+        <TD>Bat size you should use:</TD>
+
+        <TD><INPUT TYPE="text" NAME="length5" VALUE="" size=8></TD>
+
+    </TR>
+</TABLE>
+</FORM>
+
+
+
+
+
+
+
+    </table>
+    
+    
+    
+    <main>
+        <div id="built-in-functions">
+            <!-- ALERT-->
+
+            <!--PRINT-->
+           
+
+            <div class="container-fluid mt-3 mb-3">
+                <div class="row">
     <main class="wideMargin">
 
-        <h1 class="text-left my-3"><center>Home</center></h1><!-- Edit this line for the title of your page -->
-        <script> function printWindow2() {
-          window.print(); }</script>
-                      <button class="btn btn-dark btn-md" onclick="printWindow2()">Print</button></script>
-        <center><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5pjRoVNgGtjZnmpbz3Fu7r2QoBEUQMfbQZQ&usqp=CAU" style=width:750px;height:750px;></center>
-        
-       
+        <SCRIPT LANGUAGE="JAVASCRIPT">
 
-      
+            function lifetimer() {
+                today = new Date()
+    
+                BirthDay = new Date(document.live.age.value)
+    
+                timeold = (today.getTime() - BirthDay.getTime());
+    
+                msPerDay = 24 * 60 * 60 * 1000;
+    
+                timeold = (today.getTime() - BirthDay.getTime());
+    
+                e_daysold = timeold / msPerDay;
+    
+                daysold = Math.floor(e_daysold);
+    
+                e_hrsold = (e_daysold - daysold) * 24;
+    
+                hrsold = Math.floor(e_hrsold);
+                e_minsold = (e_hrsold - hrsold) * 60;
+    
+                minsold = Math.floor((e_hrsold - hrsold) * 60);
+    
+                secondsold = Math.floor((e_minsold - minsold) * 60);
+
+               
+                
+    
+                document.live.time1.value = daysold
+    
+                document.live.time2.value = hrsold
+    
+                document.live.time3.value = minsold
+    
+                document.live.time4.value = secondsold
+                
+                if (daysold>0 & daysold<4379) amount = 31;
+                if (daysold>4380 & daysold<5110) amount = 32;
+                if (daysold>5111) amount =33;
+                   
+                document.live.length5.value = amount
+               
+                window.status = "Well at the moment you are " + secondsold + "............ seconds old.";
+    
+                timerID = setTimeout("lifetimer()", 1000)
+        }
+    
+              
+
+            
+
+        
+
+            // -- done hiding from old browsers -->
+    
+        </script>
+       
     </main>
     <!--↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ Make sure all your content is above this line ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑-->
 
